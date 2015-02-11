@@ -122,7 +122,7 @@ class ESP8266 {
      * @param pwd - PASSWORD of SoftAP. 
      * @param chl - the channel (1 - 13, default: 7). 
      * @param ecn - the way of encrypstion (0 - OPEN, 1 - WEP, 
-     *  2 - WPA_PSK, 3 - WPA2_PSK, 4 - WPA_WPA2_PSK, default: 0). 
+     *  2 - WPA_PSK, 3 - WPA2_PSK, 4 - WPA_WPA2_PSK, default: 4). 
      * @note This method should not be called when station mode. 
      */
     bool setSoftAPParam(String ssid, String pwd, uint8_t chl = 7, uint8_t ecn = 4);

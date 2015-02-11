@@ -45,7 +45,69 @@
 <div class="contents">
 <div class="textblock"><h1>WeeESP8266</h1>
 <p>An <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a> library for Arduino providing an easy-to-use way to manipulate <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a>.</p>
-<h1>Source</h1>
+<h2>API List</h2>
+<pre class="fragment">bool    kick (void) : Verify ESP8266 whether live or not.
+
+bool    restart (void) : Restart ESP8266 by "AT+RST".
+
+String  getVersion (void) : Get the version of AT Command Set.
+
+bool    setOprToStation (void) : Set operation mode to staion.
+
+bool    setOprToSoftAP (void) : Set operation mode to softap.
+
+bool    setOprToStationSoftAP (void) : Set operation mode to station + softap.
+
+String  getAPList (void) : Search available AP list and return it.
+
+bool    joinAP (String ssid, String pwd) : Join in AP. 
+
+bool    leaveAP (void) : Leave AP joined before. 
+
+bool    setSoftAPParam (String ssid, String pwd, uint8_t chl=7, uint8_t ecn=4) : Set SoftAP parameters. 
+
+String  getJoinedDeviceIP (void) : Get the IP list of devices connected to SoftAP. 
+
+String  getIPStatus (void) : Get the current status of connection(UDP and TCP). 
+
+String  getLocalIP (void) : Get the IP address of ESP8266. 
+
+bool    enableMUX (void) : Enable IP MUX(multiple connection mode). 
+
+bool    disableMUX (void) : Disable IP MUX(single connection mode). 
+
+bool    createTCP (String addr, uint32_t port) : Create TCP connection in single mode. 
+
+bool    releaseTCP (void) : Release TCP connection in single mode. 
+
+bool    registerUDP (String addr, uint32_t port) : Register UDP port number in single mode. 
+
+bool    unregisterUDP (void) : Unregister UDP port number in single mode. 
+
+bool    createTCP (uint8_t mux_id, String addr, uint32_t port) : Create TCP connection in multiple mode. 
+
+bool    releaseTCP (uint8_t mux_id) : Release TCP connection in multiple mode. 
+
+bool    registerUDP (uint8_t mux_id, String addr, uint32_t port) : Register UDP port number in multiple mode. 
+
+bool    unregisterUDP (uint8_t mux_id) : Unregister UDP port number in multiple mode. 
+
+bool    setTCPServerTimeout (uint32_t timeout=180) : Set the timeout of TCP Server. 
+
+bool    startTCPServer (uint32_t port=333) : Start TCP Server(Only in multiple mode). 
+
+bool    stopTCPServer (void) : Stop TCP Server(Only in multiple mode). 
+
+bool    send (const uint8_t *buffer, uint32_t len) : Send data based on TCP or UDP builded already in single mode. 
+
+bool    send (uint8_t mux_id, const uint8_t *buffer, uint32_t len) : Send data based on one of TCP or UDP builded already in multiple mode. 
+
+uint32_t    recv (uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from TCP or UDP builded already in single mode. 
+
+uint32_t    recv (uint8_t mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from one of TCP or UDP builded already in multiple mode. 
+
+uint32_t    recv (uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from all of TCP or UDP builded already in multiple mode. 
+</pre><h1>Source</h1>
 <p>Source can be download at <a href="https://github.com/itead/ITEADLIB_Arduino_WeeESP8266">https://github.com/itead/ITEADLIB_Arduino_WeeESP8266</a>.</p>
 <p>You can clone it by: </p><pre class="fragment">git clone https://github.com/itead/ITEADLIB_Arduino_WeeESP8266.git
 </pre><h1>Documentation</h1>
@@ -69,7 +131,7 @@
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 11 2015 13:48:41 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 11 2015 14:01:41 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

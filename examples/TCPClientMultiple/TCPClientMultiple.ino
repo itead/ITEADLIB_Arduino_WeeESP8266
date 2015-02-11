@@ -1,5 +1,5 @@
 /**
- * @example TCPClientMultiple.cpp
+ * @example TCPClientMultiple.ino
  * @brief The TCPClientMultiple demo of library WeeESP8266. 
  * @author Wu Pengfei<pengfei.wu@itead.cc> 
  * @date 2015.02
@@ -26,14 +26,6 @@ void setup(void)
 {
     Serial.begin(9600);
     Serial.print("setup begin\r\n");
-
-#if 0    
-    if (wifi.restart()) {
-        Serial.println("ESP8266 restart ok");
-    } else {
-        Serial.println("ESP8266 restart err");        
-    }
-#endif
 
     Serial.print("FW Version: ");
     Serial.println(wifi.getVersion().c_str());
@@ -79,23 +71,21 @@ void loop(void)
 
     
     char *hello = "Hello, this is client!";
-    //while (1) {
-        if (wifi.send(mux_id, (const uint8_t*)hello, strlen(hello))) {
-            Serial.println("send ok");
-        } else {
-            Serial.println("send err");
+    if (wifi.send(mux_id, (const uint8_t*)hello, strlen(hello))) {
+        Serial.println("send ok");
+    } else {
+        Serial.println("send err");
+    }
+    
+    uint32_t len = wifi.recv(mux_id, buffer, sizeof(buffer), 10000);
+    if (len > 0) {
+        Serial.print("Received:[");
+        for(uint32_t i = 0; i < len; i++) {
+            Serial.print((char)buffer[i]);
         }
-        
-        uint32_t len = wifi.recv(mux_id, buffer, sizeof(buffer), 10000);
-        if (len > 0) {
-            Serial.print("Received:[");
-            for(uint32_t i = 0; i < len; i++) {
-                Serial.print((char)buffer[i]);
-            }
-            Serial.print("]\r\n");
-        }
-    //}
-#if 1    
+        Serial.print("]\r\n");
+    }
+ 
     if (wifi.releaseTCP(mux_id)) {
         Serial.print("release tcp ");
         Serial.print(mux_id);
@@ -105,7 +95,7 @@ void loop(void)
         Serial.print(mux_id);
         Serial.println(" err");
     }
-#endif    
+  
     delay(3000);
     mux_id++;
     if (mux_id >= 5) {

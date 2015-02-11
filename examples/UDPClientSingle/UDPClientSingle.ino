@@ -1,5 +1,5 @@
 /**
- * @example UDPClientSingle.cpp
+ * @example UDPClientSingle.ino
  * @brief The UDPClientSingle demo of library WeeESP8266. 
  * @author Wu Pengfei<pengfei.wu@itead.cc> 
  * @date 2015.02

@@ -1,5 +1,5 @@
 /**
- * @example TCPClientSingle.cpp
+ * @example TCPClientSingle.ino
  * @brief The TCPClientSingle demo of library WeeESP8266. 
  * @author Wu Pengfei<pengfei.wu@itead.cc> 
  * @date 2015.02

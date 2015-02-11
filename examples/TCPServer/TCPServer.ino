@@ -1,5 +1,5 @@
 /**
- * @example TCPServer.cpp
+ * @example TCPServer.ino
  * @brief The TCPServer demo of library WeeESP8266. 
  * @author Wu Pengfei<pengfei.wu@itead.cc> 
  * @date 2015.02

@@ -1,5 +1,5 @@
 /**
- * @example UDPClientMultiple.cpp
+ * @example UDPClientMultiple.ino
  * @brief The UDPClientMultiple demo of library WeeESP8266. 
  * @author Wu Pengfei<pengfei.wu@itead.cc> 
  * @date 2015.02

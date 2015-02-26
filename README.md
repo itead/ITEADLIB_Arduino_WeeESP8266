@@ -99,6 +99,39 @@ will be useful for Arduino developers.
   - WBoard Pro
   - MEGA and its derivatives
 
+# Hardware Connection
+
+WeeESP8266 library only needs an uart for hardware connection. All communications 
+are done via uart. In each example, you must specify the uart used by mainboard 
+to communicate with ESP8266 flashed AT firmware.
+
+For MEGA and WBoard Pro, Serial1 will be used if you create an object (named wifi) 
+of class ESP8266 in your code like this:
+
+    #include "ESP8266.h"
+    ESP8266 wifi(Serial1);
+
+the connection should be like these:
+
+    ESP8266_TX->RX1(D19)
+    ESP8266_RX->TX1(D18)
+    ESP8266_CH_PD->3.3V
+    ESP8266_VCC->3.3V
+    ESP8266_GND->GND
+    
+# Attention
+
+The size of data from ESP8266 is too big for arduino sometimes, so the library can't
+receive the whole buffer because the size of the hardware serial buffer which is 
+defined in HardwareSerial.h is too small.
+
+Open the file from \arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h. See the follow line in the HardwareSerial.h file.
+
+    #define SERIAL_BUFFER_SIZE 64
+
+The default size of the buffer is 64. Change it into a bigger number, like 256 or more.
+
+
 -------------------------------------------------------------------------------
 
 # The End!

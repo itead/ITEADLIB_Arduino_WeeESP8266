@@ -4,7 +4,27 @@
 
 An ESP8266 library for Arduino providing an easy-to-use way to manipulate ESP8266.
 
-## API List
+# Source 
+
+Source can be download at <https://github.com/itead/ITEADLIB_Arduino_WeeESP8266>.
+
+You can clone it by:
+
+    git clone https://github.com/itead/ITEADLIB_Arduino_WeeESP8266.git
+
+# Documentation
+
+Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_WeeESP8266/index.html>.
+
+Offline API documentation can be found under directory 
+[doc](https://github.com/itead/ITEADLIB_Arduino_WeeESP8266/tree/master/doc).
+
+# How to get started
+
+On the home page of API documentation, the tabs of Modules, Classes and Examples 
+will be useful for Arduino developers. 
+
+# API List
 
     bool 	kick (void) : Verify ESP8266 whether live or not.
      
@@ -69,26 +89,6 @@ An ESP8266 library for Arduino providing an easy-to-use way to manipulate ESP826
     uint32_t 	recv (uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from all of TCP or UDP builded already in multiple mode. 
 
 
-# Source 
-
-Source can be download at <https://github.com/itead/ITEADLIB_Arduino_WeeESP8266>.
-
-You can clone it by:
-
-    git clone https://github.com/itead/ITEADLIB_Arduino_WeeESP8266.git
-
-# Documentation
-
-Online API documentation can be reached at <http://docs.iteadstudio.com/ITEADLIB_Arduino_WeeESP8266/index.html>.
-
-Offline API documentation can be found under directory 
-[doc](https://github.com/itead/ITEADLIB_Arduino_WeeESP8266/tree/master/doc).
-
-# How to get started
-
-On the home page of API documentation, the tabs of Modules, Classes and Examples 
-will be useful for Arduino developers. 
-
 # Mainboard Requires
 
   - RAM: not less than 2KBytes
@@ -125,7 +125,8 @@ The size of data from ESP8266 is too big for arduino sometimes, so the library c
 receive the whole buffer because the size of the hardware serial buffer which is 
 defined in HardwareSerial.h is too small.
 
-Open the file from \arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h. See the follow line in the HardwareSerial.h file.
+Open the file from `\arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h`. 
+See the follow line in the HardwareSerial.h file.
 
     #define SERIAL_BUFFER_SIZE 64
 

@@ -20,7 +20,10 @@
  */
 
 #include "ESP8266.h"
- 
+
+#define SSID        "ITEAD"
+#define PASSWORD    "12345678"
+
 ESP8266 wifi(Serial1);
 
 void setup(void)
@@ -37,7 +40,7 @@ void setup(void)
         Serial.print("to station + softap err\r\n");
     }
  
-    if (wifi.joinAP("ITEAD", "12345678")) {
+    if (wifi.joinAP(SSID, PASSWORD)) {
         Serial.print("Join AP success\r\n");
         Serial.print("IP: ");
         Serial.println(wifi.getLocalIP().c_str());    

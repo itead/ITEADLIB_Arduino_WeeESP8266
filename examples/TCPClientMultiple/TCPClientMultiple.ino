@@ -20,6 +20,11 @@
  */
 #include "ESP8266.h"
 
+#define SSID        "ITEAD"
+#define PASSWORD    "12345678"
+#define HOST_NAME   "172.16.5.12"
+#define HOST_PORT   (8090)
+
 ESP8266 wifi(Serial1);
 
 void setup(void)
@@ -37,7 +42,7 @@ void setup(void)
         Serial.print("to station + softap err\r\n");
     }
 
-    if (wifi.joinAP("ITEAD", "12345678")) {
+    if (wifi.joinAP(SSID, PASSWORD)) {
         Serial.print("Join AP success\r\n");
         Serial.print("IP: ");       
         Serial.println(wifi.getLocalIP().c_str());
@@ -59,7 +64,7 @@ void loop(void)
     uint8_t buffer[128] = {0};
     static uint8_t mux_id = 0;
     
-    if (wifi.createTCP(mux_id, "172.16.5.12", 8090)) {
+    if (wifi.createTCP(mux_id, HOST_NAME, HOST_PORT)) {
         Serial.print("create tcp ");
         Serial.print(mux_id);
         Serial.println(" ok");

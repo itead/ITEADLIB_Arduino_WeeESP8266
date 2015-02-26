@@ -53,6 +53,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="fragment"><div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_s_p8266_8h.html">ESP8266.h</a>&quot;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#define SSID        &quot;ITEAD&quot;</span></div>
+<div class="line"><span class="preprocessor">#define PASSWORD    &quot;12345678&quot;</span></div>
+<div class="line"><span class="preprocessor">#define HOST_NAME   &quot;172.16.5.12&quot;</span></div>
+<div class="line"><span class="preprocessor">#define HOST_PORT   (5416)</span></div>
+<div class="line"></div>
 <div class="line"><a name="_a0"></a><a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
@@ -69,7 +74,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line">        Serial.print(<span class="stringliteral">&quot;to station + softap err\r\n&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(<span class="stringliteral">&quot;ITEAD&quot;</span>, <span class="stringliteral">&quot;12345678&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(SSID, PASSWORD)) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);</div>
 <div class="line">        Serial.println(wifi.<a name="a4"></a><a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());       </div>
@@ -91,7 +96,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line">    uint8_t buffer[1024] = {0};</div>
 <div class="line">    <span class="keyword">static</span> uint8_t mux_id = 0;</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a6"></a><a class="code" href="class_e_s_p8266.html#af8d3305a28d862c0cf353d0d758b96d4">registerUDP</a>(mux_id, <span class="stringliteral">&quot;172.16.5.12&quot;</span>, 5416)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a6"></a><a class="code" href="class_e_s_p8266.html#af8d3305a28d862c0cf353d0d758b96d4">registerUDP</a>(mux_id, HOST_NAME, HOST_PORT)) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;register udp &quot;</span>);</div>
 <div class="line">        Serial.print(mux_id);</div>
 <div class="line">        Serial.println(<span class="stringliteral">&quot; ok&quot;</span>);</div>
@@ -132,7 +137,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 26 2015 11:13:10 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 13:57:24 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

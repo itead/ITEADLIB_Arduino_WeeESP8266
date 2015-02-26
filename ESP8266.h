@@ -32,9 +32,12 @@ class ESP8266 {
     /**
      * Constuctor. 
      *
-     * @param uart - an reference of HardwareSerial object with baud 9600. 
+     * @param uart - an reference of HardwareSerial object. 
+     * @param baud - the buad rate to communicate with ESP8266(default:9600). 
+     *
+     * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
      */
-    ESP8266(HardwareSerial &uart); /* baud rate is 9600 */
+    ESP8266(HardwareSerial &uart, uint32_t baud = 9600);
     
     /** 
      * Verify ESP8266 whether live or not. 

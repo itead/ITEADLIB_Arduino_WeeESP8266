@@ -42,12 +42,11 @@
     } while(0)
 
 
-ESP8266::ESP8266(HardwareSerial &uart): m_puart(&uart)
+ESP8266::ESP8266(HardwareSerial &uart, uint32_t baud): m_puart(&uart)
 {
-    m_puart->begin(9600);
+    m_puart->begin(baud);
     rx_empty();
 }
-
 
 bool ESP8266::kick(void)
 {

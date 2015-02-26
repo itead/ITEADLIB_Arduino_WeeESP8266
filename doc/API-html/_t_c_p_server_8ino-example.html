@@ -52,7 +52,10 @@ This program is free software; you can redistribute it and/or modify it under th
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</dd></dl>
 <div class="fragment"><div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_s_p8266_8h.html">ESP8266.h</a>&quot;</span></div>
-<div class="line"> </div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#define SSID        &quot;ITEAD&quot;</span></div>
+<div class="line"><span class="preprocessor">#define PASSWORD    &quot;12345678&quot;</span></div>
+<div class="line"></div>
 <div class="line"><a name="_a0"></a><a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
@@ -69,7 +72,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line">        Serial.print(<span class="stringliteral">&quot;to station + softap err\r\n&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(<span class="stringliteral">&quot;ITEAD&quot;</span>, <span class="stringliteral">&quot;12345678&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(SSID, PASSWORD)) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);</div>
 <div class="line">        Serial.println(wifi.<a name="a4"></a><a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());    </div>
@@ -141,7 +144,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 26 2015 11:13:10 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 13:57:24 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

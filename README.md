@@ -26,6 +26,8 @@ will be useful for Arduino developers.
 
 # API List
 
+    ESP8266 (HardwareSerial &uart, uint32_t baud=9600) : Constructor
+
     bool 	kick (void) : Verify ESP8266 whether live or not.
      
     bool 	restart (void) : Restart ESP8266 by "AT+RST".

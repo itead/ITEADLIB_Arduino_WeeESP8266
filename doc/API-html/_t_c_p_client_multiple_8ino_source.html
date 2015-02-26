@@ -55,104 +55,109 @@
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_e_s_p8266_8h.html">ESP8266.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Serial.begin(9600);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Serial.print(<span class="stringliteral">&quot;setup begin\r\n&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define SSID        &quot;ITEAD&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define PASSWORD    &quot;12345678&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define HOST_NAME   &quot;172.16.5.12&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define HOST_PORT   (8090)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Serial.print(<span class="stringliteral">&quot;FW Version: &quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Serial.println(wifi.<a class="code" href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">getVersion</a>().c_str());</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">setOprToStationSoftAP</a>()) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Serial.print(<span class="stringliteral">&quot;to station + softap ok\r\n&quot;</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Serial.print(<span class="stringliteral">&quot;to station + softap err\r\n&quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(<span class="stringliteral">&quot;ITEAD&quot;</span>, <span class="stringliteral">&quot;12345678&quot;</span>)) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);       </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Serial.println(wifi.<a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Serial.print(<span class="stringliteral">&quot;Join AP failure\r\n&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007">enableMUX</a>()) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Serial.print(<span class="stringliteral">&quot;multiple ok\r\n&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Serial.print(<span class="stringliteral">&quot;multiple err\r\n&quot;</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Serial.print(<span class="stringliteral">&quot;setup end\r\n&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    uint8_t buffer[128] = {0};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> uint8_t mux_id = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2">createTCP</a>(mux_id, <span class="stringliteral">&quot;172.16.5.12&quot;</span>, 8090)) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Serial.print(<span class="stringliteral">&quot;create tcp &quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Serial.print(mux_id);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        Serial.println(<span class="stringliteral">&quot; ok&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Serial.print(<span class="stringliteral">&quot;create tcp &quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Serial.print(mux_id);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        Serial.println(<span class="stringliteral">&quot; err&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">char</span> *hello = <span class="stringliteral">&quot;Hello, this is client!&quot;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(mux_id, (<span class="keyword">const</span> uint8_t*)hello, strlen(hello))) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        Serial.println(<span class="stringliteral">&quot;send ok&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        Serial.println(<span class="stringliteral">&quot;send err&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    uint32_t len = wifi.<a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(mux_id, buffer, <span class="keyword">sizeof</span>(buffer), 10000);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (len &gt; 0) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        Serial.print(<span class="stringliteral">&quot;Received:[&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span>(uint32_t i = 0; i &lt; len; i++) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            Serial.print((<span class="keywordtype">char</span>)buffer[i]);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        Serial.print(<span class="stringliteral">&quot;]\r\n&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">releaseTCP</a>(mux_id)) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Serial.print(<span class="stringliteral">&quot;release tcp &quot;</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        Serial.print(mux_id);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        Serial.println(<span class="stringliteral">&quot; ok&quot;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        Serial.print(<span class="stringliteral">&quot;release tcp &quot;</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Serial.print(mux_id);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        Serial.println(<span class="stringliteral">&quot; err&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    delay(3000);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    mux_id++;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (mux_id &gt;= 5) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        mux_id = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="ttc" id="class_e_s_p8266_html_a6ba21b921a7afc79a36d0e41c20d59bc"><div class="ttname"><a href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">ESP8266::send</a></div><div class="ttdeci">bool send(const uint8_t *buffer, uint32_t len)</div><div class="ttdoc">Send data based on TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00245">ESP8266.cpp:245</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_a4e2d8a0637b437d4b03209cebfa5b750"><div class="ttname"><a href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">ESP8266::getVersion</a></div><div class="ttdeci">String getVersion(void)</div><div class="ttdoc">Get the version of AT Command Set. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00074">ESP8266.cpp:74</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_ac15ce9df69dc566c37b3fa2c3c869337"><div class="ttname"><a href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">ESP8266::releaseTCP</a></div><div class="ttdeci">bool releaseTCP(void)</div><div class="ttdoc">Release TCP connection in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00190">ESP8266.cpp:190</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_af8ce40bd14556bcfb5d4c521047fc821"><div class="ttname"><a href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">ESP8266::recv</a></div><div class="ttdeci">uint32_t recv(uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000)</div><div class="ttdoc">Receive data from TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00255">ESP8266.cpp:255</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_a16963a076b80906563d2269c0cd52007"><div class="ttname"><a href="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007">ESP8266::enableMUX</a></div><div class="ttdeci">bool enableMUX(void)</div><div class="ttdoc">Enable IP MUX(multiple connection mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00175">ESP8266.cpp:175</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_a20819d4dabf19fed6e3dcb3fd04ee49d"><div class="ttname"><a href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">ESP8266::getLocalIP</a></div><div class="ttdeci">String getLocalIP(void)</div><div class="ttdoc">Get the IP address of ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00168">ESP8266.cpp:168</a></div></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Serial.begin(9600);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    Serial.print(<span class="stringliteral">&quot;setup begin\r\n&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Serial.print(<span class="stringliteral">&quot;FW Version: &quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Serial.println(wifi.<a class="code" href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">getVersion</a>().c_str());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">setOprToStationSoftAP</a>()) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Serial.print(<span class="stringliteral">&quot;to station + softap ok\r\n&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Serial.print(<span class="stringliteral">&quot;to station + softap err\r\n&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(SSID, PASSWORD)) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);       </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        Serial.println(wifi.<a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        Serial.print(<span class="stringliteral">&quot;Join AP failure\r\n&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007">enableMUX</a>()) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        Serial.print(<span class="stringliteral">&quot;multiple ok\r\n&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        Serial.print(<span class="stringliteral">&quot;multiple err\r\n&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Serial.print(<span class="stringliteral">&quot;setup end\r\n&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint8_t buffer[128] = {0};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> uint8_t mux_id = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2">createTCP</a>(mux_id, HOST_NAME, HOST_PORT)) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Serial.print(<span class="stringliteral">&quot;create tcp &quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        Serial.print(mux_id);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Serial.println(<span class="stringliteral">&quot; ok&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Serial.print(<span class="stringliteral">&quot;create tcp &quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Serial.print(mux_id);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        Serial.println(<span class="stringliteral">&quot; err&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">char</span> *hello = <span class="stringliteral">&quot;Hello, this is client!&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(mux_id, (<span class="keyword">const</span> uint8_t*)hello, strlen(hello))) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        Serial.println(<span class="stringliteral">&quot;send ok&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        Serial.println(<span class="stringliteral">&quot;send err&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint32_t len = wifi.<a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(mux_id, buffer, <span class="keyword">sizeof</span>(buffer), 10000);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (len &gt; 0) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        Serial.print(<span class="stringliteral">&quot;Received:[&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">for</span>(uint32_t i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            Serial.print((<span class="keywordtype">char</span>)buffer[i]);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        Serial.print(<span class="stringliteral">&quot;]\r\n&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">releaseTCP</a>(mux_id)) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Serial.print(<span class="stringliteral">&quot;release tcp &quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        Serial.print(mux_id);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        Serial.println(<span class="stringliteral">&quot; ok&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        Serial.print(<span class="stringliteral">&quot;release tcp &quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        Serial.print(mux_id);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        Serial.println(<span class="stringliteral">&quot; err&quot;</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    delay(3000);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    mux_id++;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (mux_id &gt;= 5) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        mux_id = 0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="ttc" id="class_e_s_p8266_html_a6ba21b921a7afc79a36d0e41c20d59bc"><div class="ttname"><a href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">ESP8266::send</a></div><div class="ttdeci">bool send(const uint8_t *buffer, uint32_t len)</div><div class="ttdoc">Send data based on TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00244">ESP8266.cpp:244</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a4e2d8a0637b437d4b03209cebfa5b750"><div class="ttname"><a href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">ESP8266::getVersion</a></div><div class="ttdeci">String getVersion(void)</div><div class="ttdoc">Get the version of AT Command Set. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00073">ESP8266.cpp:73</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_ac15ce9df69dc566c37b3fa2c3c869337"><div class="ttname"><a href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">ESP8266::releaseTCP</a></div><div class="ttdeci">bool releaseTCP(void)</div><div class="ttdoc">Release TCP connection in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00189">ESP8266.cpp:189</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_af8ce40bd14556bcfb5d4c521047fc821"><div class="ttname"><a href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">ESP8266::recv</a></div><div class="ttdeci">uint32_t recv(uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000)</div><div class="ttdoc">Receive data from TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00254">ESP8266.cpp:254</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a16963a076b80906563d2269c0cd52007"><div class="ttname"><a href="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007">ESP8266::enableMUX</a></div><div class="ttdeci">bool enableMUX(void)</div><div class="ttdoc">Enable IP MUX(multiple connection mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00174">ESP8266.cpp:174</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a20819d4dabf19fed6e3dcb3fd04ee49d"><div class="ttname"><a href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">ESP8266::getLocalIP</a></div><div class="ttdeci">String getLocalIP(void)</div><div class="ttdoc">Get the IP address of ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00167">ESP8266.cpp:167</a></div></div>
 <div class="ttc" id="_e_s_p8266_8h_html"><div class="ttname"><a href="_e_s_p8266_8h.html">ESP8266.h</a></div><div class="ttdoc">The definition of class ESP8266. </div></div>
-<div class="ttc" id="class_e_s_p8266_html_ac179183a46b218609a481747bcfd5a61"><div class="ttname"><a href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">ESP8266::setOprToStationSoftAP</a></div><div class="ttdeci">bool setOprToStationSoftAP(void)</div><div class="ttdoc">Set operation mode to station + softap. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00115">ESP8266.cpp:115</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_aa927b7b8aaef163011015c22da1f07e2"><div class="ttname"><a href="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2">ESP8266::createTCP</a></div><div class="ttdeci">bool createTCP(String addr, uint32_t port)</div><div class="ttdoc">Create TCP connection in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00185">ESP8266.cpp:185</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_a300535b4b5f001b74058ebcc694a749f"><div class="ttname"><a href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">ESP8266::joinAP</a></div><div class="ttdeci">bool joinAP(String ssid, String pwd)</div><div class="ttdoc">Join in AP. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00139">ESP8266.cpp:139</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_ac179183a46b218609a481747bcfd5a61"><div class="ttname"><a href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">ESP8266::setOprToStationSoftAP</a></div><div class="ttdeci">bool setOprToStationSoftAP(void)</div><div class="ttdoc">Set operation mode to station + softap. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00114">ESP8266.cpp:114</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_aa927b7b8aaef163011015c22da1f07e2"><div class="ttname"><a href="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2">ESP8266::createTCP</a></div><div class="ttdeci">bool createTCP(String addr, uint32_t port)</div><div class="ttdoc">Create TCP connection in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00184">ESP8266.cpp:184</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a300535b4b5f001b74058ebcc694a749f"><div class="ttname"><a href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">ESP8266::joinAP</a></div><div class="ttdeci">bool joinAP(String ssid, String pwd)</div><div class="ttdoc">Join in AP. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00138">ESP8266.cpp:138</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html"><div class="ttname"><a href="class_e_s_p8266.html">ESP8266</a></div><div class="ttdoc">Provide an easy-to-use way to manipulate ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8h_source.html#l00029">ESP8266.h:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 26 2015 11:13:10 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 13:57:24 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

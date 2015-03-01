@@ -60,7 +60,7 @@ void setup(void)
  
 void loop(void)
 {
-    uint8_t buffer[1024] = {0};
+    uint8_t buffer[128] = {0};
     
     if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
         Serial.print("create tcp ok\r\n");

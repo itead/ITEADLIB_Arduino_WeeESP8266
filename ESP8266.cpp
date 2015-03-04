@@ -381,6 +381,7 @@ String ESP8266::recvString(String target, uint32_t timeout)
     while (millis() - start < timeout) {
         while(m_puart->available() > 0) {
             a = m_puart->read();
+			if(a == '\0') continue;
             data += a;
         }
         if (data.indexOf(target) != -1) {
@@ -398,6 +399,7 @@ String ESP8266::recvString(String target1, String target2, uint32_t timeout)
     while (millis() - start < timeout) {
         while(m_puart->available() > 0) {
             a = m_puart->read();
+			if(a == '\0') continue;
             data += a;
         }
         if (data.indexOf(target1) != -1) {
@@ -417,6 +419,7 @@ String ESP8266::recvString(String target1, String target2, String target3, uint3
     while (millis() - start < timeout) {
         while(m_puart->available() > 0) {
             a = m_puart->read();
+			if(a == '\0') continue;
             data += a;
         }
         if (data.indexOf(target1) != -1) {

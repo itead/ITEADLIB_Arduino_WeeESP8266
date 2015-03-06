@@ -58,6 +58,10 @@
     <UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="examples"><param name="Local" value="dir_d28a4824dc47e487b107a5db32ef43c4.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ConnectWiFi"><param name="Local" value="dir_8d6221cc4158f181d53b350a968e25f7.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ConnectWiFi.ino"><param name="Local" value="_connect_wi_fi_8ino_source.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientMultiple"><param name="Local" value="dir_f7dc4f4aec738992f977d5b3021cb4e4.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientMultiple.ino"><param name="Local" value="_t_c_p_client_multiple_8ino_source.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -125,6 +129,7 @@
   </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Examples"><param name="Local" value="examples.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="ConnectWiFi.ino"><param name="Local" value="_connect_wi_fi_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientMultiple.ino"><param name="Local" value="_t_c_p_client_multiple_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientSingle.ino"><param name="Local" value="_t_c_p_client_single_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPServer.ino"><param name="Local" value="_t_c_p_server_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>

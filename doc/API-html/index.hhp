@@ -13,6 +13,7 @@ Title=API
 main="API","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
 
 [FILES]
+_connect_wi_fi_8ino-example.html
 _t_c_p_client_multiple_8ino-example.html
 _t_c_p_client_single_8ino-example.html
 _t_c_p_server_8ino-example.html
@@ -21,6 +22,7 @@ _u_d_p_client_single_8ino-example.html
 doxygen_8h_source.html
 _e_s_p8266_8cpp_source.html
 _e_s_p8266_8h_source.html
+_connect_wi_fi_8ino_source.html
 _t_c_p_client_multiple_8ino_source.html
 _t_c_p_client_single_8ino_source.html
 _t_c_p_server_8ino_source.html
@@ -33,6 +35,7 @@ _e_s_p8266_8h.html
 md__r_e_a_d_m_e.html
 class_e_s_p8266.html
 class_e_s_p8266-members.html
+dir_8d6221cc4158f181d53b350a968e25f7.html
 dir_d28a4824dc47e487b107a5db32ef43c4.html
 dir_f7dc4f4aec738992f977d5b3021cb4e4.html
 dir_8897193998642bcd5bfc513741e45982.html

@@ -21,12 +21,10 @@ Offline API documentation can be found under directory
 
 # How to get started
 
-On the home page of API documentation, the tabs of Modules, Classes and Examples 
-will be useful for Arduino developers. 
+On the home page of API documentation, the tabs of Examples, Classes and Modules 
+will be useful for Arduino lovers. 
 
 # API List
-
-    ESP8266 (HardwareSerial &uart, uint32_t baud=9600) : Constructor
 
     bool 	kick (void) : Verify ESP8266 whether live or not.
      
@@ -94,12 +92,26 @@ will be useful for Arduino developers.
 # Mainboard Requires
 
   - RAM: not less than 2KBytes
-  - UART: one hardware serial at least 
+  - Serial: one serial (HardwareSerial or SoftwareSerial) at least 
 
 # Suppported Mainboards
-
+  
+  - Arduino UNO and its derivatives
+  - Arduino MEGA and its derivatives
+  - Iteaduino UNO
   - WBoard Pro
-  - MEGA and its derivatives
+
+# Using SoftwareSerial
+
+If you want to use SoftwareSerial to communicate with ESP8266, you need to modify
+the line in file `ESP8266.h`: 
+
+    //#define ESP8266_USE_SOFTWARE_SERIAL
+
+After modification, it should be:
+
+    #define ESP8266_USE_SOFTWARE_SERIAL
+
 
 # Hardware Connection
 
@@ -107,16 +119,37 @@ WeeESP8266 library only needs an uart for hardware connection. All communication
 are done via uart. In each example, you must specify the uart used by mainboard 
 to communicate with ESP8266 flashed AT firmware.
 
-For MEGA and WBoard Pro, Serial1 will be used if you create an object (named wifi) 
+## MEGA and WBoard Pro
+
+For MEGA and WBoard Pro, `Serial1` will be used if you create an object (named wifi) 
 of class ESP8266 in your code like this:
 
     #include "ESP8266.h"
     ESP8266 wifi(Serial1);
 
-the connection should be like these:
+The connection should be like these:
 
     ESP8266_TX->RX1(D19)
     ESP8266_RX->TX1(D18)
+    ESP8266_CH_PD->3.3V
+    ESP8266_VCC->3.3V
+    ESP8266_GND->GND
+
+## UNO
+
+To use SoftwareSerial, `mySerial` will be used if you create an object (named wifi)
+of class ESP8266 in your code like this:
+
+    #include "ESP8266.h"
+    #include <SoftwareSerial.h>
+    
+    SoftwareSerial mySerial(3, 2); /* RX:D3, TX:D2 */
+    ESP8266 wifi(mySerial);
+
+The connection should be like these:
+
+    ESP8266_TX->RX(D3)
+    ESP8266_RX->TX(D2)
     ESP8266_CH_PD->3.3V
     ESP8266_VCC->3.3V
     ESP8266_GND->GND

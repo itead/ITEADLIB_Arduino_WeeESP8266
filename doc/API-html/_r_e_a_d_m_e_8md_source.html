@@ -71,130 +71,163 @@
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># How to get started</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;On the home page of API documentation, the tabs of Modules, Classes and Examples </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;will be useful <span class="keywordflow">for</span> Arduino developers. </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;On the home page of API documentation, the tabs of Examples, Classes and Modules </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;will be useful <span class="keywordflow">for</span> Arduino lovers. </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"># API List</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_e_s_p8266.html">ESP8266</a> (HardwareSerial &amp;uart, uint32_t baud=9600) : Constructor</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    bool    kick (void) : Verify <a class="code" href="class_e_s_p8266.html">ESP8266</a> whether live or not.</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span>    kick (<span class="keywordtype">void</span>) : Verify <a class="code" href="class_e_s_p8266.html">ESP8266</a> whether live or not.</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;     </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    bool    restart (void) : Restart <a class="code" href="class_e_s_p8266.html">ESP8266</a> by <span class="stringliteral">&quot;AT+RST&quot;</span>.</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;     </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    bool    restart (void) : Restart <a class="code" href="class_e_s_p8266.html">ESP8266</a> by <span class="stringliteral">&quot;AT+RST&quot;</span>.</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    String  getVersion (void) : Get the version of AT Command Set.</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;     </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    String  getVersion (void) : Get the version of AT Command Set.</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    bool    setOprToStation (void) : Set operation mode to staion.</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    bool    setOprToStation (void) : Set operation mode to staion.</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    bool    setOprToSoftAP (void) : Set operation mode to softap.</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;     </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    bool    setOprToSoftAP (void) : Set operation mode to softap.</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    bool    setOprToStationSoftAP (void) : Set operation mode to station + softap.</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;     </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    bool    setOprToStationSoftAP (void) : Set operation mode to station + softap.</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    String  getAPList (void) : Search available AP list and return it.</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;     </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    String  getAPList (void) : Search available AP list and return it.</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    bool    joinAP (String ssid, String pwd) : Join in AP. </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    bool    joinAP (String ssid, String pwd) : Join in AP. </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    bool    leaveAP (void) : Leave AP joined before. </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    bool    leaveAP (void) : Leave AP joined before. </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    bool    setSoftAPParam (String ssid, String pwd, uint8_t chl=7, uint8_t ecn=4) : Set SoftAP parameters. </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    bool    setSoftAPParam (String ssid, String pwd, uint8_t chl=7, uint8_t ecn=4) : Set SoftAP parameters. </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    String  getJoinedDeviceIP (void) : Get the IP list of devices connected to SoftAP. </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    String  getJoinedDeviceIP (void) : Get the IP list of devices connected to SoftAP. </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    String  getIPStatus (void) : Get the current status of connection(UDP and TCP). </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;     </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    String  getIPStatus (void) : Get the current status of connection(UDP and TCP). </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    String  getLocalIP (void) : Get the IP address of <a class="code" href="class_e_s_p8266.html">ESP8266</a>. </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    String  getLocalIP (void) : Get the IP address of <a class="code" href="class_e_s_p8266.html">ESP8266</a>. </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    bool    enableMUX (void) : Enable IP MUX(multiple connection mode). </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;     </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    bool    enableMUX (void) : Enable IP MUX(multiple connection mode). </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    bool    disableMUX (void) : Disable IP MUX(single connection mode). </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;     </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    bool    disableMUX (void) : Disable IP MUX(single connection mode). </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    bool    createTCP (String addr, uint32_t port) : Create TCP connection in single mode. </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;     </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    bool    createTCP (String addr, uint32_t port) : Create TCP connection in single mode. </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    bool    releaseTCP (void) : Release TCP connection in single mode. </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;     </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    bool    releaseTCP (void) : Release TCP connection in single mode. </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    bool    registerUDP (String addr, uint32_t port) : Register UDP port number in single mode. </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;     </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    bool    registerUDP (String addr, uint32_t port) : Register UDP port number in single mode. </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    bool    unregisterUDP (void) : Unregister UDP port number in single mode. </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;     </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    bool    unregisterUDP (void) : Unregister UDP port number in single mode. </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    bool    createTCP (uint8_t mux_id, String addr, uint32_t port) : Create TCP connection in multiple mode. </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;     </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    bool    createTCP (uint8_t mux_id, String addr, uint32_t port) : Create TCP connection in multiple mode. </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    bool    releaseTCP (uint8_t mux_id) : Release TCP connection in multiple mode. </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;     </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    bool    releaseTCP (uint8_t mux_id) : Release TCP connection in multiple mode. </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    bool    registerUDP (uint8_t mux_id, String addr, uint32_t port) : Register UDP port number in multiple mode. </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;     </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    bool    registerUDP (uint8_t mux_id, String addr, uint32_t port) : Register UDP port number in multiple mode. </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    bool    unregisterUDP (uint8_t mux_id) : Unregister UDP port number in multiple mode. </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;     </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    bool    unregisterUDP (uint8_t mux_id) : Unregister UDP port number in multiple mode. </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    bool    setTCPServerTimeout (uint32_t timeout=180) : Set the timeout of TCP Server. </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;     </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    bool    setTCPServerTimeout (uint32_t timeout=180) : Set the timeout of TCP Server. </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    bool    startTCPServer (uint32_t port=333) : Start TCP Server(Only in multiple mode). </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;     </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    bool    startTCPServer (uint32_t port=333) : Start TCP Server(Only in multiple mode). </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    bool    stopTCPServer (void) : Stop TCP Server(Only in multiple mode). </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;     </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    bool    stopTCPServer (void) : Stop TCP Server(Only in multiple mode). </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    bool    send (const uint8_t *buffer, uint32_t len) : Send data based on TCP or UDP builded already in single mode. </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;     </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    bool    send (const uint8_t *buffer, uint32_t len) : Send data based on TCP or UDP builded already in single mode. </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    bool    send (uint8_t mux_id, const uint8_t *buffer, uint32_t len) : Send data based on one of TCP or UDP builded already in multiple mode. </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;     </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    bool    send (uint8_t mux_id, const uint8_t *buffer, uint32_t len) : Send data based on one of TCP or UDP builded already in multiple mode. </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint32_t    recv (uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from TCP or UDP builded already in single mode. </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;     </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    uint32_t    recv (uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from TCP or UDP builded already in single mode. </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    uint32_t    recv (uint8_t mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from one of TCP or UDP builded already in multiple mode. </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;     </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint32_t    recv (uint8_t mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from one of TCP or UDP builded already in multiple mode. </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;     </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    uint32_t    recv (uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from all of TCP or UDP builded already in multiple mode. </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint32_t    recv (uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from all of TCP or UDP builded already in multiple mode. </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;# Mainboard Requires</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;# Mainboard Requires</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  - RAM: not less than 2KBytes</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  - UART: one hardware serial at least </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;# Suppported Mainboards</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  - WBoard Pro</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  - MEGA and its derivatives</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  - RAM: not less than 2KBytes</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  - Serial: one serial (HardwareSerial or SoftwareSerial) at least </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;# Suppported Mainboards</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  - Arduino UNO and its derivatives</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  - Arduino MEGA and its derivatives</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  - Iteaduino UNO</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  - WBoard Pro</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;# Hardware Connection</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;# Using SoftwareSerial</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;WeeESP8266 library only needs an uart for hardware connection. All communications </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;are done via uart. In each example, you must specify the uart used by mainboard </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;to communicate with <a class="code" href="class_e_s_p8266.html">ESP8266</a> flashed AT firmware.</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;For MEGA and WBoard Pro, Serial1 will be used if you create an object (named wifi) </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;of class <a class="code" href="class_e_s_p8266.html">ESP8266</a> in your code like this:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;If you want to use SoftwareSerial to communicate with <a class="code" href="class_e_s_p8266.html">ESP8266</a>, you need to modify</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;the line in file `<a class="code" href="class_e_s_p8266.html">ESP8266</a>.h`: </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//#define ESP8266_USE_SOFTWARE_SERIAL</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;After modification, it should be:</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    #include <span class="stringliteral">&quot;ESP8266.h&quot;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    #define ESP8266_USE_SOFTWARE_SERIAL</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;the connection should be like these:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;# Hardware Connection</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    ESP8266_TX-&gt;RX1(D19)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    ESP8266_RX-&gt;TX1(D18)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    ESP8266_CH_PD-&gt;3.3V</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    ESP8266_VCC-&gt;3.3V</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    ESP8266_GND-&gt;GND</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor"># Attention</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;The size of data from <a class="code" href="class_e_s_p8266.html">ESP8266</a> is too big <span class="keywordflow">for</span> arduino sometimes, so the library can<span class="stringliteral">&#39;t</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">receive the whole buffer because the size of the hardware serial buffer which is </span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">defined in HardwareSerial.h is too small.</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral">Open the file from `\arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h`. </span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="stringliteral">See the follow line in the HardwareSerial.h file.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="stringliteral">    #define SERIAL_BUFFER_SIZE 64</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="stringliteral">The default size of the buffer is 64. Change it into a bigger number, like 256 or more.</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="stringliteral">-------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="stringliteral"># The End!</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="stringliteral">-------------------------------------------------------------------------------</span></div>
-<div class="ttc" id="class_e_s_p8266_html"><div class="ttname"><a href="class_e_s_p8266.html">ESP8266</a></div><div class="ttdoc">Provide an easy-to-use way to manipulate ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8h_source.html#l00029">ESP8266.h:29</a></div></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;WeeESP8266 library only needs an uart for hardware connection. All communications </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;are done via uart. In each example, you must specify the uart used by mainboard </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;to communicate with <a class="code" href="class_e_s_p8266.html">ESP8266</a> flashed AT firmware.</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;## MEGA and WBoard Pro</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;For MEGA and WBoard Pro, `Serial1` will be used if you create an object (named wifi) </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;of class <a class="code" href="class_e_s_p8266.html">ESP8266</a> in your code like this:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    #include <span class="stringliteral">&quot;ESP8266.h&quot;</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;The connection should be like these:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    ESP8266_TX-&gt;RX1(D19)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    ESP8266_RX-&gt;TX1(D18)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    ESP8266_CH_PD-&gt;3.3V</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    ESP8266_VCC-&gt;3.3V</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ESP8266_GND-&gt;GND</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">## UNO</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;To use SoftwareSerial, `mySerial` will be used <span class="keywordflow">if</span> you create an object (named wifi)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;of <span class="keyword">class </span><a class="code" href="class_e_s_p8266.html">ESP8266</a> in your code like this:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">    #include &quot;ESP8266.h&quot;</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">    #include &lt;SoftwareSerial.h&gt;</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    SoftwareSerial mySerial(3, 2); <span class="comment">/* RX:D3, TX:D2 */</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(mySerial);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;The connection should be like these:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    ESP8266_TX-&gt;RX(D3)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ESP8266_RX-&gt;TX(D2)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    ESP8266_CH_PD-&gt;3.3V</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ESP8266_VCC-&gt;3.3V</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    ESP8266_GND-&gt;GND</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor"># Attention</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;The size of data from <a class="code" href="class_e_s_p8266.html">ESP8266</a> is too big for arduino sometimes, so the library can&#39;t</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;receive the whole buffer because the size of the hardware serial buffer which is </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;defined in HardwareSerial.h is too small.</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;Open the file from `\arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h`. </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;See the follow line in the HardwareSerial.h file.</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    #define SERIAL_BUFFER_SIZE 64</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;The default size of the buffer is 64. Change it into a bigger number, like 256 or more.</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;-------------------------------------------------------------------------------</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor"># The End!</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;-------------------------------------------------------------------------------</div>
+<div class="ttc" id="class_e_s_p8266_html"><div class="ttname"><a href="class_e_s_p8266.html">ESP8266</a></div><div class="ttdoc">Provide an easy-to-use way to manipulate ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8h_source.html#l00038">ESP8266.h:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 6 2015 15:44:39 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 12:15:38 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

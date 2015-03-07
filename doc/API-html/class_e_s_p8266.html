@@ -61,9 +61,6 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d64499c37f333cf7c97e20493641562"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a0d64499c37f333cf7c97e20493641562">ESP8266</a> (HardwareSerial &amp;uart, uint32_t baud=9600)</td></tr>
-<tr class="memdesc:a0d64499c37f333cf7c97e20493641562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constuctor.  <a href="#a0d64499c37f333cf7c97e20493641562">More...</a><br /></td></tr>
-<tr class="separator:a0d64499c37f333cf7c97e20493641562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ed71947606435c3b03b73efdaf810a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a5ed71947606435c3b03b73efdaf810a5">kick</a> (void)</td></tr>
 <tr class="memdesc:a5ed71947606435c3b03b73efdaf810a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a> whether live or not.  <a href="#a5ed71947606435c3b03b73efdaf810a5">More...</a><br /></td></tr>
 <tr class="separator:a5ed71947606435c3b03b73efdaf810a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,49 +157,10 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provide an easy-to-use way to manipulate <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#_a0">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#_a0">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#_a0">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#_a0">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#_a0">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#_a0">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#_a0">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#_a0">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#_a0">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#_a0">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#_a0">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#_a0">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#_a0">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8h_source.html#l00029">29</a> of file <a class="el" href="_e_s_p8266_8h_source.html">ESP8266.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0d64499c37f333cf7c97e20493641562"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ESP8266::ESP8266 </td>
-          <td>(</td>
-          <td class="paramtype">HardwareSerial &amp;&#160;</td>
-          <td class="paramname"><em>uart</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>baud</em> = <code>9600</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constuctor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uart</td><td>- an reference of HardwareSerial object. </td></tr>
-    <tr><td class="paramname">baud</td><td>- the buad rate to communicate with <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266(default:9600)</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section warning"><dt>Warning</dt><dd>parameter baud depends on the AT firmware. 9600 is an common value. </dd></dl>
-
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00045">45</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<p>Definition at line <a class="el" href="_e_s_p8266_8h_source.html#l00038">38</a> of file <a class="el" href="_e_s_p8266_8h_source.html">ESP8266.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa927b7b8aaef163011015c22da1f07e2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,9 +200,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a6">TCPClientMultiple.ino</a>, and <a class="el" href="_t_c_p_client_single_8ino-example.html#a6">TCPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a6">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a6">TCPClientSingle.ino</a>, and <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a6">TCPClientSingleUNO.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00184">184</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00191">191</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +253,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00204">204</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00211">211</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -322,9 +280,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_single_8ino-example.html#a5">TCPClientSingle.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a5">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_single_8ino-example.html#a5">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a5">TCPClientSingleUNO.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a5">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00179">179</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00186">186</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +311,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a5">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a5">TCPServer.ino</a>, and <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a5">UDPClientMultiple.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00174">174</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00181">181</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -375,7 +333,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the list of available APs. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method will occupy a lot of memeory(hundreds of Bytes to a couple of KBytes). Do not call this method unless you must and ensure that your board has enough memery left. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00131">131</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00138">138</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +355,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the status. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a9">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00160">160</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00167">167</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -419,7 +377,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the list of IP. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00153">153</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00160">160</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -439,9 +397,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the IP address of <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the IP list. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a4">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a4">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a4">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a4">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a4">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a4">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a4">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a4">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a4">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a4">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a4">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a4">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a4">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00167">167</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00174">174</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,9 +419,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the version of AT Command Set. </p>
 <dl class="section return"><dt>Returns</dt><dd>the string of version. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a1">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a1">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a1">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a1">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a1">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a1">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a1">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a1">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a1">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a1">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a1">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a1">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a1">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00073">73</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00080">80</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -507,9 +465,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This method will take a couple of seconds. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a3">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a3">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a3">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a3">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a3">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a3">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a3">ConnectWiFi.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a3">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a3">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a3">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a3">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a3">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a3">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00138">138</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00145">145</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +495,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00051">51</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00058">58</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -564,7 +522,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00143">143</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00150">150</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -608,9 +566,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a8">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a8">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a8">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a8">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a8">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a8">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a8">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a8">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a8">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a8">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a8">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00254">254</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00261">261</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -662,7 +620,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00259">259</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00266">266</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -715,7 +673,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00270">270</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00277">277</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +718,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_u_d_p_client_multiple_8ino-example.html#a6">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a6">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00194">194</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00201">201</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -811,7 +769,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00214">214</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00221">221</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -837,9 +795,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a9">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a9">TCPClientSingle.ino</a>, and <a class="el" href="_t_c_p_server_8ino-example.html#a11">TCPServer.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a9">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a9">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a9">TCPClientSingleUNO.ino</a>, and <a class="el" href="_t_c_p_server_8ino-example.html#a11">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00189">189</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00196">196</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -872,7 +830,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00209">209</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00216">216</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -900,7 +858,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00056">56</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00063">63</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -943,9 +901,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a7">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a7">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a10">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a7">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a7">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a7">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a7">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a7">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a10">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a7">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a7">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00244">244</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00251">251</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -996,7 +954,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00249">249</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00256">256</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1023,7 +981,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00097">97</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00104">104</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1051,7 +1009,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a2">ConnectWiFi.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00080">80</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00087">87</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1077,9 +1035,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a2">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a2">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a2">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a2">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a2">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a2">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a2">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a2">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a2">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a2">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a2">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00114">114</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00121">121</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1131,7 +1089,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00148">148</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00155">155</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1165,7 +1123,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a7">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00224">224</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00231">231</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1205,7 +1163,7 @@ uint32_t <a class="el" href="class_e_s_p8266.html#a7d68591021e6ddc6919cb58658278
 bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300" title="Release TCP connection in multiple mode. ">releaseTCP(uint8_t mux_id)</a>; </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a6">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00229">229</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00236">236</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1232,7 +1190,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00237">237</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00244">244</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1260,7 +1218,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_u_d_p_client_multiple_8ino-example.html#a9">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a9">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00199">199</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00206">206</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1293,7 +1251,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00219">219</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00226">226</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1304,7 +1262,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 6 2015 15:44:39 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 12:15:38 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

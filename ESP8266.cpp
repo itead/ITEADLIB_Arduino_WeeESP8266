@@ -41,12 +41,19 @@
         }\
     } while(0)
 
-
+#ifdef ESP8266_USE_SOFTWARE_SERIAL
+ESP8266::ESP8266(SoftwareSerial &uart, uint32_t baud): m_puart(&uart)
+{
+    m_puart->begin(baud);
+    rx_empty();
+}
+#else
 ESP8266::ESP8266(HardwareSerial &uart, uint32_t baud): m_puart(&uart)
 {
     m_puart->begin(baud);
     rx_empty();
 }
+#endif
 
 bool ESP8266::kick(void)
 {

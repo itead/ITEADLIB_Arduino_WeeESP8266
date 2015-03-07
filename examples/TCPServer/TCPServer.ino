@@ -71,7 +71,7 @@ void setup(void)
  
 void loop(void)
 {
-    uint8_t buffer[1024] = {0};
+    uint8_t buffer[128] = {0};
     uint8_t mux_id;
     uint32_t len = wifi.recv(&mux_id, buffer, sizeof(buffer), 100);
     if (len > 0) {

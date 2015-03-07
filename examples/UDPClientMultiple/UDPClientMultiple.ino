@@ -61,7 +61,7 @@ void setup(void)
  
 void loop(void)
 {
-    uint8_t buffer[1024] = {0};
+    uint8_t buffer[128] = {0};
     static uint8_t mux_id = 0;
     
     if (wifi.registerUDP(mux_id, HOST_NAME, HOST_PORT)) {

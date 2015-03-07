@@ -1,8 +1,8 @@
 /**
- * @example UDPClientSingle.ino
- * @brief The UDPClientSingle demo of library WeeESP8266. 
+ * @example TCPClientSingleUNO.ino
+ * @brief The TCPClientSingleUNO demo of library WeeESP8266. 
  * @author Wu Pengfei<pengfei.wu@itead.cc> 
- * @date 2015.02
+ * @date 2015.03
  * 
  * @par Copyright:
  * Copyright (c) 2015 ITEAD Intelligent Systems Co., Ltd. \n\n
@@ -18,19 +18,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 #include "ESP8266.h"
+#include <SoftwareSerial.h>
 
 #define SSID        "ITEAD"
 #define PASSWORD    "12345678"
 #define HOST_NAME   "172.16.5.12"
-#define HOST_PORT   (5416)
+#define HOST_PORT   (8090)
 
-ESP8266 wifi(Serial1);
- 
+SoftwareSerial mySerial(3, 2); /* RX:D3, TX:D2 */
+ESP8266 wifi(mySerial);
+
 void setup(void)
 {
-    Serial.begin(9600);  
+    Serial.begin(9600);
     Serial.print("setup begin\r\n");
     
     Serial.print("FW Version:");
@@ -44,8 +45,8 @@ void setup(void)
  
     if (wifi.joinAP(SSID, PASSWORD)) {
         Serial.print("Join AP success\r\n");
-        Serial.print("IP: ");
-        Serial.println(wifi.getLocalIP().c_str());       
+        Serial.print("IP:");
+        Serial.println( wifi.getLocalIP().c_str());       
     } else {
         Serial.print("Join AP failure\r\n");
     }
@@ -63,10 +64,10 @@ void loop(void)
 {
     uint8_t buffer[128] = {0};
     
-    if (wifi.registerUDP(HOST_NAME, HOST_PORT)) {
-        Serial.print("register udp ok\r\n");
+    if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
+        Serial.print("create tcp ok\r\n");
     } else {
-        Serial.print("register udp err\r\n");
+        Serial.print("create tcp err\r\n");
     }
     
     char *hello = "Hello, this is client!";
@@ -81,11 +82,11 @@ void loop(void)
         Serial.print("]\r\n");
     }
     
-    if (wifi.unregisterUDP()) {
-        Serial.print("unregister udp ok\r\n");
+    if (wifi.releaseTCP()) {
+        Serial.print("release tcp ok\r\n");
     } else {
-        Serial.print("unregister udp err\r\n");
+        Serial.print("release tcp err\r\n");
     }
     delay(5000);
 }
-          
+     

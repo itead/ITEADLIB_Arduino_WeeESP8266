@@ -23,13 +23,33 @@
 
 #include "Arduino.h"
 
+
+//#define ESP8266_USE_SOFTWARE_SERIAL
+
+
+#ifdef ESP8266_USE_SOFTWARE_SERIAL
+#include "SoftwareSerial.h"
+#endif
+
+
 /**
  * Provide an easy-to-use way to manipulate ESP8266. 
  */
 class ESP8266 {
  public:
- 
-    /**
+
+#ifdef ESP8266_USE_SOFTWARE_SERIAL
+    /*
+     * Constuctor. 
+     *
+     * @param uart - an reference of SoftwareSerial object. 
+     * @param baud - the buad rate to communicate with ESP8266(default:9600). 
+     *
+     * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
+     */
+    ESP8266(SoftwareSerial &uart, uint32_t baud = 9600);
+#else /* HardwareSerial */
+    /*
      * Constuctor. 
      *
      * @param uart - an reference of HardwareSerial object. 
@@ -38,6 +58,8 @@ class ESP8266 {
      * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
      */
     ESP8266(HardwareSerial &uart, uint32_t baud = 9600);
+#endif
+    
     
     /** 
      * Verify ESP8266 whether live or not. 
@@ -415,9 +437,11 @@ class ESP8266 {
      * +IPD,id,len:data
      */
     
-    
+#ifdef ESP8266_USE_SOFTWARE_SERIAL
+    SoftwareSerial *m_puart; /* The UART to communicate with ESP8266 */
+#else
     HardwareSerial *m_puart; /* The UART to communicate with ESP8266 */
- 
+#endif
 };
 
 #endif /* #ifndef __ESP8266_H__ */

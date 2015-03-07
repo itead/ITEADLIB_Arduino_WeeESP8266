@@ -52,11 +52,9 @@
 <p>Online API documentation can be reached at <a href="http://docs.iteadstudio.com/ITEADLIB_Arduino_WeeESP8266/index.html">http://docs.iteadstudio.com/ITEADLIB_Arduino_WeeESP8266/index.html</a>.</p>
 <p>Offline API documentation can be found under directory <a href="https://github.com/itead/ITEADLIB_Arduino_WeeESP8266/tree/master/doc">doc</a>.</p>
 <h1>How to get started</h1>
-<p>On the home page of API documentation, the tabs of Modules, Classes and Examples will be useful for Arduino developers.</p>
+<p>On the home page of API documentation, the tabs of Examples, Classes and Modules will be useful for Arduino lovers.</p>
 <h1>API List</h1>
-<pre class="fragment">ESP8266 (HardwareSerial &amp;uart, uint32_t baud=9600) : Constructor
-
-bool    kick (void) : Verify ESP8266 whether live or not.
+<pre class="fragment">bool    kick (void) : Verify ESP8266 whether live or not.
 
 bool    restart (void) : Restart ESP8266 by "AT+RST".
 
@@ -120,19 +118,36 @@ uint32_t    recv (uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size,
 </pre><h1>Mainboard Requires</h1>
 <ul>
 <li>RAM: not less than 2KBytes</li>
-<li>UART: one hardware serial at least</li>
+<li>Serial: one serial (HardwareSerial or SoftwareSerial) at least</li>
 </ul>
 <h1>Suppported Mainboards</h1>
 <ul>
+<li>Arduino UNO and its derivatives</li>
+<li>Arduino MEGA and its derivatives</li>
+<li>Iteaduino UNO</li>
 <li>WBoard Pro</li>
-<li>MEGA and its derivatives</li>
 </ul>
-<h1>Hardware Connection</h1>
+<h1>Using SoftwareSerial</h1>
+<p>If you want to use SoftwareSerial to communicate with <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a>, you need to modify the line in file <code><a class="el" href="_e_s_p8266_8h.html" title="The definition of class ESP8266. ">ESP8266.h</a></code>: </p><pre class="fragment">//#define ESP8266_USE_SOFTWARE_SERIAL
+</pre><p>After modification, it should be: </p><pre class="fragment">#define ESP8266_USE_SOFTWARE_SERIAL
+</pre><h1>Hardware Connection</h1>
 <p>WeeESP8266 library only needs an uart for hardware connection. All communications are done via uart. In each example, you must specify the uart used by mainboard to communicate with <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a> flashed AT firmware.</p>
-<p>For MEGA and WBoard Pro, Serial1 will be used if you create an object (named wifi) of class <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a> in your code like this: </p><pre class="fragment">#include "ESP8266.h"
+<h2>MEGA and WBoard Pro</h2>
+<p>For MEGA and WBoard Pro, <code>Serial1</code> will be used if you create an object (named wifi) of class <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a> in your code like this: </p><pre class="fragment">#include "ESP8266.h"
 ESP8266 wifi(Serial1);
-</pre><p>the connection should be like these: </p><pre class="fragment">ESP8266_TX-&gt;RX1(D19)
+</pre><p>The connection should be like these: </p><pre class="fragment">ESP8266_TX-&gt;RX1(D19)
 ESP8266_RX-&gt;TX1(D18)
+ESP8266_CH_PD-&gt;3.3V
+ESP8266_VCC-&gt;3.3V
+ESP8266_GND-&gt;GND
+</pre><h2>UNO</h2>
+<p>To use SoftwareSerial, <code>mySerial</code> will be used if you create an object (named wifi) of class <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a> in your code like this: </p><pre class="fragment">#include "ESP8266.h"
+#include &lt;SoftwareSerial.h&gt;
+
+SoftwareSerial mySerial(3, 2); /* RX:D3, TX:D2 */
+ESP8266 wifi(mySerial);
+</pre><p>The connection should be like these: </p><pre class="fragment">ESP8266_TX-&gt;RX(D3)
+ESP8266_RX-&gt;TX(D2)
 ESP8266_CH_PD-&gt;3.3V
 ESP8266_VCC-&gt;3.3V
 ESP8266_GND-&gt;GND
@@ -146,7 +161,7 @@ ESP8266_GND-&gt;GND
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 6 2015 15:44:39 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 12:15:38 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

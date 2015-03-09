@@ -98,8 +98,8 @@ will be useful for Arduino lovers.
   
   - Arduino UNO and its derivatives
   - Arduino MEGA and its derivatives
-  - Iteaduino UNO
-  - WBoard Pro
+  - [Iteaduino UNO](http://imall.iteadstudio.com/im130312001.html)
+  - [WBoard Pro](http://imall.iteadstudio.com/im141125005.html)
 
 # Using SoftwareSerial
 

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>API: TCPServer.ino</title>
+<title>API: HTTPGET.ino</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,11 +40,11 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">TCPServer.ino</div>  </div>
+<div class="title">HTTPGET.ino</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>The TCPServer demo of library WeeESP8266.</p><dl class="section author"><dt>Author</dt><dd>Wu Pengfei<a href="#" onclick="location.href='mai'+'lto:'+'pen'+'gf'+'ei.'+'wu'+'@it'+'ea'+'d.c'+'c'; return false;">pengf<span style="display: none;">.nosp@m.</span>ei.w<span style="display: none;">.nosp@m.</span>u@ite<span style="display: none;">.nosp@m.</span>ad.c<span style="display: none;">.nosp@m.</span>c</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2015.02</dd></dl>
+<p>The HTTPGET demo of library WeeESP8266.</p><dl class="section author"><dt>Author</dt><dd>Wu Pengfei<a href="#" onclick="location.href='mai'+'lto:'+'pen'+'gf'+'ei.'+'wu'+'@it'+'ea'+'d.c'+'c'; return false;">pengf<span style="display: none;">.nosp@m.</span>ei.w<span style="display: none;">.nosp@m.</span>u@ite<span style="display: none;">.nosp@m.</span>ad.c<span style="display: none;">.nosp@m.</span>c</a> </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2015.03</dd></dl>
 <dl class="section user"><dt>Copyright:</dt><dd>Copyright (c) 2015 ITEAD Intelligent Systems Co., Ltd. <br />
 <br />
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. <br />
@@ -55,6 +55,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#define SSID        &quot;ITEAD&quot;</span></div>
 <div class="line"><span class="preprocessor">#define PASSWORD    &quot;12345678&quot;</span></div>
+<div class="line"><span class="preprocessor">#define HOST_NAME   &quot;www.baidu.com&quot;</span></div>
+<div class="line"><span class="preprocessor">#define HOST_PORT   (80)</span></div>
 <div class="line"></div>
 <div class="line"><a name="_a0"></a><a class="code" href="class_e_s_p8266.html">ESP8266</a> wifi(Serial1);</div>
 <div class="line"></div>
@@ -62,40 +64,29 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line">{</div>
 <div class="line">    Serial.begin(9600);</div>
 <div class="line">    Serial.print(<span class="stringliteral">&quot;setup begin\r\n&quot;</span>);</div>
-<div class="line">    </div>
+<div class="line"></div>
 <div class="line">    Serial.print(<span class="stringliteral">&quot;FW Version:&quot;</span>);</div>
 <div class="line">    Serial.println(wifi.<a name="a1"></a><a class="code" href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">getVersion</a>().c_str());</div>
-<div class="line">      </div>
+<div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a2"></a><a class="code" href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">setOprToStationSoftAP</a>()) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;to station + softap ok\r\n&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;to station + softap err\r\n&quot;</span>);</div>
 <div class="line">    }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(SSID, PASSWORD)) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);</div>
-<div class="line">        Serial.println(wifi.<a name="a4"></a><a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());    </div>
+<div class="line"></div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;IP:&quot;</span>);</div>
+<div class="line">        Serial.println( wifi.<a name="a4"></a><a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());       </div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;Join AP failure\r\n&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a5"></a><a class="code" href="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007">enableMUX</a>()) {</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;multiple ok\r\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a5"></a><a class="code" href="class_e_s_p8266.html#a2bc64145329ea45018e956b97ced030a">disableMUX</a>()) {</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;single ok\r\n&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;multiple err\r\n&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a6"></a><a class="code" href="class_e_s_p8266.html#a22a7768a76709c8d8f0b9809158b7ec9">startTCPServer</a>(8090)) {</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;start tcp server ok\r\n&quot;</span>);</div>
-<div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;start tcp server err\r\n&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a7"></a><a class="code" href="class_e_s_p8266.html#a71f76c76d23fc66c26f1c7b357f58ac2">setTCPServerTimeout</a>(10)) { </div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;set tcp server timout 10 seconds\r\n&quot;</span>);</div>
-<div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;set tcp server timout err\r\n&quot;</span>);</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;single err\r\n&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    Serial.print(<span class="stringliteral">&quot;setup end\r\n&quot;</span>);</div>
@@ -103,44 +94,36 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    uint8_t buffer[128] = {0};</div>
-<div class="line">    uint8_t mux_id;</div>
-<div class="line">    uint32_t len = wifi.<a name="a8"></a><a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(&amp;mux_id, buffer, <span class="keyword">sizeof</span>(buffer), 100);</div>
+<div class="line">    uint8_t buffer[1024] = {0};</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a6"></a><a class="code" href="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2">createTCP</a>(HOST_NAME, HOST_PORT)) {</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;create tcp ok\r\n&quot;</span>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;create tcp err\r\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">char</span> *hello = <span class="stringliteral">&quot;GET / HTTP/1.1\r\nHost: www.baidu.com\r\nConnection: close\r\n\r\n&quot;</span>;</div>
+<div class="line">    wifi.<a name="a7"></a><a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>((<span class="keyword">const</span> uint8_t*)hello, strlen(hello));</div>
+<div class="line"></div>
+<div class="line">    uint32_t len = wifi.<a name="a8"></a><a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(buffer, <span class="keyword">sizeof</span>(buffer), 10000);</div>
 <div class="line">    <span class="keywordflow">if</span> (len &gt; 0) {</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;Status:[&quot;</span>);</div>
-<div class="line">        Serial.print(wifi.<a name="a9"></a><a class="code" href="class_e_s_p8266.html#ad273286fbb8627a612249a232d53ca22">getIPStatus</a>().c_str());</div>
-<div class="line">        Serial.println(<span class="stringliteral">&quot;]&quot;</span>);</div>
-<div class="line">        </div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;Received from :&quot;</span>);</div>
-<div class="line">        Serial.print(mux_id);</div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;[&quot;</span>);</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;Received:[&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">for</span>(uint32_t i = 0; i &lt; len; i++) {</div>
 <div class="line">            Serial.print((<span class="keywordtype">char</span>)buffer[i]);</div>
 <div class="line">        }</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;]\r\n&quot;</span>);</div>
-<div class="line">        </div>
-<div class="line">        <span class="keywordflow">if</span>(wifi.<a name="a10"></a><a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(mux_id, buffer, len)) {</div>
-<div class="line">            Serial.print(<span class="stringliteral">&quot;send back ok\r\n&quot;</span>);</div>
-<div class="line">        } <span class="keywordflow">else</span> {</div>
-<div class="line">            Serial.print(<span class="stringliteral">&quot;send back err\r\n&quot;</span>);</div>
-<div class="line">        }</div>
-<div class="line">        </div>
-<div class="line">        <span class="keywordflow">if</span> (wifi.<a name="a11"></a><a class="code" href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">releaseTCP</a>(mux_id)) {</div>
-<div class="line">            Serial.print(<span class="stringliteral">&quot;release tcp &quot;</span>);</div>
-<div class="line">            Serial.print(mux_id);</div>
-<div class="line">            Serial.println(<span class="stringliteral">&quot; ok&quot;</span>);</div>
-<div class="line">        } <span class="keywordflow">else</span> {</div>
-<div class="line">            Serial.print(<span class="stringliteral">&quot;release tcp&quot;</span>);</div>
-<div class="line">            Serial.print(mux_id);</div>
-<div class="line">            Serial.println(<span class="stringliteral">&quot; err&quot;</span>);</div>
-<div class="line">        }</div>
-<div class="line">        </div>
-<div class="line">        Serial.print(<span class="stringliteral">&quot;Status:[&quot;</span>);</div>
-<div class="line">        Serial.print(wifi.<a class="code" href="class_e_s_p8266.html#ad273286fbb8627a612249a232d53ca22">getIPStatus</a>().c_str());</div>
-<div class="line">        Serial.println(<span class="stringliteral">&quot;]&quot;</span>);</div>
 <div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a9"></a><a class="code" href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">releaseTCP</a>()) {</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;release tcp ok\r\n&quot;</span>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        Serial.print(<span class="stringliteral">&quot;release tcp err\r\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">while</span>(1);</div>
+<div class="line">    </div>
 <div class="line">}</div>
-<div class="line">        </div>
+<div class="line">     </div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -61,6 +61,10 @@
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="ConnectWiFi.ino"><param name="Local" value="_connect_wi_fi_8ino_source.html"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="HTTPGET"><param name="Local" value="dir_e77b6112596a040608ac3c23911cc719.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="HTTPGET.ino"><param name="Local" value="_h_t_t_p_g_e_t_8ino_source.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientMultiple"><param name="Local" value="dir_f7dc4f4aec738992f977d5b3021cb4e4.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientMultiple.ino"><param name="Local" value="_t_c_p_client_multiple_8ino_source.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -132,6 +136,7 @@
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Examples"><param name="Local" value="examples.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="ConnectWiFi.ino"><param name="Local" value="_connect_wi_fi_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="HTTPGET.ino"><param name="Local" value="_h_t_t_p_g_e_t_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientMultiple.ino"><param name="Local" value="_t_c_p_client_multiple_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientSingle.ino"><param name="Local" value="_t_c_p_client_single_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="TCPClientSingleUNO.ino"><param name="Local" value="_t_c_p_client_single_u_n_o_8ino-example.html"><param name="ImageNumber" value="11"></OBJECT>

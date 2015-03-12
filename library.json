@@ -1,0 +1,13 @@
+{
+  "name": "ESP8266",
+  "keywords": "wifi, wi-fi, http, web, server, client",
+  "description": "ESP8266 offers a complete and self-contained Wi-Fi networking solution, allowing it to either host the application or to offload all Wi-Fi networking functions from another application processor",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/itead/ITEADLIB_Arduino_WeeESP8266.git"
+  },
+  "exclude": "doc",
+  "frameworks": "arduino",
+  "platforms": "atmelavr"
+}

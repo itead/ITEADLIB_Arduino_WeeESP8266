@@ -306,6 +306,26 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool stopTCPServer(void);
+    
+    /**
+     * Start Server(Only in multiple mode). 
+     * 
+     * @param port - the port number to listen(default: 333).
+     * @retval true - success.
+     * @retval false - failure.
+     *
+     * @see String getIPStatus(void);
+     * @see uint32_t recv(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t len, uint32_t timeout);
+     */
+    bool startServer(uint32_t port = 333);
+
+    /**
+     * Stop Server(Only in multiple mode). 
+     * 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool stopServer(void);
 
     /**
      * Send data based on TCP or UDP builded already in single mode. 

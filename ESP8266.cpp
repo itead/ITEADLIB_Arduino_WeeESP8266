@@ -248,6 +248,16 @@ bool ESP8266::stopTCPServer(void)
     return false;
 }
 
+bool ESP8266::startServer(uint32_t port)
+{
+    return startTCPServer(port);
+}
+
+bool ESP8266::stopServer(void)
+{
+    return stopTCPServer();
+}
+
 bool ESP8266::send(const uint8_t *buffer, uint32_t len)
 {
     return sATCIPSENDSingle(buffer, len);

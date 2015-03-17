@@ -139,6 +139,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5355dce05aa59b92ce9f7ea76d86eef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef">stopTCPServer</a> (void)</td></tr>
 <tr class="memdesc:aa5355dce05aa59b92ce9f7ea76d86eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop TCP Server(Only in multiple mode).  <a href="#aa5355dce05aa59b92ce9f7ea76d86eef">More...</a><br /></td></tr>
 <tr class="separator:aa5355dce05aa59b92ce9f7ea76d86eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d9a6b130b6c278fd6cd2e6cda816d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7">startServer</a> (uint32_t port=333)</td></tr>
+<tr class="memdesc:a88d9a6b130b6c278fd6cd2e6cda816d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Server(Only in multiple mode).  <a href="#a88d9a6b130b6c278fd6cd2e6cda816d7">More...</a><br /></td></tr>
+<tr class="separator:a88d9a6b130b6c278fd6cd2e6cda816d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af272f2f57b7b99434e257f06c276acfc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc">stopServer</a> (void)</td></tr>
+<tr class="memdesc:af272f2f57b7b99434e257f06c276acfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop Server(Only in multiple mode).  <a href="#af272f2f57b7b99434e257f06c276acfc">More...</a><br /></td></tr>
+<tr class="separator:af272f2f57b7b99434e257f06c276acfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba21b921a7afc79a36d0e41c20d59bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a> (const uint8_t *buffer, uint32_t len)</td></tr>
 <tr class="memdesc:a6ba21b921a7afc79a36d0e41c20d59bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data based on TCP or UDP builded already in single mode.  <a href="#a6ba21b921a7afc79a36d0e41c20d59bc">More...</a><br /></td></tr>
 <tr class="separator:a6ba21b921a7afc79a36d0e41c20d59bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -568,7 +574,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a8">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a8">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a8">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a8">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a8">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a8">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a8">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00261">261</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00271">271</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -620,7 +626,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00266">266</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00276">276</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -673,7 +679,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00277">277</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00287">287</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -903,7 +909,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a7">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a7">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a7">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a7">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a10">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a7">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a7">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00251">251</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00261">261</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -954,7 +960,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00256">256</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00266">266</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1127,6 +1133,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a88d9a6b130b6c278fd6cd2e6cda816d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::startServer </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>port</em> = <code>333</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start Server(Only in multiple mode). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>- the port number to listen(default: 333). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>String <a class="el" href="class_e_s_p8266.html#ad273286fbb8627a612249a232d53ca22" title="Get the current status of connection(UDP and TCP). ">getIPStatus(void)</a>; </dd>
+<dd>
+uint32_t <a class="el" href="class_e_s_p8266.html#a7d68591021e6ddc6919cb5865827856f" title="Receive data from all of TCP or UDP builded already in multiple mode. ">recv(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t len, uint32_t timeout)</a>; </dd></dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00251">251</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a22a7768a76709c8d8f0b9809158b7ec9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1164,6 +1206,33 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a6">TCPServer.ino</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00236">236</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af272f2f57b7b99434e257f06c276acfc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::stopServer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop Server(Only in multiple mode). </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00256">256</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1262,7 +1331,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 12 2015 12:51:54 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 17 2015 10:34:17 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

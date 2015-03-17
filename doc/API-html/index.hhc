@@ -38,7 +38,9 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="setOprToStationSoftAP"><param name="Local" value="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="setSoftAPParam"><param name="Local" value="class_e_s_p8266.html#aacce786dc0ef289cd37a48642d2efef1"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="setTCPServerTimeout"><param name="Local" value="class_e_s_p8266.html#a71f76c76d23fc66c26f1c7b357f58ac2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="startServer"><param name="Local" value="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="startTCPServer"><param name="Local" value="class_e_s_p8266.html#a22a7768a76709c8d8f0b9809158b7ec9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="stopServer"><param name="Local" value="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="stopTCPServer"><param name="Local" value="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="unregisterUDP"><param name="Local" value="class_e_s_p8266.html#aa355332a78aa5f2b58cb11b0daa05cf5"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="unregisterUDP"><param name="Local" value="class_e_s_p8266.html#a0a48619ad157fd2bd9c7f2e9c151f9b3"><param name="ImageNumber" value="11"></OBJECT>
@@ -125,7 +127,9 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="setOprToStationSoftAP"><param name="Local" value="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="setSoftAPParam"><param name="Local" value="class_e_s_p8266.html#aacce786dc0ef289cd37a48642d2efef1"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="setTCPServerTimeout"><param name="Local" value="class_e_s_p8266.html#a71f76c76d23fc66c26f1c7b357f58ac2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="startServer"><param name="Local" value="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="startTCPServer"><param name="Local" value="class_e_s_p8266.html#a22a7768a76709c8d8f0b9809158b7ec9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="stopServer"><param name="Local" value="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="stopTCPServer"><param name="Local" value="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="unregisterUDP"><param name="Local" value="class_e_s_p8266.html#aa355332a78aa5f2b58cb11b0daa05cf5"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="unregisterUDP"><param name="Local" value="class_e_s_p8266.html#a0a48619ad157fd2bd9c7f2e9c151f9b3"><param name="ImageNumber" value="11"></OBJECT>

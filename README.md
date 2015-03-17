@@ -73,7 +73,11 @@ will be useful for Arduino lovers.
     bool 	unregisterUDP (uint8_t mux_id) : Unregister UDP port number in multiple mode. 
      
     bool 	setTCPServerTimeout (uint32_t timeout=180) : Set the timeout of TCP Server. 
-     
+    
+    bool 	startServer (uint32_t port=333) ： Start Server(Only in multiple mode).
+
+    bool 	stopServer (void) : Stop Server(Only in multiple mode).
+ 
     bool 	startTCPServer (uint32_t port=333) : Start TCP Server(Only in multiple mode). 
      
     bool 	stopTCPServer (void) : Stop TCP Server(Only in multiple mode). 

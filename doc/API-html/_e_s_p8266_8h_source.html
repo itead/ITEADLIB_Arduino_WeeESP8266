@@ -142,111 +142,117 @@
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#a22a7768a76709c8d8f0b9809158b7ec9">startTCPServer</a>(uint32_t port = 333);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef">stopTCPServer</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(<span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(uint8_t mux_id, <span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    uint32_t <a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(uint8_t *buffer, uint32_t buffer_size, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    uint32_t <a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(uint8_t mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    uint32_t <a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">/* </span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment">     * Empty the buffer or UART RX.</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordtype">void</span> rx_empty(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">/* </span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">     * Recvive data from uart. Return all received data if target found or timeout. </span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    String recvString(String target, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="comment">/* </span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">     * Recvive data from uart. Return all received data if one of target1 and target2 found or timeout. </span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    String recvString(String target1, String target2, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">/* </span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment">     * Recvive data from uart. Return all received data if one of target1, target2 and target3 found or timeout. </span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    String recvString(String target1, String target2, String target3, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7">startServer</a>(uint32_t port = 333);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc">stopServer</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(<span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a>(uint8_t mux_id, <span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    uint32_t <a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(uint8_t *buffer, uint32_t buffer_size, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    uint32_t <a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(uint8_t mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    uint32_t <a class="code" href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">recv</a>(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="comment">/* </span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment">     * Recvive data from uart and search first target. Return true if target found, false for timeout.</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment">     * Empty the buffer or UART RX.</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">bool</span> recvFind(String target, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">void</span> rx_empty(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="comment">/* </span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment">     * Recvive data from uart and search first target and cut out the substring between begin and end(excluding begin and end self). </span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment">     * Return true if target found, false for timeout.</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordtype">bool</span> recvFindAndFilter(String target, String begin, String end, String &amp;data, uint32_t timeout = 1000);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">     * Receive a package from uart. </span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment">     * @param buffer - the buffer storing data. </span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">     * @param buffer_size - guess what!</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">     * @param data_len - the length of data actually received(maybe more than buffer_size, the remained data will be abandoned).</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment">     * @param timeout - the duration waitting data comming.</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">     * @param coming_mux_id - in single connection mode, should be NULL and not NULL in multiple. </span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    uint32_t recvPkg(uint8_t *buffer, uint32_t buffer_size, uint32_t *data_len, uint32_t timeout, uint8_t *coming_mux_id);</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordtype">bool</span> eAT(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordtype">bool</span> eATRST(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">bool</span> eATGMR(String &amp;version);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordtype">bool</span> qATCWMODE(uint8_t *mode);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">bool</span> sATCWMODE(uint8_t mode);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordtype">bool</span> sATCWJAP(String ssid, String pwd);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordtype">bool</span> eATCWLAP(String &amp;list);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordtype">bool</span> eATCWQAP(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordtype">bool</span> sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">bool</span> eATCWLIF(String &amp;list);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordtype">bool</span> eATCIPSTATUS(String &amp;list);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordtype">bool</span> sATCIPSTARTSingle(String type, String addr, uint32_t port);</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordtype">bool</span> sATCIPSTARTMultiple(uint8_t mux_id, String type, String addr, uint32_t port);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordtype">bool</span> sATCIPSENDSingle(<span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keywordtype">bool</span> sATCIPSENDMultiple(uint8_t mux_id, <span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordtype">bool</span> sATCIPCLOSEMulitple(uint8_t mux_id);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordtype">bool</span> eATCIPCLOSESingle(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">bool</span> eATCIFSR(String &amp;list);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordtype">bool</span> sATCIPMUX(uint8_t mode);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">bool</span> sATCIPSERVER(uint8_t mode, uint32_t port = 333);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">bool</span> sATCIPSTO(uint32_t timeout);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment">     * Recvive data from uart. Return all received data if target found or timeout. </span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    String recvString(String target, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="comment">/* </span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment">     * Recvive data from uart. Return all received data if one of target1 and target2 found or timeout. </span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    String recvString(String target1, String target2, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">/* </span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">     * Recvive data from uart. Return all received data if one of target1, target2 and target3 found or timeout. </span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    String recvString(String target1, String target2, String target3, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">/* </span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment">     * Recvive data from uart and search first target. Return true if target found, false for timeout.</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordtype">bool</span> recvFind(String target, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">/* </span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="comment">     * Recvive data from uart and search first target and cut out the substring between begin and end(excluding begin and end self). </span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment">     * Return true if target found, false for timeout.</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordtype">bool</span> recvFindAndFilter(String target, String begin, String end, String &amp;data, uint32_t timeout = 1000);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="comment">     * Receive a package from uart. </span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="comment">     *</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="comment">     * @param buffer - the buffer storing data. </span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">     * @param buffer_size - guess what!</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">     * @param data_len - the length of data actually received(maybe more than buffer_size, the remained data will be abandoned).</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment">     * @param timeout - the duration waitting data comming.</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment">     * @param coming_mux_id - in single connection mode, should be NULL and not NULL in multiple. </span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    uint32_t recvPkg(uint8_t *buffer, uint32_t buffer_size, uint32_t *data_len, uint32_t timeout, uint8_t *coming_mux_id);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordtype">bool</span> eAT(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">bool</span> eATRST(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">bool</span> eATGMR(String &amp;version);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="comment">     * +IPD,len:data</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="comment">     * +IPD,id,len:data</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="preprocessor">#ifdef ESP8266_USE_SOFTWARE_SERIAL</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    SoftwareSerial *m_puart; <span class="comment">/* The UART to communicate with ESP8266 */</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    HardwareSerial *m_puart; <span class="comment">/* The UART to communicate with ESP8266 */</span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;};</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __ESP8266_H__ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;</div>
-<div class="ttc" id="class_e_s_p8266_html_a6ba21b921a7afc79a36d0e41c20d59bc"><div class="ttname"><a href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">ESP8266::send</a></div><div class="ttdeci">bool send(const uint8_t *buffer, uint32_t len)</div><div class="ttdoc">Send data based on TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00251">ESP8266.cpp:251</a></div></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keywordtype">bool</span> qATCWMODE(uint8_t *mode);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordtype">bool</span> sATCWMODE(uint8_t mode);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordtype">bool</span> sATCWJAP(String ssid, String pwd);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keywordtype">bool</span> eATCWLAP(String &amp;list);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordtype">bool</span> eATCWQAP(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordtype">bool</span> sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keywordtype">bool</span> eATCWLIF(String &amp;list);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordtype">bool</span> eATCIPSTATUS(String &amp;list);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordtype">bool</span> sATCIPSTARTSingle(String type, String addr, uint32_t port);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordtype">bool</span> sATCIPSTARTMultiple(uint8_t mux_id, String type, String addr, uint32_t port);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordtype">bool</span> sATCIPSENDSingle(<span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordtype">bool</span> sATCIPSENDMultiple(uint8_t mux_id, <span class="keyword">const</span> uint8_t *buffer, uint32_t len);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordtype">bool</span> sATCIPCLOSEMulitple(uint8_t mux_id);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordtype">bool</span> eATCIPCLOSESingle(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordtype">bool</span> eATCIFSR(String &amp;list);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordtype">bool</span> sATCIPMUX(uint8_t mode);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordtype">bool</span> sATCIPSERVER(uint8_t mode, uint32_t port = 333);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="keywordtype">bool</span> sATCIPSTO(uint32_t timeout);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="comment">     * +IPD,len:data</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="comment">     * +IPD,id,len:data</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="preprocessor">#ifdef ESP8266_USE_SOFTWARE_SERIAL</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    SoftwareSerial *m_puart; <span class="comment">/* The UART to communicate with ESP8266 */</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    HardwareSerial *m_puart; <span class="comment">/* The UART to communicate with ESP8266 */</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;};</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* #ifndef __ESP8266_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;</div>
+<div class="ttc" id="class_e_s_p8266_html_a6ba21b921a7afc79a36d0e41c20d59bc"><div class="ttname"><a href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">ESP8266::send</a></div><div class="ttdeci">bool send(const uint8_t *buffer, uint32_t len)</div><div class="ttdoc">Send data based on TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00261">ESP8266.cpp:261</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a4e2d8a0637b437d4b03209cebfa5b750"><div class="ttname"><a href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">ESP8266::getVersion</a></div><div class="ttdeci">String getVersion(void)</div><div class="ttdoc">Get the version of AT Command Set. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00080">ESP8266.cpp:80</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_ac15ce9df69dc566c37b3fa2c3c869337"><div class="ttname"><a href="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337">ESP8266::releaseTCP</a></div><div class="ttdeci">bool releaseTCP(void)</div><div class="ttdoc">Release TCP connection in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00196">ESP8266.cpp:196</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_af8ce40bd14556bcfb5d4c521047fc821"><div class="ttname"><a href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">ESP8266::recv</a></div><div class="ttdeci">uint32_t recv(uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000)</div><div class="ttdoc">Receive data from TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00261">ESP8266.cpp:261</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_af8ce40bd14556bcfb5d4c521047fc821"><div class="ttname"><a href="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821">ESP8266::recv</a></div><div class="ttdeci">uint32_t recv(uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000)</div><div class="ttdoc">Receive data from TCP or UDP builded already in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00271">ESP8266.cpp:271</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a16963a076b80906563d2269c0cd52007"><div class="ttname"><a href="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007">ESP8266::enableMUX</a></div><div class="ttdeci">bool enableMUX(void)</div><div class="ttdoc">Enable IP MUX(multiple connection mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00181">ESP8266.cpp:181</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a20819d4dabf19fed6e3dcb3fd04ee49d"><div class="ttname"><a href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">ESP8266::getLocalIP</a></div><div class="ttdeci">String getLocalIP(void)</div><div class="ttdoc">Get the IP address of ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00174">ESP8266.cpp:174</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a247706884d60e85c8983bb65de26d346"><div class="ttname"><a href="class_e_s_p8266.html#a247706884d60e85c8983bb65de26d346">ESP8266::setOprToSoftAP</a></div><div class="ttdeci">bool setOprToSoftAP(void)</div><div class="ttdoc">Set operation mode to softap. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00104">ESP8266.cpp:104</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_ac179183a46b218609a481747bcfd5a61"><div class="ttname"><a href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">ESP8266::setOprToStationSoftAP</a></div><div class="ttdeci">bool setOprToStationSoftAP(void)</div><div class="ttdoc">Set operation mode to station + softap. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00121">ESP8266.cpp:121</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_aa927b7b8aaef163011015c22da1f07e2"><div class="ttname"><a href="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2">ESP8266::createTCP</a></div><div class="ttdeci">bool createTCP(String addr, uint32_t port)</div><div class="ttdoc">Create TCP connection in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00191">ESP8266.cpp:191</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_aa355332a78aa5f2b58cb11b0daa05cf5"><div class="ttname"><a href="class_e_s_p8266.html#aa355332a78aa5f2b58cb11b0daa05cf5">ESP8266::unregisterUDP</a></div><div class="ttdeci">bool unregisterUDP(void)</div><div class="ttdoc">Unregister UDP port number in single mode. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00206">ESP8266.cpp:206</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a88d9a6b130b6c278fd6cd2e6cda816d7"><div class="ttname"><a href="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7">ESP8266::startServer</a></div><div class="ttdeci">bool startServer(uint32_t port=333)</div><div class="ttdoc">Start Server(Only in multiple mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00251">ESP8266.cpp:251</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_aa5355dce05aa59b92ce9f7ea76d86eef"><div class="ttname"><a href="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef">ESP8266::stopTCPServer</a></div><div class="ttdeci">bool stopTCPServer(void)</div><div class="ttdoc">Stop TCP Server(Only in multiple mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00244">ESP8266.cpp:244</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_af272f2f57b7b99434e257f06c276acfc"><div class="ttname"><a href="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc">ESP8266::stopServer</a></div><div class="ttdeci">bool stopServer(void)</div><div class="ttdoc">Stop Server(Only in multiple mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00256">ESP8266.cpp:256</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a2bc64145329ea45018e956b97ced030a"><div class="ttname"><a href="class_e_s_p8266.html#a2bc64145329ea45018e956b97ced030a">ESP8266::disableMUX</a></div><div class="ttdeci">bool disableMUX(void)</div><div class="ttdoc">Disable IP MUX(single connection mode). </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00186">ESP8266.cpp:186</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a04b61a01af4ee5e8820c9de79b4b3c39"><div class="ttname"><a href="class_e_s_p8266.html#a04b61a01af4ee5e8820c9de79b4b3c39">ESP8266::restart</a></div><div class="ttdeci">bool restart(void)</div><div class="ttdoc">Restart ESP8266 by "AT+RST". </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00063">ESP8266.cpp:63</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a5ed71947606435c3b03b73efdaf810a5"><div class="ttname"><a href="class_e_s_p8266.html#a5ed71947606435c3b03b73efdaf810a5">ESP8266::kick</a></div><div class="ttdeci">bool kick(void)</div><div class="ttdoc">Verify ESP8266 whether live or not. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00058">ESP8266.cpp:58</a></div></div>
@@ -264,7 +270,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 12 2015 12:51:54 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 17 2015 10:34:17 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

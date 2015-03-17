@@ -102,6 +102,10 @@ bool    unregisterUDP (uint8_t mux_id) : Unregister UDP port number in multiple 
 
 bool    setTCPServerTimeout (uint32_t timeout=180) : Set the timeout of TCP Server. 
 
+bool    startServer (uint32_t port=333) ： Start Server(Only in multiple mode).
+
+bool    stopServer (void) : Stop Server(Only in multiple mode).
+
 bool    startTCPServer (uint32_t port=333) : Start TCP Server(Only in multiple mode). 
 
 bool    stopTCPServer (void) : Stop TCP Server(Only in multiple mode). 
@@ -161,7 +165,7 @@ ESP8266_GND-&gt;GND
  </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 12 2015 12:51:54 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 17 2015 10:34:17 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

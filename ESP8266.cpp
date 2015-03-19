@@ -290,6 +290,8 @@ uint32_t ESP8266::recv(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_
 }
 
 /*----------------------------------------------------------------------------*/
+/* +IPD,<id>,<len>:<data> */
+/* +IPD,<len>:<data> */
 
 uint32_t ESP8266::recvPkg(uint8_t *buffer, uint32_t buffer_size, uint32_t *data_len, uint32_t timeout, uint8_t *coming_mux_id)
 {
@@ -301,85 +303,69 @@ uint32_t ESP8266::recvPkg(uint8_t *buffer, uint32_t buffer_size, uint32_t *data_
     int32_t len = -1;
     int8_t id = -1;
     bool has_data = false;
-    //logDebug("start recv pkg");
+    uint32_t ret;
+    unsigned long start;
+    uint32_t i;
     
-    unsigned long start = millis();
+    if (buffer == NULL) {
+        return 0;
+    }
+    
+    start = millis();
     while (millis() - start < timeout) {
-        while(m_puart->available() > 0) {
+        if(m_puart->available() > 0) {
             a = m_puart->read();
             data += a;
         }
         
         index_PIPDcomma = data.indexOf("+IPD,");
         if (index_PIPDcomma != -1) {
-            //logDebug("index_PIPDcomma found = %d", index_PIPDcomma);
             index_colon = data.indexOf(':', index_PIPDcomma + 5);
             if (index_colon != -1) {
-                //logDebug("data1 = %s\r\n", data.c_str());
-                //logDebug("index_colon found = %d", index_colon);
-                
                 index_comma = data.indexOf(',', index_PIPDcomma + 5);
-                //logDebug("index_comma found = %d", index_comma);
-                
-                if (index_comma != -1 && index_comma < index_colon) { /* +IPD,id,len:data */
-                    //logDebug("id = %d", id);
+                /* +IPD,id,len:data */
+                if (index_comma != -1 && index_comma < index_colon) { 
                     id = data.substring(index_PIPDcomma + 5, index_comma).toInt();
-                    //logDebug("id = %d", id);
                     if (id < 0 || id > 4) {
                         return 0;
                     }
-                    //logDebug("len = %d", len);
                     len = data.substring(index_comma + 1, index_colon).toInt();
-                    //logDebug("len = %d", len);
                     if (len <= 0) {
                         return 0;
                     }
-                    //logDebug("has id");
                 } else { /* +IPD,len:data */
                     len = data.substring(index_PIPDcomma + 5, index_colon).toInt();
-                    //logDebug("len = %d", len);
                     if (len <= 0) {
                         return 0;
                     }
-                    //logDebug("no id");
                 }
                 has_data = true;
-                //logDebug("has_data true");
                 break;
             }
         }
     }
-    //logDebug("has_data = %u\r\n", has_data);
-    //logDebug("data2 = %s\r\n", data.c_str());
     
     if (has_data) {
+        i = 0;
+        ret = len > buffer_size ? buffer_size : len;
         start = millis();
         while (millis() - start < 3000) {
-            while(m_puart->available() > 0) {
+            while(m_puart->available() > 0 && i < ret) {
                 a = m_puart->read();
-                data += a;
+                buffer[i++] = a;
             }
-            //logDebug("data3 = %s\r\n", data.c_str());
-            if (data.length() >= index_colon + 1 + len) {
+            if (i == ret) {
+                rx_empty();
                 if (data_len) {
                     *data_len = len;    
                 }
                 if (index_comma != -1 && coming_mux_id) {
                     *coming_mux_id = id;
                 }
-                //logDebug("len = %d", len);
-                //logDebug("buffer_size = %d", buffer_size);
-                uint32_t ret = len > buffer_size ? buffer_size : len;
-                
-                memcpy(buffer, 
-                    data.substring(index_colon + 1, index_colon + 1 + len).c_str(), 
-                    ret);
-                //logDebug("ret = %u\r\n", ret);
                 return ret;
             }
         }
     }
-    //logDebug("end recv pkg");
     return 0;
 }
 

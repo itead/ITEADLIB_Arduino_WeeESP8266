@@ -22,7 +22,7 @@
 
 #define SSID        "ITEAD"
 #define PASSWORD    "12345678"
-#define HOST_NAME   "172.16.5.12"
+#define HOST_NAME   "192.168.1.1"
 #define HOST_PORT   (8090)
 
 ESP8266 wifi(Serial1);

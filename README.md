@@ -105,6 +105,18 @@ will be useful for Arduino lovers.
   - [Iteaduino UNO](http://imall.iteadstudio.com/im130312001.html)
   - [WBoard Pro](http://imall.iteadstudio.com/im141125005.html)
 
+# Select the version of ESP8266 AT Firmware
+
+At present, this library supports ESP8266 AT 0.18 version and 0.22 version. You
+can select one of them to fit your module by modifing this line in `ESP8266.h`:
+
+    #define  USER_SEL_VERSION         VERSION_18
+
+If you want to select 0.22 version, it should be like below after modification:
+
+    #define  USER_SEL_VERSION         VERSION_22
+
+
 # Using SoftwareSerial
 
 If you want to use SoftwareSerial to communicate with ESP8266, you need to modify

@@ -84,33 +84,58 @@ String ESP8266::getVersion(void)
     return version;
 }
 
-bool ESP8266::setOprToStation(void)
+bool ESP8266::setEcho(uint8_t mode)
+{
+    return eATE(mode);
+}
+
+bool ESP8266::restore(void)
+{
+    return eATRESTORE();
+}
+bool ESP8266::setUart(uint32_t baudrate,uint8_t pattern)
+{
+    return eATSETUART(baudrate,pattern);
+}
+
+bool ESP8266::deepSleep(uint32_t time)
+{
+    return eATGSLP(time);
+}
+
+
+bool ESP8266::setOprToStation(uint8_t pattern1,uint8_t pattern2)
 {
     uint8_t mode;
-    if (!qATCWMODE(&mode)) {
+    if (!qATCWMODE(&mode,pattern1)) {
         return false;
     }
     if (mode == 1) {
         return true;
     } else {
-        if (sATCWMODE(1) && restart()) {
+        if (sATCWMODE(1,pattern2)){
             return true;
         } else {
             return false;
         }
     }
 }
-
-bool ESP8266::setOprToSoftAP(void)
+String ESP8266::getWifiModeList(void)
+{   
+     String list;
+     eATCWMODE(list);
+     return list;
+}
+bool ESP8266::setOprToSoftAP(uint8_t pattern1,uint8_t pattern2)
 {
     uint8_t mode;
-    if (!qATCWMODE(&mode)) {
+    if (!qATCWMODE(&mode,pattern1)) {
         return false;
     }
     if (mode == 2) {
         return true;
     } else {
-        if (sATCWMODE(2) && restart()) {
+        if (sATCWMODE(2,pattern2) ){
             return true;
         } else {
             return false;
@@ -118,22 +143,30 @@ bool ESP8266::setOprToSoftAP(void)
     }
 }
 
-bool ESP8266::setOprToStationSoftAP(void)
+bool ESP8266::setOprToStationSoftAP(uint8_t pattern1,uint8_t pattern2)
 {
     uint8_t mode;
-    if (!qATCWMODE(&mode)) {
+    if (!qATCWMODE(&mode,pattern1)) {
         return false;
     }
     if (mode == 3) {
         return true;
     } else {
-        if (sATCWMODE(3) && restart()) {
+        if (sATCWMODE(3,pattern2) ){
             return true;
         } else {
             return false;
         }
     }
 }
+
+String ESP8266::getNowConecAp(uint8_t pattern)
+{   
+     String ssid;
+     qATCWJAP(ssid,pattern);
+     return ssid;
+}
+
 
 String ESP8266::getAPList(void)
 {
@@ -142,9 +175,9 @@ String ESP8266::getAPList(void)
     return list;
 }
 
-bool ESP8266::joinAP(String ssid, String pwd)
+bool ESP8266::joinAP(String ssid, String pwd,uint8_t pattern)
 {
-    return sATCWJAP(ssid, pwd);
+    return sATCWJAP(ssid, pwd,pattern);
 }
 
 bool ESP8266::leaveAP(void)
@@ -152,9 +185,18 @@ bool ESP8266::leaveAP(void)
     return eATCWQAP();
 }
 
-bool ESP8266::setSoftAPParam(String ssid, String pwd, uint8_t chl, uint8_t ecn)
+String ESP8266::getSoftAPParam(uint8_t pattern)
+{   
+     String list;
+     qATCWSAP(list,pattern);
+     return list;
+}
+
+
+
+bool ESP8266::setSoftAPParam(String ssid, String pwd, uint8_t chl, uint8_t ecn,uint8_t pattern)
 {
-    return sATCWSAP(ssid, pwd, chl, ecn);
+    return sATCWSAP(ssid, pwd, chl, ecn,pattern);
 }
 
 String ESP8266::getJoinedDeviceIP(void)
@@ -163,6 +205,71 @@ String ESP8266::getJoinedDeviceIP(void)
     eATCWLIF(list);
     return list;
 }
+
+String ESP8266::getDHCP(uint8_t pattern)
+{   
+     String dhcp;
+     qATCWDHCP(dhcp,pattern);
+     return dhcp;
+}
+bool ESP8266::setDHCP(uint8_t mode, uint8_t en, uint8_t pattern)
+{
+    return sATCWDHCP(mode, en, pattern);
+}
+
+bool ESP8266::setAutoConnect(uint8_t en)
+{
+    return eATCWAUTOCONN(en);
+}
+String ESP8266::getStationMac(uint8_t pattern)
+{
+    String mac;
+    qATCIPSTAMAC(mac,pattern);
+    return mac;
+}
+
+
+bool ESP8266::setStationMac(String mac,uint8_t pattern)
+{
+   return eATCIPSTAMAC(mac,pattern);
+}
+
+String ESP8266::getStationIp(uint8_t pattern)
+{
+    String ip;
+    qATCIPSTAIP(ip,pattern);
+    return ip;
+}
+
+bool ESP8266::setStationIp(String ip,String gateway,String netmask,uint8_t pattern)
+{
+   return eATCIPSTAIP(ip,gateway,netmask,pattern);
+}
+
+String ESP8266::getAPIp(uint8_t pattern)
+{
+    String ip;
+    qATCIPAP(ip,pattern);
+    return ip;
+}
+
+bool ESP8266::setAPIp(String ip,uint8_t pattern)
+{
+   return eATCIPAP(ip,pattern);
+}
+
+bool ESP8266::startSmartConfig(uint8_t type)
+{
+    return eCWSTARTSMART(type);
+}
+
+bool ESP8266::stopSmartConfig(void)
+{
+    return eCWSTOPSMART();
+}
+
+
+
 
 String ESP8266::getIPStatus(void)
 {
@@ -247,6 +354,24 @@ bool ESP8266::stopTCPServer(void)
     restart();
     return false;
 }
+
+bool ESP8266::setCIPMODE(uint8_t mode)
+{
+    return sATCIPMODE(mode);
+}
+
+bool ESP8266::saveTransLink (uint8_t mode,String ip,uint32_t port)
+{
+    return eATSAVETRANSLINK(mode,ip,port);
+}
+
+bool ESP8266::setPing(String ip)
+{
+    return eATPING(ip);
+}
+
+
+
 
 bool ESP8266::startServer(uint32_t port)
 {
@@ -391,6 +516,7 @@ String ESP8266::recvString(String target, uint32_t timeout)
             break;
         }   
     }
+    
     return data;
 }
 
@@ -480,47 +606,183 @@ bool ESP8266::eATRST(void)
 bool ESP8266::eATGMR(String &version)
 {
     rx_empty();
+    delay(3000);
     m_puart->println("AT+GMR");
-    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", version); 
+    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", version,10000); 
 }
 
-bool ESP8266::qATCWMODE(uint8_t *mode) 
+bool ESP8266::eATGSLP(uint32_t time)
+{
+    rx_empty();
+    m_puart->print("AT+GSLP=");
+    m_puart->println(time);
+    return recvFind("OK");
+}
+
+
+bool ESP8266::eATE(uint8_t mode)
+{
+    rx_empty();
+    m_puart->print("ATE");
+    m_puart->println(mode);
+    return recvFind("OK");
+}
+
+bool ESP8266::eATRESTORE(void)
+{
+    rx_empty();
+    m_puart->println("AT+RESTORE");
+    return recvFind("OK");
+}
+
+
+bool ESP8266::eATSETUART(uint32_t baudrate,uint8_t pattern)
+{
+    rx_empty();
+    if(pattern>3||pattern<1){
+        return false;
+        }
+    switch(pattern){
+        case 1:
+            m_puart->print("AT+UART=");
+            break;
+        case 2:
+            m_puart->print("AT+UART_CUR=");
+            break;
+        case 3:
+             m_puart->print("AT+UART_DEF=");
+             break;    
+    }
+    m_puart->print(baudrate);
+    m_puart->print(",");
+    m_puart->print(8);
+    m_puart->print(",");
+    m_puart->print(1);
+    m_puart->print(",");
+    m_puart->print(0);
+    m_puart->print(",");
+    m_puart->println(0);
+    if(recvFind("OK",5000)){
+
+    m_puart->begin(baudrate);
+    return true;
+    }
+    else{
+    return false;
+    }
+ 
+}
+
+
+bool ESP8266::qATCWMODE(uint8_t *mode,uint8_t pattern) 
 {
     String str_mode;
     bool ret;
-    if (!mode) {
+    if (!mode||!pattern) {
         return false;
     }
     rx_empty();
-    m_puart->println("AT+CWMODE?");
-    ret = recvFindAndFilter("OK", "+CWMODE:", "\r\n\r\nOK", str_mode); 
+    switch(pattern)
+    {
+        case 1 :
+            m_puart->println("AT+CWMODE_DEF?");
+            break;
+        case 2:
+            m_puart->println("AT+CWMODE_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CWMODE?");
+    }
+    ret = recvFindAndFilter("OK", ":", "\r\n\r\nOK", str_mode); 
     if (ret) {
-        *mode = (uint8_t)str_mode.toInt();
+        *mode = (uint8_t)str_mode.toInt();       
         return true;
     } else {
         return false;
     }
 }
-
-bool ESP8266::sATCWMODE(uint8_t mode)
+bool ESP8266::eATCWMODE(String &list) 
 {
+    rx_empty();
+    m_puart->println("AT+CWMODE=?");
+    return recvFindAndFilter("OK", "+CWMODE:(", ")\r\n\r\nOK", list);
+}
+
+bool ESP8266::sATCWMODE(uint8_t mode,uint8_t pattern)
+{
+    if(!pattern){
+        return false;
+        }
     String data;
     rx_empty();
-    m_puart->print("AT+CWMODE=");
+    switch(pattern)
+    {
+        case 1 :
+            m_puart->print("AT+CWMODE_DEF=");
+            break;
+        case 2:
+            m_puart->print("AT+CWMODE_CUR=");
+            break;
+        default:
+            m_puart->print("AT+CWMODE=");
+    }
     m_puart->println(mode);
-    
     data = recvString("OK", "no change");
+
     if (data.indexOf("OK") != -1 || data.indexOf("no change") != -1) {
         return true;
     }
     return false;
 }
 
-bool ESP8266::sATCWJAP(String ssid, String pwd)
+
+bool ESP8266::qATCWJAP(String &ssid,uint8_t pattern) 
+{
+
+    bool ret;
+    if (!pattern) {
+        return false;
+    }
+    rx_empty();
+    switch(pattern)
+    {
+        case 1 :
+            m_puart->println("AT+CWJAP_DEF?");
+            break;
+        case 2:
+            m_puart->println("AT+CWJAP_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CWJAP?");
+    }
+    ssid = recvString("OK", "No AP");
+    if (ssid.indexOf("OK") != -1 || ssid.indexOf("No AP") != -1) {
+        return true;
+    }
+    return false;
+ 
+}
+
+bool ESP8266::sATCWJAP(String ssid, String pwd,uint8_t pattern)
 {
     String data;
+    if (!pattern) {
+        return false;
+    }
     rx_empty();
-    m_puart->print("AT+CWJAP=\"");
+    switch(pattern)
+    {
+        case 1 :
+            m_puart->print("AT+CWJAP_DEF=\"");
+
+            break;
+        case 2:
+            m_puart->print("AT+CWJAP_CUR=\"");
+            break;
+        default:
+            m_puart->print("AT+CWJAP=\"");
+    }
+    
     m_puart->print(ssid);
     m_puart->print("\",\"");
     m_puart->print(pwd);
@@ -533,13 +795,16 @@ bool ESP8266::sATCWJAP(String ssid, String pwd)
     return false;
 }
 
-bool ESP8266::eATCWLAP(String &list)
+bool ESP8266::eATCWLAP(String &list) 
 {
     String data;
     rx_empty();
     m_puart->println("AT+CWLAP");
-    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", list, 10000);
+    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", list, 15000);
 }
+
+
+
 
 bool ESP8266::eATCWQAP(void)
 {
@@ -549,11 +814,48 @@ bool ESP8266::eATCWQAP(void)
     return recvFind("OK");
 }
 
-bool ESP8266::sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn)
+
+bool ESP8266::qATCWSAP(String &List,uint8_t pattern) 
+{
+    if (!pattern) {
+        return false;
+    }
+    rx_empty();
+    switch(pattern)
+    {
+        case 1 :
+            m_puart->println("AT+CWSAP_DEF?");
+
+            break;
+        case 2:
+            m_puart->println("AT+CWSAP_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CWSAP?");
+    }
+    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", List,10000);
+
+}
+
+bool ESP8266::sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn,uint8_t pattern)
 {
     String data;
+    if (!pattern) {
+        return false;
+    }
     rx_empty();
-    m_puart->print("AT+CWSAP=\"");
+    switch(pattern){
+         case 1 :
+            m_puart->print("AT+CWSAP_DEF=\"");
+
+            break;
+        case 2:
+            m_puart->print("AT+CWSAP_CUR=\"");
+            break;
+        default:
+            m_puart->print("AT+CWSAP=\"");
+
+    }
     m_puart->print(ssid);
     m_puart->print("\",\"");
     m_puart->print(pwd);
@@ -576,6 +878,245 @@ bool ESP8266::eATCWLIF(String &list)
     m_puart->println("AT+CWLIF");
     return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", list);
 }
+
+bool ESP8266::qATCWDHCP(String &List,uint8_t pattern) 
+{
+    if (!pattern) {
+        return false;
+    }
+    rx_empty();
+    switch(pattern)
+    {
+        case 1 :
+            m_puart->println("AT+CWDHCP_DEF?");
+            break;
+        case 2:
+            m_puart->println("AT+CWDHCP_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CWDHCP?");
+    }
+
+    return recvFindAndFilter("OK", "\r\r\n", "\r\nOK", List,10000);
+
+}
+
+
+bool ESP8266::sATCWDHCP(uint8_t mode, uint8_t en, uint8_t pattern)
+{
+    String data;
+    if (!pattern) {
+        return false;
+    }
+    rx_empty();
+    switch(pattern){
+         case 1 :
+            m_puart->print("AT+CWDHCP_DEF=");
+
+            break;
+        case 2:
+            m_puart->print("AT+CWDHCP_CUR=");
+            break;
+        default:
+            m_puart->print("AT+CWDHCP=");
+
+    }
+    m_puart->print(mode);
+    m_puart->print(",");
+    m_puart->println(en);    
+    data = recvString("OK", "ERROR", 2000);
+
+    if (data.indexOf("OK") != -1) {
+        return true;
+    }
+    return false;
+}
+
+
+bool ESP8266::eATCWAUTOCONN(uint8_t en)
+{
+
+    rx_empty();
+    if(en>1||en<0){
+        return false;
+    }
+    m_puart->print("AT+CWAUTOCONN=");
+    m_puart->println(en);
+    return recvFind("OK");
+
+}
+
+bool ESP8266::qATCIPSTAMAC(String &mac,uint8_t pattern)
+{
+
+    rx_empty();
+    if (!pattern) {
+        return false;
+    }
+    switch(pattern){
+         case 1 :
+            m_puart->println("AT+CIPSTAMAC_DEF?");
+
+            break;
+        case 2:
+            m_puart->println("AT+CIPSTAMAC_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CIPSTAMAC?");
+
+    }
+    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", mac,2000);
+
+}
+
+
+
+bool ESP8266::eATCIPSTAMAC(String mac,uint8_t pattern)
+{
+
+    rx_empty();
+    if (!pattern) {
+        return false;
+    }
+    switch(pattern){
+         case 1 :
+            m_puart->print("AT+CIPSTAMAC_DEF=");
+
+            break;
+        case 2:
+            m_puart->print("AT+CIPSTAMAC_CUR=");
+            break;
+        default:
+            m_puart->print("AT+CIPSTAMAC=");
+
+    }
+    m_puart->print("\"");
+    m_puart->print(mac);
+    m_puart->println("\"");
+    return recvFind("OK");
+
+}
+
+bool ESP8266::qATCIPSTAIP(String &ip,uint8_t pattern)
+{
+
+    rx_empty();
+    if (!pattern) {
+        return false;
+    }
+    switch(pattern){
+         case 1 :
+            m_puart->println("AT+CIPSTA_DEF?");
+
+            break;
+        case 2:
+            m_puart->println("AT+CIPSTA_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CIPSTA?");
+
+    }
+    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", ip,2000);
+
+}
+
+bool ESP8266::eATCIPSTAIP(String ip,String gateway,String netmask,uint8_t pattern)
+{
+
+    rx_empty();
+    if (!pattern) {
+        return false;
+    }
+    switch(pattern){
+         case 1 :
+            m_puart->print("AT+CIPSTA_DEF=");
+
+            break;
+        case 2:
+            m_puart->print("AT+CIPSTA_CUR=");
+            break;
+        default:
+            m_puart->print("AT+CIPSTA=");
+
+    }
+    m_puart->print("\"");
+    m_puart->print(ip);
+    m_puart->print("\",\"");
+    m_puart->print(gateway);
+    m_puart->print("\",\"");
+    m_puart->print(netmask);
+    m_puart->println("\"");
+    return recvFind("OK");
+
+}
+
+
+bool ESP8266::qATCIPAP(String &ip,uint8_t pattern)
+{
+
+    rx_empty();
+    if (!pattern) {
+        return false;
+    }
+    switch(pattern){
+         case 1 :
+            m_puart->println("AT+CIPAP_DEF?");
+
+            break;
+        case 2:
+            m_puart->println("AT+CIPAP_CUR?");
+            break;
+        default:
+            m_puart->println("AT+CIPAP?");
+
+    }
+    return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", ip,2000);
+
+}
+
+
+bool ESP8266::eATCIPAP(String ip,uint8_t pattern)
+{
+
+    rx_empty();
+    if (!pattern) {
+        return false;
+    }
+    switch(pattern){
+         case 1 :
+            m_puart->print("AT+CIPAP_DEF=");
+
+            break;
+        case 2:
+            m_puart->print("AT+CIPAP_CUR=");
+            break;
+        default:
+            m_puart->print("AT+CIPAP=");
+
+    }
+    m_puart->print("\"");
+    m_puart->print(ip);
+    m_puart->println("\"");
+    return recvFind("OK");
+
+}
+
+
+bool ESP8266::eCWSTARTSMART(uint8_t type)
+{
+    rx_empty();
+    m_puart->print("AT+CWSTARTSMART=");
+    m_puart->println(type);
+    return recvFind("OK");
+}
+
+bool ESP8266::eCWSTOPSMART(void)
+{
+    rx_empty();
+    m_puart->println("AT+CWSTOPSMART");
+    return recvFind("OK");
+}
+
 bool ESP8266::eATCIPSTATUS(String &list)
 {
     String data;
@@ -707,6 +1248,60 @@ bool ESP8266::sATCIPSERVER(uint8_t mode, uint32_t port)
         return recvFind("\r\r\n");
     }
 }
+
+
+bool ESP8266::sATCIPMODE(uint8_t mode)
+{
+    String data;
+    if(mode>1||mode<0){
+        return false;
+        }
+    rx_empty();
+    m_puart->print("AT+CIPMODE=");
+    m_puart->println(mode);
+    
+    data = recvString("OK", "Link is builded",2000);
+    if (data.indexOf("OK") != -1 ) {
+        return true;
+    }
+    return false;
+}
+
+
+
+
+bool ESP8266::eATSAVETRANSLINK(uint8_t mode,String ip,uint32_t port)
+{
+
+    String data;
+    rx_empty();
+    m_puart->print("AT+SAVETRANSLINK=");
+    m_puart->print(mode);
+    m_puart->print(",\"");
+    m_puart->print(ip);
+    m_puart->print("\",");
+    m_puart->println(port);
+    data = recvString("OK", "ERROR",2000);
+    if (data.indexOf("OK") != -1 ) {
+        return true;
+    }
+    return false;
+}
+
+
+
+bool ESP8266::eATPING(String ip)
+{
+    rx_empty();
+    m_puart->print("AT+PING=");
+    m_puart->print("\"");
+    m_puart->print(ip);
+    m_puart->println("\"");
+    return recvFind("OK",2000);
+}
+
+
+
 bool ESP8266::sATCIPSTO(uint32_t timeout)
 {
     rx_empty();

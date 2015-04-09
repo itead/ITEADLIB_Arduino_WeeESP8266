@@ -106,7 +106,7 @@ class ESP8266 {
     /**
      * Start function of deep sleep.  
      * 
-     *  @param time - the sleep time
+     *  @param time - the sleep time. 
      *  @retval true - success.
      *  @retval false - failure.
      *  @note the feature requires hardware support. 
@@ -134,7 +134,8 @@ class ESP8266 {
     /**
      * Set up a serial port configuration.  
      *
-     * @param mode -1 send "AT+UART=", -2 send "AT+UART_CUR=", -3 send "AT+UART_DEF=". 
+     * @param pattern -1 send "AT+UART=", -2 send "AT+UART_CUR=", -3 send "AT+UART_DEF=". 
+     * @param baudrate - the uart baudrate. 
      * @retval true - success. 
      * @retval false - failure. 
      * @note  Only allows baud rate design, for the other parameters:databits- 8,stopbits -1,parity -0,flow control -0 . 
@@ -144,7 +145,8 @@ class ESP8266 {
     /**
      * Set operation mode to station. 
      *
-     * @param   pattern -1, send "AT+CWMODE_DEF",-2,send "AT+CWMODE_CUR",-3,send "AT+CWMODE". 
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * @param   pattern2 -1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". 
      * @retval true - success.
      * @retval false - failure.
      * 
@@ -154,13 +156,14 @@ class ESP8266 {
     /**
      * Get the model values list.  
      * 
-     * @rerurns the list of model.  
+     * @return the list of model.  
      */ 
     String getWifiModeList(void);
     
     /**
      * Set operation mode to softap.  
-     * if pattern - 1,send "AT+CWMODE_DEF",-2,send "AT+CWMODE_CUR",-3,send "AT+CWMODE". 
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * @param   pattern2 -1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". 
      * 
      * @retval true - success. 
      * @retval false - failure. 
@@ -169,7 +172,8 @@ class ESP8266 {
    
     /**
      * Set operation mode to station + softap.  
-     * @param   pattern -1, send "AT+CWMODE_DEF",-2,send  "AT+CWMODE_CUR",-3,send "AT+CWMODE". 
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send  "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * @param   pattern2 -1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". 
      * 
      * @retval true - success. 
      * @retval false - failure. 
@@ -232,11 +236,6 @@ class ESP8266 {
      * get SoftAP parameters. 
      * 
      * @param pattern -1 send "AT+CWSAP_DEF?" -2 send "AT+CWSAP_CUR?" -3 send "AT+CWSAP?". 
-     * @param ssid - SSID of SoftAP. 
-     * @param pwd - PASSWORD of SoftAP. 
-     * @param chl - the channel (1 - 13, default: 7). 
-     * @param ecn - the way of encrypstion (0 - OPEN, 1 - WEP, 
-     *  2 - WPA_PSK, 3 - WPA2_PSK, 4 - WPA_WPA2_PSK, default: 4). 
      * @note This method should not be called when station mode. 
      */
     String getSoftAPParam(uint8_t pattern=3);
@@ -261,6 +260,8 @@ class ESP8266 {
      /**
      * Set the  state of DHCP. 
      * @param pattern -1 send "AT+CWDHCP_DEF=" -2 send "AT+CWDHCP_CUR=" -3 send "AT+CWDHCP=". 
+     * @param mode - set ap or set station or set ap + station. 
+     * @param en - 0 disable DHCP  - 1 enable DHCP. 
      * @retval true - success.
      * @retval false - failure.
      */
@@ -268,7 +269,7 @@ class ESP8266 {
      
      /**
      * make boot automatically connected. 
-     * @en -1 enable  -0 disable. 
+     * @param en -1 enable  -0 disable. 
      * @retval true - success.
      * @retval false - failure.
      */
@@ -285,6 +286,7 @@ class ESP8266 {
      /**
      * Set the station's MAC address. 
      * @param pattern -1 send "AT+CIPSTAMAC_DEF=" -2 send "AT+CIPSTAMAC_CUR=" -3 send "AT+CIPSTAMAC=". 
+     * @param mac - the mac address of station. 
      * @retval true - success.
      * @retval false - failure.
      */
@@ -301,6 +303,9 @@ class ESP8266 {
       /**
      * Set the station's IP. 
      * @param pattern -1 send "AT+CIPSTA_DEF=" -2 send "AT+CIPSTA_CUR=" -3 send "AT+CIPSTA=". 
+     * @param ip - the ip of station. 
+     * @param gateway -the gateway of station. 
+     * @param netmask -the netmask of station.  
      * @retval true - success.
      * @retval false - failure.
      * @note This method should not be called when ap mode. 
@@ -309,7 +314,7 @@ class ESP8266 {
      
      /**
      * Get the AP's IP. 
-     * @Param pattern -1 send "AT+CIPAP_DEF?" -2 send "AT+CIPAP_CUR?" -3 send "AT+CIPAP?". 
+     * @param pattern -1 send "AT+CIPAP_DEF?" -2 send "AT+CIPAP_CUR?" -3 send "AT+CIPAP?". 
      * @return ap's ip. 
      * @note This method should not be called when station mode. 
      * 
@@ -319,6 +324,7 @@ class ESP8266 {
      /**
      * Set the AP IP. 
      * @param pattern -1 send "AT+CIPAP_DEF=" -2 send "AT+CIPAP_CUR=" -3 send "AT+CIPAP=". 
+     * @param ip - the ip of AP. 
      * @retval true - success.
      * @retval false - failure.
      * @note This method should not be called when station mode.
@@ -375,7 +381,6 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool disableMUX(void);
-    
     
     /**
      * Create TCP connection in single mode. 
@@ -453,7 +458,6 @@ class ESP8266 {
      */
     bool unregisterUDP(uint8_t mux_id);
 
-
     /**
      * Set the timeout of TCP Server. 
      * 
@@ -487,6 +491,7 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool stopTCPServer(void);
+    
     /**
      *Set the module transfer mode
      * 
@@ -655,11 +660,11 @@ class ESP8266 {
     bool qATCIPSTAMAC(String &mac,uint8_t pattern=3);
     bool eATCIPSTAMAC(String mac,uint8_t pattern=3);
     bool qATCIPSTAIP(String &ip,uint8_t pattern=3);
-   bool eATCIPSTAIP(String ip,String gateway,String netmask,uint8_t pattern=3);
-   bool qATCIPAP(String &ip,uint8_t pattern=3);
-   bool eATCIPAP(String ip,uint8_t pattern=3);
-   bool eCWSTARTSMART(uint8_t type);
-   bool eCWSTOPSMART(void);
+    bool eATCIPSTAIP(String ip,String gateway,String netmask,uint8_t pattern=3);
+    bool qATCIPAP(String &ip,uint8_t pattern=3);
+    bool eATCIPAP(String ip,uint8_t pattern=3);
+    bool eCWSTARTSMART(uint8_t type);
+    bool eCWSTOPSMART(void);
 
    
     bool eATCIPSTATUS(String &list);

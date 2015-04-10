@@ -585,7 +585,7 @@ bool ESP8266::recvFindAndFilter(String target, String begin, String end, String 
             return true;
         }
     }
-    data = "";
+    data = data_tmp;
     return false;
 }
 

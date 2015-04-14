@@ -19,6 +19,7 @@
  * THE SOFTWARE.
  */
 #include "ESP8266.h"
+#include <avr/pgmspace.h>
 
 #define LOG_OUTPUT_DEBUG            (1)
 #define LOG_OUTPUT_DEBUG_PREFIX     (1)
@@ -1209,7 +1210,7 @@ bool ESP8266::sATCIPSENDSingleFromFlash(const uint8_t *buffer, uint32_t len)
     if (recvFind(">", 5000)) {
         rx_empty();
         for (uint32_t i = 0; i < len; i++) {
-            m_puart->write(pgm_read_byte(buffer[i]));
+            m_puart->write((char) pgm_read_byte(&buffer[i]));
         }
         return recvFind("SEND OK", 10000);
     }
@@ -1225,7 +1226,7 @@ bool ESP8266::sATCIPSENDMultipleFromFlash(uint8_t mux_id, const uint8_t *buffer,
     if (recvFind(">", 5000)) {
         rx_empty();
         for (uint32_t i = 0; i < len; i++) {
-            m_puart->write(pgm_read_byte(buffer[i]));
+            m_puart->write((char) pgm_read_byte(&buffer[i]));
         }
         return recvFind("SEND OK", 10000);
     }

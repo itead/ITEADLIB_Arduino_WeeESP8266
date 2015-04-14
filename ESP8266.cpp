@@ -388,6 +388,16 @@ bool ESP8266::send(const uint8_t *buffer, uint32_t len)
     return sATCIPSENDSingle(buffer, len);
 }
 
+bool ESP8266::sendFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len)
+{
+    return sATCIPSENDMultipleFromFlash(mux_id, buffer, len);
+}
+
+bool ESP8266::sendFromFlash(const uint8_t *buffer, uint32_t len)
+{
+    return sATCIPSENDSingleFromFlash(buffer, len);
+}
+
 bool ESP8266::send(uint8_t mux_id, const uint8_t *buffer, uint32_t len)
 {
     return sATCIPSENDMultiple(mux_id, buffer, len);
@@ -1186,6 +1196,36 @@ bool ESP8266::sATCIPSENDMultiple(uint8_t mux_id, const uint8_t *buffer, uint32_t
         rx_empty();
         for (uint32_t i = 0; i < len; i++) {
             m_puart->write(buffer[i]);
+        }
+        return recvFind("SEND OK", 10000);
+    }
+    return false;
+}
+bool ESP8266::sATCIPSENDSingleFromFlash(const uint8_t *buffer, uint32_t len)
+{
+    rx_empty();
+    m_puart->print("AT+CIPSEND=");
+    m_puart->println(len);
+    if (recvFind(">", 5000)) {
+        rx_empty();
+        for (uint32_t i = 0; i < len; i++) {
+            m_puart->write(pgm_read_byte(buffer[i]));
+        }
+        return recvFind("SEND OK", 10000);
+    }
+    return false;
+}
+bool ESP8266::sATCIPSENDMultipleFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len)
+{
+    rx_empty();
+    m_puart->print("AT+CIPSEND=");
+    m_puart->print(mux_id);
+    m_puart->print(",");
+    m_puart->println(len);
+    if (recvFind(">", 5000)) {
+        rx_empty();
+        for (uint32_t i = 0; i < len; i++) {
+            m_puart->write(pgm_read_byte(buffer[i]));
         }
         return recvFind("SEND OK", 10000);
     }

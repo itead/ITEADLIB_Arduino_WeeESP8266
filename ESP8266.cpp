@@ -627,7 +627,7 @@ bool ESP8266::eATGSLP(uint32_t time)
     rx_empty();
     m_puart->print(F("AT+GSLP="));
     m_puart->println(time);
-    return recvFind(F("OK"));
+    return recvFind("OK");
 }
 
 

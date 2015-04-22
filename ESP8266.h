@@ -559,6 +559,27 @@ class ESP8266 {
     bool send(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
     
     /**
+     * Send data based on TCP or UDP builded already in single mode. 
+     * 
+     * @param buffer - the buffer of data to send from flash memeory. 
+     * @param len - the length of data to send. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool sendFromFlash(const uint8_t *buffer, uint32_t len);
+            
+    /**
+     * Send data based on one of TCP or UDP builded already in multiple mode. 
+     * 
+     * @param mux_id - the identifier of this TCP(available value: 0 - 4). 
+     * @param buffer - the buffer of data to send from flash memeory. 
+     * @param len - the length of data to send. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool sendFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
+    
+    /**
      * Receive data from TCP or UDP builded already in single mode. 
      *
      * @param buffer - the buffer for storing data. 
@@ -674,6 +695,8 @@ class ESP8266 {
     bool sATCIPSTARTMultiple(uint8_t mux_id, String type, String addr, uint32_t port);
     bool sATCIPSENDSingle(const uint8_t *buffer, uint32_t len);
     bool sATCIPSENDMultiple(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
+    bool sATCIPSENDSingleFromFlash(const uint8_t *buffer, uint32_t len);
+    bool sATCIPSENDMultipleFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
     bool sATCIPCLOSEMulitple(uint8_t mux_id);
     bool eATCIPCLOSESingle(void);
     bool eATCIFSR(String &list);

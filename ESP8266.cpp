@@ -161,6 +161,16 @@ bool ESP8266::setOprToStationSoftAP(uint8_t pattern1,uint8_t pattern2)
     }
 }
 
+uint8_t ESP8266::getOprMode(uint8_t pattern1)
+{
+	uint8_t mode;
+	if (!qATCWMODE(&mode,pattern1)) {
+        return 0;
+    } else {
+		return mode;
+    }
+}
+
 String ESP8266::getNowConecAp(uint8_t pattern)
 {   
      String ssid;

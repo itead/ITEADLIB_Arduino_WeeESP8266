@@ -29,8 +29,9 @@
 #include "SoftwareSerial.h"
 #endif
 
-#define  VERSION_18   0X18
-#define  VERSION_22   0X22
+#define  VERSION_18   		0X18
+#define  VERSION_22   		0X22
+#define  DEFAULT_PATTERN	3
 
 /**
  * You can modify the macro to choose a different version
@@ -153,7 +154,7 @@ class ESP8266 {
      * @retval false - failure.
      * 
      */
-    bool setOprToStation(uint8_t pattern1=3,uint8_t pattern2=3);
+    bool setOprToStation(uint8_t pattern1=DEFAULT_PATTERN,uint8_t pattern2=DEFAULT_PATTERN);
     
     /**
      * Get the model values list.  
@@ -170,7 +171,7 @@ class ESP8266 {
      * @retval true - success. 
      * @retval false - failure. 
      */
-    bool setOprToSoftAP(uint8_t pattern1=3,uint8_t pattern2=3);
+    bool setOprToSoftAP(uint8_t pattern1=DEFAULT_PATTERN,uint8_t pattern2=DEFAULT_PATTERN);
    
     /**
      * Set operation mode to station + softap.  
@@ -180,7 +181,18 @@ class ESP8266 {
      * @retval true - success. 
      * @retval false - failure. 
      */
-    bool setOprToStationSoftAP(uint8_t pattern1=3,uint8_t pattern2=3);
+    bool setOprToStationSoftAP(uint8_t pattern1=DEFAULT_PATTERN,uint8_t pattern2=DEFAULT_PATTERN);
+    
+    /**
+     * Get the operation mode.  
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send  "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * 
+     * @retval 0 - failure.
+     * @retval 1 - mode Station.
+     * @retval 2 - mode AP. 
+     * @retval 3 - mode AP + station. 
+     */
+    uint8_t getOprMode(uint8_t pattern1=DEFAULT_PATTERN);
     
     /**
      * Search available AP list and return it.
@@ -197,7 +209,7 @@ class ESP8266 {
      * @param pattern -1, send "AT+CWJAP_DEF?",-2,send "AT+CWJAP_CUR?",-3,send "AT+CWJAP?". 
      * @return the ssid of AP connected now. 
      */ 
-    String getNowConecAp(uint8_t pattern=3);
+    String getNowConecAp(uint8_t pattern=DEFAULT_PATTERN);
     
     /**
      * Join in AP. 
@@ -209,7 +221,7 @@ class ESP8266 {
      * @retval false - failure.
      * @note This method will take a couple of seconds. 
      */
-    bool joinAP(String ssid, String pwd,uint8_t pattern=3);
+    bool joinAP(String ssid, String pwd,uint8_t pattern=DEFAULT_PATTERN);
     
     /**
      * Leave AP joined before. 
@@ -232,7 +244,7 @@ class ESP8266 {
      * @retval false - failure.
      * @note This method should not be called when station mode. 
      */
-    bool setSoftAPParam(String ssid, String pwd, uint8_t chl = 7, uint8_t ecn = 4,uint8_t pattern=3);
+    bool setSoftAPParam(String ssid, String pwd, uint8_t chl = 7, uint8_t ecn = 4,uint8_t pattern=DEFAULT_PATTERN);
     
     /**
      * get SoftAP parameters. 
@@ -240,7 +252,7 @@ class ESP8266 {
      * @param pattern -1 send "AT+CWSAP_DEF?" -2 send "AT+CWSAP_CUR?" -3 send "AT+CWSAP?". 
      * @note This method should not be called when station mode. 
      */
-    String getSoftAPParam(uint8_t pattern=3);
+    String getSoftAPParam(uint8_t pattern=DEFAULT_PATTERN);
     
     /**
      * Get the IP list of devices connected to SoftAP. 
@@ -257,7 +269,7 @@ class ESP8266 {
      * @return the state of DHCP.
      * 
      */
-    String getDHCP(uint8_t pattern=3);
+    String getDHCP(uint8_t pattern=DEFAULT_PATTERN);
     
      /**
      * Set the  state of DHCP. 
@@ -267,7 +279,7 @@ class ESP8266 {
      * @retval true - success.
      * @retval false - failure.
      */
-     bool setDHCP(uint8_t mode, uint8_t en, uint8_t pattern=3);
+     bool setDHCP(uint8_t mode, uint8_t en, uint8_t pattern=DEFAULT_PATTERN);
      
      /**
      * make boot automatically connected. 
@@ -283,7 +295,7 @@ class ESP8266 {
      * @return mac address. 
      * @note This method should not be called when ap mode. 
      */
-     String getStationMac(uint8_t pattern=3);
+     String getStationMac(uint8_t pattern=DEFAULT_PATTERN);
      
      /**
      * Set the station's MAC address. 
@@ -292,7 +304,7 @@ class ESP8266 {
      * @retval true - success.
      * @retval false - failure.
      */
-     bool setStationMac(String mac,uint8_t pattern=3);
+     bool setStationMac(String mac,uint8_t pattern=DEFAULT_PATTERN);
      
      /**
      * Get the station's IP. 
@@ -300,7 +312,7 @@ class ESP8266 {
      * @return the station's IP. 
      * @note This method should not be called when ap mode. 
      */
-     String getStationIp(uint8_t pattern=3);
+     String getStationIp(uint8_t pattern=DEFAULT_PATTERN);
      
       /**
      * Set the station's IP. 
@@ -312,7 +324,7 @@ class ESP8266 {
      * @retval false - failure.
      * @note This method should not be called when ap mode. 
      */
-     bool setStationIp(String ip,String gateway,String netmask,uint8_t pattern=3);
+     bool setStationIp(String ip,String gateway,String netmask,uint8_t pattern=DEFAULT_PATTERN);
      
      /**
      * Get the AP's IP. 
@@ -321,7 +333,7 @@ class ESP8266 {
      * @note This method should not be called when station mode. 
      * 
      */
-     String getAPIp(uint8_t pattern=3);
+     String getAPIp(uint8_t pattern=DEFAULT_PATTERN);
      
      /**
      * Set the AP IP. 
@@ -331,7 +343,7 @@ class ESP8266 {
      * @retval false - failure.
      * @note This method should not be called when station mode.
      */
-     bool setAPIp(String ip,uint8_t pattern=3);
+     bool setAPIp(String ip,uint8_t pattern=DEFAULT_PATTERN);
      
      /**
      * start smartconfig. 

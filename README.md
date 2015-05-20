@@ -37,6 +37,8 @@ will be useful for Arduino lovers.
     bool 	setOprToSoftAP (void) : Set operation mode to softap.
      
     bool 	setOprToStationSoftAP (void) : Set operation mode to station + softap.
+    
+    uint8_t getOprMode(void) : Get the operation mode.
      
     String 	getAPList (void) : Search available AP list and return it.
      

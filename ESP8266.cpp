@@ -306,9 +306,9 @@ bool ESP8266::disableMUX(void)
     return sATCIPMUX(0);
 }
 
-bool ESP8266::createTCP(String addr, uint32_t port)
+bool ESP8266::createTCP(String addr, uint32_t port,  uint16_t keep_alive=0)
 {
-    return sATCIPSTARTSingle("TCP", addr, port);
+    return sATCIPSTARTSingleTCP(addr, port, keep_alive);
 }
 
 bool ESP8266::releaseTCP(void)
@@ -316,32 +316,32 @@ bool ESP8266::releaseTCP(void)
     return eATCIPCLOSESingle();
 }
 
-bool ESP8266::registerUDP(String addr, uint32_t port)
+bool ESP8266::registerUDP(String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode)
 {
-    return sATCIPSTARTSingle("UDP", addr, port);
+    return sATCIPSTARTSingleUDP(remote_addr, remote_port, local_port, udp_mode);
 }
 
-bool ESP8266::unregisterUDP(void)
+bool ESP8266::registerUDP(uint8_t mux_id, String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode)
+{
+    return sATCIPSTARTMultipleUDP(mux_id, remote_addr, remote_port, local_port, udp_mode);
+}
+
+bool ESP8266::unregisterUDP()
 {
     return eATCIPCLOSESingle();
 }
 
-bool ESP8266::createTCP(uint8_t mux_id, String addr, uint32_t port)
+bool ESP8266::unregisterUDP(uint8_t mux_id)
 {
-    return sATCIPSTARTMultiple(mux_id, "TCP", addr, port);
+    return eATCIPCLOSEMultiple(mux_id);
+}
+
+bool ESP8266::createTCP(uint8_t mux_id, String addr, uint32_t port, uint16_t keep_alive=0)
+{
+    return sATCIPSTARTMultipleTCP(mux_id, addr, port, keep_alive);
 }
 
 bool ESP8266::releaseTCP(uint8_t mux_id)
-{
-    return sATCIPCLOSEMulitple(mux_id);
-}
-
-bool ESP8266::registerUDP(uint8_t mux_id, String addr, uint32_t port)
-{
-    return sATCIPSTARTMultiple(mux_id, "UDP", addr, port);
-}
-
-bool ESP8266::unregisterUDP(uint8_t mux_id)
 {
     return sATCIPCLOSEMulitple(mux_id);
 }
@@ -379,19 +379,6 @@ bool ESP8266::saveTransLink (uint8_t mode,String ip,uint32_t port)
 bool ESP8266::setPing(String ip)
 {
     return eATPING(ip);
-}
-
-
-
-
-bool ESP8266::startServer(uint32_t port)
-{
-    return startTCPServer(port);
-}
-
-bool ESP8266::stopServer(void)
-{
-    return stopTCPServer();
 }
 
 bool ESP8266::send(const uint8_t *buffer, uint32_t len)
@@ -1146,16 +1133,64 @@ bool ESP8266::eATCIPSTATUS(String &list)
     m_puart->println(F("AT+CIPSTATUS"));
     return recvFindAndFilter("OK", "\r\r\n", "\r\n\r\nOK", list);
 }
-bool ESP8266::sATCIPSTARTSingle(String type, String addr, uint32_t port)
+
+bool ESP8266::sATCIPSTARTSingleUDP(String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode)
 {
     String data;
     rx_empty();
     m_puart->print(F("AT+CIPSTART=\""));
-    m_puart->print(type);
+    m_puart->print(F("UDP"));
+    m_puart->print(F("\",\""));
+    m_puart->print(remote_addr);
+    m_puart->print(F("\","));
+    m_puart->print(remote_port);
+    m_puart->print(",");
+    m_puart->print(local_port);
+    m_puart->print(",");
+    m_puart->println(udp_mode);
+
+    data = recvString("OK", "ERROR", "ALREADY CONNECT", 10000);
+    if (data.indexOf("OK") != -1 || data.indexOf("ALREADY CONNECT") != -1) {
+        return true;
+    }
+    return false;
+}
+
+bool ESP8266::sATCIPSTARTMultipleUDP(uint8_t mux_id, String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode)
+{
+    String data;
+    rx_empty();
+    m_puart->print(F("AT+CIPSTART="));
+    m_puart->print(mux_id);
+    m_puart->print(F(",\""));
+    m_puart->print(F("UDP"));
+    m_puart->print(F("\",\""));
+    m_puart->print(remote_addr);
+    m_puart->print(F("\","));
+    m_puart->print(remote_port);
+    m_puart->print(",");
+    m_puart->print(local_port);
+    m_puart->print(",");
+    m_puart->println(udp_mode);
+
+    data = recvString("OK", "ERROR", "ALREADY CONNECT", 10000);
+    if (data.indexOf("OK") != -1 || data.indexOf("ALREADY CONNECT") != -1) {
+        return true;
+    }
+    return false;
+}
+bool ESP8266::sATCIPSTARTSingleTCP(String addr, uint32_t port, uint16_t keep_alive=0)
+{
+    String data;
+    rx_empty();
+    m_puart->print(F("AT+CIPSTART=\""));
+    m_puart->print(F("TCP"));
     m_puart->print(F("\",\""));
     m_puart->print(addr);
     m_puart->print(F("\","));
-    m_puart->println(port);
+    m_puart->print(port);
+    m_puart->print(",");
+    m_puart->println(keep_alive);
     
     data = recvString("OK", "ERROR", "ALREADY CONNECT", 10000);
     if (data.indexOf("OK") != -1 || data.indexOf("ALREADY CONNECT") != -1) {
@@ -1163,18 +1198,20 @@ bool ESP8266::sATCIPSTARTSingle(String type, String addr, uint32_t port)
     }
     return false;
 }
-bool ESP8266::sATCIPSTARTMultiple(uint8_t mux_id, String type, String addr, uint32_t port)
+bool ESP8266::sATCIPSTARTMultipleTCP(uint8_t mux_id, String addr, uint32_t port, uint16_t keep_alive=0)
 {
     String data;
     rx_empty();
     m_puart->print(F("AT+CIPSTART="));
     m_puart->print(mux_id);
     m_puart->print(F(",\""));
-    m_puart->print(type);
+    m_puart->print(F("TCP"));
     m_puart->print(F("\",\""));
     m_puart->print(addr);
     m_puart->print(F("\","));
-    m_puart->println(port);
+    m_puart->print(port);
+    m_puart->print(",");
+    m_puart->println(keep_alive);
     
     data = recvString("OK", "ERROR", "ALREADY CONNECT", 10000);
     if (data.indexOf("OK") != -1 || data.indexOf("ALREADY CONNECT") != -1) {
@@ -1259,6 +1296,14 @@ bool ESP8266::eATCIPCLOSESingle(void)
 {
     rx_empty();
     m_puart->println(F("AT+CIPCLOSE"));
+    return recvFind("OK", 5000);
+}
+
+bool ESP8266::eATCIPCLOSEMultiple(uint8_t mux_id)
+{
+    rx_empty();
+    m_puart->print(F("AT+CIPCLOSE="));
+    m_puart->println(mux_id);
     return recvFind("OK", 5000);
 }
 bool ESP8266::eATCIFSR(String &list)

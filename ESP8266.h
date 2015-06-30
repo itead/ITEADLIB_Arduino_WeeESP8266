@@ -404,7 +404,7 @@ class ESP8266 {
      * @retval true - success.
      * @retval false - failure.
      */
-    bool createTCP(String addr, uint32_t port);
+    bool createTCP(String addr, uint32_t port, uint16_t keep_alive);
     
     /**
      * Release TCP connection in single mode. 
@@ -418,12 +418,33 @@ class ESP8266 {
      * Register UDP port number in single mode.
      * 
      * @param addr - the IP or domain name of the target host. 
-     * @param port - the port number of the target host. 
+     * @param remote_port - the port number of the target host.
+     * @param local_port - the port number of the local host.
+     * @param udp_mode - In UDP transparent transmission, it has to be 0:
+     * 0 : destination peer entity of UDP will not change.
+     * 1 : destination peer entity of UDP can change once.
+     * 2 : destination peer entity of UDP is allowed to change.
      * @retval true - success.
      * @retval false - failure.
      */
-    bool registerUDP(String addr, uint32_t port);
+    bool registerUDP(String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode);
     
+    /**
+     * Register UDP port number in multiple mode. (to recieve the udp packets too)
+     *
+     * @param mux_id - the identifier of this UDP (available value: 0 - 4).
+     * @param addr - the IP or domain name of the target host.
+     * @param remote_port - the port number of the target host.
+     * @param local_port - the port number of the local host.
+     * @param udp_mode - In UDP transparent transmission, it has to be 0:
+     * 0 : destination peer entity of UDP will not change.
+     * 1 : destination peer entity of UDP can change once.
+     * 2 : destination peer entity of UDP is allowed to change.
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool registerUDP(uint8_t mux_id, String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode);
+
     /**
      * Unregister UDP port number in single mode. 
      * 
@@ -431,6 +452,14 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool unregisterUDP(void);
+
+    /**
+     * Unregister UDP port number in miltiple mode.
+     *
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool unregisterUDP(uint8_t mux_id);
   
     /**
      * Create TCP connection in multiple mode. 
@@ -441,7 +470,7 @@ class ESP8266 {
      * @retval true - success.
      * @retval false - failure.
      */
-    bool createTCP(uint8_t mux_id, String addr, uint32_t port);
+    bool createTCP(uint8_t mux_id, String addr, uint32_t port, uint16_t keep_alive);
     
     /**
      * Release TCP connection in multiple mode. 
@@ -451,26 +480,6 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool releaseTCP(uint8_t mux_id);
-    
-    /**
-     * Register UDP port number in multiple mode.
-     * 
-     * @param mux_id - the identifier of this TCP(available value: 0 - 4). 
-     * @param addr - the IP or domain name of the target host. 
-     * @param port - the port number of the target host. 
-     * @retval true - success.
-     * @retval false - failure.
-     */
-    bool registerUDP(uint8_t mux_id, String addr, uint32_t port);
-    
-    /**
-     * Unregister UDP port number in multiple mode. 
-     * 
-     * @param mux_id - the identifier of this TCP(available value: 0 - 4). 
-     * @retval true - success.
-     * @retval false - failure.
-     */
-    bool unregisterUDP(uint8_t mux_id);
 
     /**
      * Set the timeout of TCP Server. 
@@ -514,25 +523,6 @@ class ESP8266 {
      */
     bool setCIPMODE(uint8_t mode);
     
-    /**
-     * Start Server(Only in multiple mode). 
-     * 
-     * @param port - the port number to listen(default: 333).
-     * @retval true - success.
-     * @retval false - failure.
-     *
-     * @see String getIPStatus(void);
-     * @see uint32_t recv(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t len, uint32_t timeout);
-     */
-    bool startServer(uint32_t port = 333);
-
-    /**
-     * Stop Server(Only in multiple mode). 
-     * 
-     * @retval true - success.
-     * @retval false - failure.
-     */
-    bool stopServer(void);
     /**
      * Save the passthrough links
      * 
@@ -703,14 +693,17 @@ class ESP8266 {
 
    
     bool eATCIPSTATUS(String &list);
-    bool sATCIPSTARTSingle(String type, String addr, uint32_t port);
-    bool sATCIPSTARTMultiple(uint8_t mux_id, String type, String addr, uint32_t port);
+    bool sATCIPSTARTSingleUDP(String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode);
+    bool sATCIPSTARTMultipleUDP(uint8_t mux_id, String remote_addr, uint32_t remote_port, uint32_t local_port, uint8_t udp_mode);
+    bool sATCIPSTARTSingleTCP(String addr, uint32_t port, uint16_t keep_alive);
+    bool sATCIPSTARTMultipleTCP(uint8_t mux_id, String addr, uint32_t port, uint16_t keep_alive);
     bool sATCIPSENDSingle(const uint8_t *buffer, uint32_t len);
     bool sATCIPSENDMultiple(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
     bool sATCIPSENDSingleFromFlash(const uint8_t *buffer, uint32_t len);
     bool sATCIPSENDMultipleFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
     bool sATCIPCLOSEMulitple(uint8_t mux_id);
     bool eATCIPCLOSESingle(void);
+    bool eATCIPCLOSEMultiple(uint8_t mux_id);
     bool eATCIFSR(String &list);
     bool sATCIPMUX(uint8_t mode);
     bool sATCIPSERVER(uint8_t mode, uint32_t port = 333);

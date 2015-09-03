@@ -68,13 +68,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <div class="line">    Serial.print(<span class="stringliteral">&quot;FW Version:&quot;</span>);</div>
 <div class="line">    Serial.println(wifi.<a name="a1"></a><a class="code" href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">getVersion</a>().c_str());</div>
 <div class="line">      </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a2"></a><a class="code" href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">setOprToStationSoftAP</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a2"></a><a class="code" href="class_e_s_p8266.html#a9662323e56b93b7e517a41cf6bf357fd">setOprToStationSoftAP</a>()) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;to station + softap ok\r\n&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;to station + softap err\r\n&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(SSID, PASSWORD)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (wifi.<a name="a3"></a><a class="code" href="class_e_s_p8266.html#a109cc0b4d90ab8894e50a73ae15cb76d">joinAP</a>(SSID, PASSWORD)) {</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
 <div class="line">        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);</div>
 <div class="line">        Serial.println(wifi.<a name="a4"></a><a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());       </div>
@@ -124,7 +124,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 17 2015 10:34:17 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 9 2015 13:57:59 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

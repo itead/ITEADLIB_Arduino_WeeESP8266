@@ -116,6 +116,20 @@ After modification, it should be:
 
     #define ESP8266_USE_SOFTWARE_SERIAL
 
+# Using AltSoftSerial
+
+There is a alternative to SoftwareSerial (a.k.a NewSoftSerial).
+AltSoftSerial is particularly useful when simultaneous data flows are needed.
+https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html
+
+If you want to use AltSoftSerial to communicate with ESP8266, you need to modify
+the line in file `ESP8266.h`:
+
+    //#define ESP8266_USE_ALTSOFT_SERIAL
+
+After modification, it should be:
+
+    #define ESP8266_USE_ALTSOFT_SERIAL
 
 # Hardware Connection
 

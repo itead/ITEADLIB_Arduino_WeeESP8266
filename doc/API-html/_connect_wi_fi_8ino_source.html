@@ -40,6 +40,7 @@
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -69,13 +70,13 @@
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Serial.println(wifi.<a class="code" href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">getVersion</a>().c_str());</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a572c6f855d70078fdbff9ac2c4b1ce99">setOprToStation</a>()) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a37579b02494895753fcb596e9deeda8d">setOprToStation</a>()) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Serial.print(<span class="stringliteral">&quot;to station ok\r\n&quot;</span>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Serial.print(<span class="stringliteral">&quot;to station err\r\n&quot;</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a>(SSID, PASSWORD)) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (wifi.<a class="code" href="class_e_s_p8266.html#a109cc0b4d90ab8894e50a73ae15cb76d">joinAP</a>(SSID, PASSWORD)) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Serial.print(<span class="stringliteral">&quot;Join AP success\r\n&quot;</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Serial.print(<span class="stringliteral">&quot;IP: &quot;</span>);       </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Serial.println(wifi.<a class="code" href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">getLocalIP</a>().c_str());</div>
@@ -90,16 +91,16 @@
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="ttc" id="class_e_s_p8266_html_a109cc0b4d90ab8894e50a73ae15cb76d"><div class="ttname"><a href="class_e_s_p8266.html#a109cc0b4d90ab8894e50a73ae15cb76d">ESP8266::joinAP</a></div><div class="ttdeci">bool joinAP(String ssid, String pwd, uint8_t pattern=3)</div><div class="ttdoc">Join in AP. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00178">ESP8266.cpp:178</a></div></div>
 <div class="ttc" id="class_e_s_p8266_html_a4e2d8a0637b437d4b03209cebfa5b750"><div class="ttname"><a href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">ESP8266::getVersion</a></div><div class="ttdeci">String getVersion(void)</div><div class="ttdoc">Get the version of AT Command Set. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00080">ESP8266.cpp:80</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_a20819d4dabf19fed6e3dcb3fd04ee49d"><div class="ttname"><a href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">ESP8266::getLocalIP</a></div><div class="ttdeci">String getLocalIP(void)</div><div class="ttdoc">Get the IP address of ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00174">ESP8266.cpp:174</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a20819d4dabf19fed6e3dcb3fd04ee49d"><div class="ttname"><a href="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d">ESP8266::getLocalIP</a></div><div class="ttdeci">String getLocalIP(void)</div><div class="ttdoc">Get the IP address of ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00281">ESP8266.cpp:281</a></div></div>
 <div class="ttc" id="_e_s_p8266_8h_html"><div class="ttname"><a href="_e_s_p8266_8h.html">ESP8266.h</a></div><div class="ttdoc">The definition of class ESP8266. </div></div>
-<div class="ttc" id="class_e_s_p8266_html_a300535b4b5f001b74058ebcc694a749f"><div class="ttname"><a href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">ESP8266::joinAP</a></div><div class="ttdeci">bool joinAP(String ssid, String pwd)</div><div class="ttdoc">Join in AP. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00145">ESP8266.cpp:145</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html"><div class="ttname"><a href="class_e_s_p8266.html">ESP8266</a></div><div class="ttdoc">Provide an easy-to-use way to manipulate ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8h_source.html#l00038">ESP8266.h:38</a></div></div>
-<div class="ttc" id="class_e_s_p8266_html_a572c6f855d70078fdbff9ac2c4b1ce99"><div class="ttname"><a href="class_e_s_p8266.html#a572c6f855d70078fdbff9ac2c4b1ce99">ESP8266::setOprToStation</a></div><div class="ttdeci">bool setOprToStation(void)</div><div class="ttdoc">Set operation mode to staion. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00087">ESP8266.cpp:87</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html"><div class="ttname"><a href="class_e_s_p8266.html">ESP8266</a></div><div class="ttdoc">Provide an easy-to-use way to manipulate ESP8266. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8h_source.html#l00042">ESP8266.h:42</a></div></div>
+<div class="ttc" id="class_e_s_p8266_html_a37579b02494895753fcb596e9deeda8d"><div class="ttname"><a href="class_e_s_p8266.html#a37579b02494895753fcb596e9deeda8d">ESP8266::setOprToStation</a></div><div class="ttdeci">bool setOprToStation(uint8_t pattern1=3, uint8_t pattern2=3)</div><div class="ttdoc">Set operation mode to station. </div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p8266_8cpp_source.html#l00107">ESP8266.cpp:107</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 17 2015 10:34:17 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 9 2015 13:57:59 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

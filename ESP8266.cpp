@@ -450,6 +450,11 @@ bool ESP8266::recvFindAndFilter(String target, String begin, String end, String 
 {
     String data_tmp;
     data_tmp = recvString(target, timeout);
+/*odilon begin
+  bug here. when found target on AT Command reply, sometimes
+  didn't find begin or end, set data=null and return false
+ */
+/* original code
     if (data_tmp.indexOf(target) != -1) {
         int32_t index1 = data_tmp.indexOf(begin);
         int32_t index2 = data_tmp.indexOf(end);
@@ -459,6 +464,22 @@ bool ESP8266::recvFindAndFilter(String target, String begin, String end, String 
             return true;
         }
     }
+*/
+    int8_t iTarget = data_tmp.indexOf(target);	
+    if (iTarget != -1) {
+        int32_t index1 = data_tmp.indexOf(begin);
+        int32_t index2 = data_tmp.indexOf(end);
+        if (index1 != -1 && index2 != -1) {
+            index1 += begin.length();
+            data = data_tmp.substring(index1, index2);
+            return true;
+        }
+	else{
+            data = data_tmp.substring(0, iTarget + target.length());
+            return true;
+	}
+    }
+/*odilon end*/
     data = "";
     return false;
 }

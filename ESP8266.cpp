@@ -147,6 +147,11 @@ bool ESP8266::joinAP(String ssid, String pwd)
     return sATCWJAP(ssid, pwd);
 }
 
+bool ESP8266::enableClientDHCP(uint8_t mode, boolean enabled)
+{
+    return sATCWDHCP(mode, enabled);
+}
+
 bool ESP8266::leaveAP(void)
 {
     return eATCWQAP();
@@ -525,6 +530,28 @@ bool ESP8266::sATCWJAP(String ssid, String pwd)
     m_puart->print("\",\"");
     m_puart->print(pwd);
     m_puart->println("\"");
+    
+    data = recvString("OK", "FAIL", 10000);
+    if (data.indexOf("OK") != -1) {
+        return true;
+    }
+    return false;
+}
+
+bool ESP8266::sATCWDHCP(uint8_t mode, boolean enabled)
+{
+	String strEn = "0";
+	if (enabled) {
+		strEn = "1";
+	}
+	
+	
+    String data;
+    rx_empty();
+    m_puart->print("AT+CWDHCP=");
+    m_puart->print(strEn);
+    m_puart->print(",");
+    m_puart->println(mode);
     
     data = recvString("OK", "FAIL", 10000);
     if (data.indexOf("OK") != -1) {

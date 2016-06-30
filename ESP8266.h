@@ -132,6 +132,17 @@ class ESP8266 {
      */
     bool joinAP(String ssid, String pwd);
     
+    
+    /**
+     * Enable DHCP for client mode. 
+     *
+     * @param mode - server mode (0=soft AP, 1=station, 2=both
+     * @param enabled - true if dhcp should be enabled, otherwise false
+     * 
+     * @note This method will enable DHCP but only for client mode!
+     */
+    bool enableClientDHCP(uint8_t mode, boolean enabled);
+    
     /**
      * Leave AP joined before. 
      *
@@ -435,6 +446,7 @@ class ESP8266 {
     bool qATCWMODE(uint8_t *mode);
     bool sATCWMODE(uint8_t mode);
     bool sATCWJAP(String ssid, String pwd);
+    bool sATCWDHCP(uint8_t mode, boolean enabled);
     bool eATCWLAP(String &list);
     bool eATCWQAP(void);
     bool sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn);

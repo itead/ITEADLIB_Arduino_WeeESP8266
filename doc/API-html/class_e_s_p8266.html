@@ -70,30 +70,84 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e2d8a0637b437d4b03209cebfa5b750"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750">getVersion</a> (void)</td></tr>
 <tr class="memdesc:a4e2d8a0637b437d4b03209cebfa5b750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the version of AT Command Set.  <a href="#a4e2d8a0637b437d4b03209cebfa5b750">More...</a><br /></td></tr>
 <tr class="separator:a4e2d8a0637b437d4b03209cebfa5b750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572c6f855d70078fdbff9ac2c4b1ce99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a572c6f855d70078fdbff9ac2c4b1ce99">setOprToStation</a> (void)</td></tr>
-<tr class="memdesc:a572c6f855d70078fdbff9ac2c4b1ce99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set operation mode to staion.  <a href="#a572c6f855d70078fdbff9ac2c4b1ce99">More...</a><br /></td></tr>
-<tr class="separator:a572c6f855d70078fdbff9ac2c4b1ce99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a247706884d60e85c8983bb65de26d346"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a247706884d60e85c8983bb65de26d346">setOprToSoftAP</a> (void)</td></tr>
-<tr class="memdesc:a247706884d60e85c8983bb65de26d346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set operation mode to softap.  <a href="#a247706884d60e85c8983bb65de26d346">More...</a><br /></td></tr>
-<tr class="separator:a247706884d60e85c8983bb65de26d346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac179183a46b218609a481747bcfd5a61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61">setOprToStationSoftAP</a> (void)</td></tr>
-<tr class="memdesc:ac179183a46b218609a481747bcfd5a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set operation mode to station + softap.  <a href="#ac179183a46b218609a481747bcfd5a61">More...</a><br /></td></tr>
-<tr class="separator:ac179183a46b218609a481747bcfd5a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06211d9f6f076fc712c56079ec0476a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a06211d9f6f076fc712c56079ec0476a6">deepSleep</a> (uint32_t time)</td></tr>
+<tr class="memdesc:a06211d9f6f076fc712c56079ec0476a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start function of deep sleep.  <a href="#a06211d9f6f076fc712c56079ec0476a6">More...</a><br /></td></tr>
+<tr class="separator:a06211d9f6f076fc712c56079ec0476a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e5adeb4e47ee133123d8149e9a9dfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a54e5adeb4e47ee133123d8149e9a9dfd">setEcho</a> (uint8_t mode)</td></tr>
+<tr class="memdesc:a54e5adeb4e47ee133123d8149e9a9dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch the echo function.  <a href="#a54e5adeb4e47ee133123d8149e9a9dfd">More...</a><br /></td></tr>
+<tr class="separator:a54e5adeb4e47ee133123d8149e9a9dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f965a4d12aaee1c157ee3c749b64943"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a6f965a4d12aaee1c157ee3c749b64943">restore</a> (void)</td></tr>
+<tr class="memdesc:a6f965a4d12aaee1c157ee3c749b64943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore factory.  <a href="#a6f965a4d12aaee1c157ee3c749b64943">More...</a><br /></td></tr>
+<tr class="separator:a6f965a4d12aaee1c157ee3c749b64943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc79d4438447ba464d65458f2f5ff26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a7bc79d4438447ba464d65458f2f5ff26">setUart</a> (uint32_t baudrate, uint8_t pattern)</td></tr>
+<tr class="memdesc:a7bc79d4438447ba464d65458f2f5ff26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up a serial port configuration.  <a href="#a7bc79d4438447ba464d65458f2f5ff26">More...</a><br /></td></tr>
+<tr class="separator:a7bc79d4438447ba464d65458f2f5ff26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37579b02494895753fcb596e9deeda8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a37579b02494895753fcb596e9deeda8d">setOprToStation</a> (uint8_t pattern1=3, uint8_t pattern2=3)</td></tr>
+<tr class="memdesc:a37579b02494895753fcb596e9deeda8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set operation mode to station.  <a href="#a37579b02494895753fcb596e9deeda8d">More...</a><br /></td></tr>
+<tr class="separator:a37579b02494895753fcb596e9deeda8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1103fdc1562d2632c7fe56455a200904"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a1103fdc1562d2632c7fe56455a200904">getWifiModeList</a> (void)</td></tr>
+<tr class="memdesc:a1103fdc1562d2632c7fe56455a200904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the model values list.  <a href="#a1103fdc1562d2632c7fe56455a200904">More...</a><br /></td></tr>
+<tr class="separator:a1103fdc1562d2632c7fe56455a200904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add7695c7120d4811075c8a57e9ac2300"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#add7695c7120d4811075c8a57e9ac2300">setOprToSoftAP</a> (uint8_t pattern1=3, uint8_t pattern2=3)</td></tr>
+<tr class="memdesc:add7695c7120d4811075c8a57e9ac2300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set operation mode to softap.  <a href="#add7695c7120d4811075c8a57e9ac2300">More...</a><br /></td></tr>
+<tr class="separator:add7695c7120d4811075c8a57e9ac2300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9662323e56b93b7e517a41cf6bf357fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a9662323e56b93b7e517a41cf6bf357fd">setOprToStationSoftAP</a> (uint8_t pattern1=3, uint8_t pattern2=3)</td></tr>
+<tr class="memdesc:a9662323e56b93b7e517a41cf6bf357fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set operation mode to station + softap.  <a href="#a9662323e56b93b7e517a41cf6bf357fd">More...</a><br /></td></tr>
+<tr class="separator:a9662323e56b93b7e517a41cf6bf357fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0cafe8a994349e81e75a35af9645a76"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#af0cafe8a994349e81e75a35af9645a76">getAPList</a> (void)</td></tr>
 <tr class="memdesc:af0cafe8a994349e81e75a35af9645a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search available AP list and return it.  <a href="#af0cafe8a994349e81e75a35af9645a76">More...</a><br /></td></tr>
 <tr class="separator:af0cafe8a994349e81e75a35af9645a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a300535b4b5f001b74058ebcc694a749f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f">joinAP</a> (String ssid, String pwd)</td></tr>
-<tr class="memdesc:a300535b4b5f001b74058ebcc694a749f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join in AP.  <a href="#a300535b4b5f001b74058ebcc694a749f">More...</a><br /></td></tr>
-<tr class="separator:a300535b4b5f001b74058ebcc694a749f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877d42c19b79460b7bc7044d61127362"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a877d42c19b79460b7bc7044d61127362">getNowConecAp</a> (uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a877d42c19b79460b7bc7044d61127362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search and returns the current connect AP.  <a href="#a877d42c19b79460b7bc7044d61127362">More...</a><br /></td></tr>
+<tr class="separator:a877d42c19b79460b7bc7044d61127362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109cc0b4d90ab8894e50a73ae15cb76d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a109cc0b4d90ab8894e50a73ae15cb76d">joinAP</a> (String ssid, String pwd, uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a109cc0b4d90ab8894e50a73ae15cb76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join in AP.  <a href="#a109cc0b4d90ab8894e50a73ae15cb76d">More...</a><br /></td></tr>
+<tr class="separator:a109cc0b4d90ab8894e50a73ae15cb76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda29748e0d28efa9d82c9c7fab1859b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#aeda29748e0d28efa9d82c9c7fab1859b">leaveAP</a> (void)</td></tr>
 <tr class="memdesc:aeda29748e0d28efa9d82c9c7fab1859b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leave AP joined before.  <a href="#aeda29748e0d28efa9d82c9c7fab1859b">More...</a><br /></td></tr>
 <tr class="separator:aeda29748e0d28efa9d82c9c7fab1859b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacce786dc0ef289cd37a48642d2efef1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#aacce786dc0ef289cd37a48642d2efef1">setSoftAPParam</a> (String ssid, String pwd, uint8_t chl=7, uint8_t ecn=4)</td></tr>
-<tr class="memdesc:aacce786dc0ef289cd37a48642d2efef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set SoftAP parameters.  <a href="#aacce786dc0ef289cd37a48642d2efef1">More...</a><br /></td></tr>
-<tr class="separator:aacce786dc0ef289cd37a48642d2efef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a40793fedc378691cb15dacfb11db49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a0a40793fedc378691cb15dacfb11db49">setSoftAPParam</a> (String ssid, String pwd, uint8_t chl=7, uint8_t ecn=4, uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a0a40793fedc378691cb15dacfb11db49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set SoftAP parameters.  <a href="#a0a40793fedc378691cb15dacfb11db49">More...</a><br /></td></tr>
+<tr class="separator:a0a40793fedc378691cb15dacfb11db49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece8cbb5d38f0bab1105fcd1e074d449"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#aece8cbb5d38f0bab1105fcd1e074d449">getSoftAPParam</a> (uint8_t pattern=3)</td></tr>
+<tr class="memdesc:aece8cbb5d38f0bab1105fcd1e074d449"><td class="mdescLeft">&#160;</td><td class="mdescRight">get SoftAP parameters.  <a href="#aece8cbb5d38f0bab1105fcd1e074d449">More...</a><br /></td></tr>
+<tr class="separator:aece8cbb5d38f0bab1105fcd1e074d449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10c82a5196a8f349720a9c9ba7209a6e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a10c82a5196a8f349720a9c9ba7209a6e">getJoinedDeviceIP</a> (void)</td></tr>
 <tr class="memdesc:a10c82a5196a8f349720a9c9ba7209a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the IP list of devices connected to SoftAP.  <a href="#a10c82a5196a8f349720a9c9ba7209a6e">More...</a><br /></td></tr>
 <tr class="separator:a10c82a5196a8f349720a9c9ba7209a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025777f5fe3360ee4b85ba76595c5f1d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a025777f5fe3360ee4b85ba76595c5f1d">getDHCP</a> (uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a025777f5fe3360ee4b85ba76595c5f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current state of DHCP.  <a href="#a025777f5fe3360ee4b85ba76595c5f1d">More...</a><br /></td></tr>
+<tr class="separator:a025777f5fe3360ee4b85ba76595c5f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9009e3fc35b30881e62d563ecb87b0a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a9009e3fc35b30881e62d563ecb87b0a6">setDHCP</a> (uint8_t mode, uint8_t en, uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a9009e3fc35b30881e62d563ecb87b0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state of DHCP.  <a href="#a9009e3fc35b30881e62d563ecb87b0a6">More...</a><br /></td></tr>
+<tr class="separator:a9009e3fc35b30881e62d563ecb87b0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df4d6ad4f3fe332b9635fe722cfc6cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a7df4d6ad4f3fe332b9635fe722cfc6cb">setAutoConnect</a> (uint8_t en)</td></tr>
+<tr class="memdesc:a7df4d6ad4f3fe332b9635fe722cfc6cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">make boot automatically connected.  <a href="#a7df4d6ad4f3fe332b9635fe722cfc6cb">More...</a><br /></td></tr>
+<tr class="separator:a7df4d6ad4f3fe332b9635fe722cfc6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0516885a04de735dc1ff83c8359bd3"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a5d0516885a04de735dc1ff83c8359bd3">getStationMac</a> (uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a5d0516885a04de735dc1ff83c8359bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the station's MAC address.  <a href="#a5d0516885a04de735dc1ff83c8359bd3">More...</a><br /></td></tr>
+<tr class="separator:a5d0516885a04de735dc1ff83c8359bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33846f3a4640c40fd3ffcb600508814d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a33846f3a4640c40fd3ffcb600508814d">setStationMac</a> (String mac, uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a33846f3a4640c40fd3ffcb600508814d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the station's MAC address.  <a href="#a33846f3a4640c40fd3ffcb600508814d">More...</a><br /></td></tr>
+<tr class="separator:a33846f3a4640c40fd3ffcb600508814d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a881c56e06485303c06204d7db772311f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a881c56e06485303c06204d7db772311f">getStationIp</a> (uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a881c56e06485303c06204d7db772311f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the station's IP.  <a href="#a881c56e06485303c06204d7db772311f">More...</a><br /></td></tr>
+<tr class="separator:a881c56e06485303c06204d7db772311f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a1401e851ba98af3e30b2682acc5c19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a3a1401e851ba98af3e30b2682acc5c19">setStationIp</a> (String ip, String gateway, String netmask, uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a3a1401e851ba98af3e30b2682acc5c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the station's IP.  <a href="#a3a1401e851ba98af3e30b2682acc5c19">More...</a><br /></td></tr>
+<tr class="separator:a3a1401e851ba98af3e30b2682acc5c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab102bf2334ccfbc6475104ca7f6cd88a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#ab102bf2334ccfbc6475104ca7f6cd88a">getAPIp</a> (uint8_t pattern=3)</td></tr>
+<tr class="memdesc:ab102bf2334ccfbc6475104ca7f6cd88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the AP's IP.  <a href="#ab102bf2334ccfbc6475104ca7f6cd88a">More...</a><br /></td></tr>
+<tr class="separator:ab102bf2334ccfbc6475104ca7f6cd88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b46751c386f62c8caa0bb47e08a0291"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a9b46751c386f62c8caa0bb47e08a0291">setAPIp</a> (String ip, uint8_t pattern=3)</td></tr>
+<tr class="memdesc:a9b46751c386f62c8caa0bb47e08a0291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the AP IP.  <a href="#a9b46751c386f62c8caa0bb47e08a0291">More...</a><br /></td></tr>
+<tr class="separator:a9b46751c386f62c8caa0bb47e08a0291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a645f7e316383c040f88faf31e34c0ce6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a645f7e316383c040f88faf31e34c0ce6">startSmartConfig</a> (uint8_t type)</td></tr>
+<tr class="memdesc:a645f7e316383c040f88faf31e34c0ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">start smartconfig.  <a href="#a645f7e316383c040f88faf31e34c0ce6">More...</a><br /></td></tr>
+<tr class="separator:a645f7e316383c040f88faf31e34c0ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3cca1c46319d4dbfc5caea6852e7c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#abb3cca1c46319d4dbfc5caea6852e7c8">stopSmartConfig</a> (void)</td></tr>
+<tr class="memdesc:abb3cca1c46319d4dbfc5caea6852e7c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop smartconfig.  <a href="#abb3cca1c46319d4dbfc5caea6852e7c8">More...</a><br /></td></tr>
+<tr class="separator:abb3cca1c46319d4dbfc5caea6852e7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad273286fbb8627a612249a232d53ca22"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#ad273286fbb8627a612249a232d53ca22">getIPStatus</a> (void)</td></tr>
 <tr class="memdesc:ad273286fbb8627a612249a232d53ca22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current status of connection(UDP and TCP).  <a href="#ad273286fbb8627a612249a232d53ca22">More...</a><br /></td></tr>
 <tr class="separator:ad273286fbb8627a612249a232d53ca22"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,12 +193,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5355dce05aa59b92ce9f7ea76d86eef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef">stopTCPServer</a> (void)</td></tr>
 <tr class="memdesc:aa5355dce05aa59b92ce9f7ea76d86eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop TCP Server(Only in multiple mode).  <a href="#aa5355dce05aa59b92ce9f7ea76d86eef">More...</a><br /></td></tr>
 <tr class="separator:aa5355dce05aa59b92ce9f7ea76d86eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4448463d30008eabb799243c4b10bbcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a4448463d30008eabb799243c4b10bbcd">setCIPMODE</a> (uint8_t mode)</td></tr>
+<tr class="memdesc:a4448463d30008eabb799243c4b10bbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the module transfer mode.  <a href="#a4448463d30008eabb799243c4b10bbcd">More...</a><br /></td></tr>
+<tr class="separator:a4448463d30008eabb799243c4b10bbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d9a6b130b6c278fd6cd2e6cda816d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7">startServer</a> (uint32_t port=333)</td></tr>
 <tr class="memdesc:a88d9a6b130b6c278fd6cd2e6cda816d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Server(Only in multiple mode).  <a href="#a88d9a6b130b6c278fd6cd2e6cda816d7">More...</a><br /></td></tr>
 <tr class="separator:a88d9a6b130b6c278fd6cd2e6cda816d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af272f2f57b7b99434e257f06c276acfc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc">stopServer</a> (void)</td></tr>
 <tr class="memdesc:af272f2f57b7b99434e257f06c276acfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop Server(Only in multiple mode).  <a href="#af272f2f57b7b99434e257f06c276acfc">More...</a><br /></td></tr>
 <tr class="separator:af272f2f57b7b99434e257f06c276acfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f69cf8ff405f881a00d9c48b171d53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a28f69cf8ff405f881a00d9c48b171d53">saveTransLink</a> (uint8_t mode, String ip, uint32_t port)</td></tr>
+<tr class="memdesc:a28f69cf8ff405f881a00d9c48b171d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the passthrough links.  <a href="#a28f69cf8ff405f881a00d9c48b171d53">More...</a><br /></td></tr>
+<tr class="separator:a28f69cf8ff405f881a00d9c48b171d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f31b68bd707ffa9c627c6419ab67ab2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a8f31b68bd707ffa9c627c6419ab67ab2">setPing</a> (String ip)</td></tr>
+<tr class="memdesc:a8f31b68bd707ffa9c627c6419ab67ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">PING COMMAND.  <a href="#a8f31b68bd707ffa9c627c6419ab67ab2">More...</a><br /></td></tr>
+<tr class="separator:a8f31b68bd707ffa9c627c6419ab67ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba21b921a7afc79a36d0e41c20d59bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc">send</a> (const uint8_t *buffer, uint32_t len)</td></tr>
 <tr class="memdesc:a6ba21b921a7afc79a36d0e41c20d59bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data based on TCP or UDP builded already in single mode.  <a href="#a6ba21b921a7afc79a36d0e41c20d59bc">More...</a><br /></td></tr>
 <tr class="separator:a6ba21b921a7afc79a36d0e41c20d59bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,9 +226,9 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provide an easy-to-use way to manipulate <a class="el" href="class_e_s_p8266.html" title="Provide an easy-to-use way to manipulate ESP8266. ">ESP8266</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#_a0">ConnectWiFi.ino</a>, <a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#_a0">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#_a0">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#_a0">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#_a0">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#_a0">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#_a0">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#_a0">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#_a0">ConnectWiFi.ino</a>, <a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#_a0">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#_a0">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#_a0">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#_a0">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#_a0">TCPServer.ino</a>, <a class="el" href="test_8ino-example.html#_a0">test.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#_a0">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#_a0">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8h_source.html#l00038">38</a> of file <a class="el" href="_e_s_p8266_8h_source.html">ESP8266.h</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8h_source.html#l00042">42</a> of file <a class="el" href="_e_s_p8266_8h_source.html">ESP8266.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa927b7b8aaef163011015c22da1f07e2"></a>
 <div class="memitem">
@@ -208,7 +271,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a6">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a6">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a6">TCPClientSingle.ino</a>, and <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a6">TCPClientSingleUNO.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00191">191</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00298">298</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +322,41 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00211">211</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00318">318</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06211d9f6f076fc712c56079ec0476a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::deepSleep </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start function of deep sleep. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>- the sleep time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>the feature requires hardware support. </dd></dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00101">101</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,7 +385,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a5">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a5">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a5">TCPClientSingleUNO.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a5">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00186">186</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00293">293</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +414,36 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_client_multiple_8ino-example.html#a5">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a5">TCPServer.ino</a>, and <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a5">UDPClientMultiple.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00181">181</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00288">288</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab102bf2334ccfbc6475104ca7f6cd88a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getAPIp </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the AP's IP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CIPAP_DEF?" -2 send "AT+CIPAP_CUR?" -3 send "AT+CIPAP?". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ap's ip. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a20">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00249">249</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -338,8 +464,37 @@ Public Member Functions</h2></td></tr>
 <p>Search available AP list and return it. </p>
 <dl class="section return"><dt>Returns</dt><dd>the list of available APs. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method will occupy a lot of memeory(hundreds of Bytes to a couple of KBytes). Do not call this method unless you must and ensure that your board has enough memery left. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a6">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00171">171</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00138">138</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a025777f5fe3360ee4b85ba76595c5f1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getDHCP </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current state of DHCP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CWDHCP_DEF?" -2 send "AT+CWDHCP_CUR?" -3 send "AT+CWDHCP?". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the state of DHCP. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a13">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00209">209</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,9 +514,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the current status of connection(UDP and TCP). </p>
 <dl class="section return"><dt>Returns</dt><dd>the status. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a9">TCPServer.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a9">TCPServer.ino</a>, and <a class="el" href="test_8ino-example.html#a24">test.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00167">167</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00274">274</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -382,8 +537,9 @@ Public Member Functions</h2></td></tr>
 <p>Get the IP list of devices connected to SoftAP. </p>
 <dl class="section return"><dt>Returns</dt><dd>the list of IP. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
-
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00160">160</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a12">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00202">202</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -405,7 +561,121 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the IP list. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a4">ConnectWiFi.ino</a>, <a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a4">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a4">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a4">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a4">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a4">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a4">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a4">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00174">174</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00281">281</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a877d42c19b79460b7bc7044d61127362"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getNowConecAp </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search and returns the current connect AP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1, send "AT+CWJAP_DEF?",-2,send "AT+CWJAP_CUR?",-3,send "AT+CWJAP?". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the ssid of AP connected now. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a8">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00163">163</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aece8cbb5d38f0bab1105fcd1e074d449"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getSoftAPParam </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get SoftAP parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CWSAP_DEF?" -2 send "AT+CWSAP_CUR?" -3 send "AT+CWSAP?". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a11">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00188">188</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a881c56e06485303c06204d7db772311f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getStationIp </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the station's IP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CIPSTA_DEF?" -2 send "AT+CIPSTA_CUR?" -3 send "AT+CIPSTA?". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the station's IP. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method should not be called when ap mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a18">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00237">237</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d0516885a04de735dc1ff83c8359bd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getStationMac </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the station's MAC address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CIPSTAMAC_DEF?=" -2 send "AT+CIPSTAMAC_CUR?" -3 send "AT+CIPSTAMAC?". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>mac address. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method should not be called when ap mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a16">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00224">224</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -431,7 +701,29 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a300535b4b5f001b74058ebcc694a749f"></a>
+<a class="anchor" id="a1103fdc1562d2632c7fe56455a200904"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String ESP8266::getWifiModeList </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the model values list. </p>
+<dl class="section return"><dt>Returns</dt><dd>the list of model. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a2">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00123">123</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a109cc0b4d90ab8894e50a73ae15cb76d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -445,7 +737,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>pwd</em>&#160;</td>
+          <td class="paramname"><em>pwd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -458,6 +756,7 @@ Public Member Functions</h2></td></tr>
 <p>Join in AP. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CWJAP_DEF=" -2 send "AT+CWJAP_CUR=" -3 send "AT+CWJAP=". </td></tr>
     <tr><td class="paramname">ssid</td><td>- SSID of AP to join in. </td></tr>
     <tr><td class="paramname">pwd</td><td>- Password of AP to join in. </td></tr>
   </table>
@@ -471,9 +770,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This method will take a couple of seconds. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a3">ConnectWiFi.ino</a>, <a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a3">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a3">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a3">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a3">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a3">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a3">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a3">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a3">ConnectWiFi.ino</a>, <a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a3">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a3">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a3">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a3">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a3">TCPServer.ino</a>, <a class="el" href="test_8ino-example.html#a7">test.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a3">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a3">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00145">145</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00178">178</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -527,8 +826,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00150">150</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a9">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00183">183</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -574,7 +874,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a8">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a8">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a8">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a8">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a8">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a8">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a8">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00271">271</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00396">396</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -626,7 +926,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00276">276</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00401">401</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -679,7 +979,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the length of data received actually. </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00287">287</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00412">412</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -724,7 +1024,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_u_d_p_client_multiple_8ino-example.html#a6">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a6">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00201">201</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00308">308</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -775,7 +1075,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00221">221</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00328">328</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -803,7 +1103,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a9">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a9">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a9">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a9">TCPClientSingleUNO.ino</a>, and <a class="el" href="_t_c_p_server_8ino-example.html#a11">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00196">196</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00303">303</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -836,7 +1136,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00216">216</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00323">323</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -865,6 +1165,78 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00063">63</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f965a4d12aaee1c157ee3c749b64943"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::restore </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restore factory. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The operation can lead to restart the machine. </dd></dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00092">92</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28f69cf8ff405f881a00d9c48b171d53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::saveTransLink </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save the passthrough links. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a25">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00363">363</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -909,7 +1281,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a7">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a7">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a7">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a7">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a10">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a7">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a7">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00261">261</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00386">386</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -960,25 +1332,234 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00266">266</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00391">391</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a247706884d60e85c8983bb65de26d346"></a>
+<a class="anchor" id="a9b46751c386f62c8caa0bb47e08a0291"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setAPIp </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the AP IP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CIPAP_DEF=" -2 send "AT+CIPAP_CUR=" -3 send "AT+CIPAP=". </td></tr>
+    <tr><td class="paramname">ip</td><td>- the ip of AP. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a21">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00256">256</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7df4d6ad4f3fe332b9635fe722cfc6cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setAutoConnect </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>en</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>make boot automatically connected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">en</td><td>-1 enable -0 disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a15">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00220">220</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4448463d30008eabb799243c4b10bbcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setCIPMODE </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the module transfer mode. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00358">358</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9009e3fc35b30881e62d563ecb87b0a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setDHCP </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>en</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the state of DHCP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CWDHCP_DEF=" -2 send "AT+CWDHCP_CUR=" -3 send "AT+CWDHCP=". </td></tr>
+    <tr><td class="paramname">mode</td><td>- set ap or set station or set ap + station. </td></tr>
+    <tr><td class="paramname">en</td><td>- 0 disable DHCP - 1 enable DHCP. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a14">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00215">215</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54e5adeb4e47ee133123d8149e9a9dfd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setEcho </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switch the echo function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>- 1 start echo -0 stop echo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00087">87</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="add7695c7120d4811075c8a57e9ac2300"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool ESP8266::setOprToSoftAP </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern1</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern2</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Set operation mode to softap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern1</td><td>-1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". </td></tr>
+    <tr><td class="paramname">pattern2</td><td>-1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=".</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">true</td><td>- success. </td></tr>
@@ -986,26 +1567,44 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00104">104</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a3">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00129">129</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a572c6f855d70078fdbff9ac2c4b1ce99"></a>
+<a class="anchor" id="a37579b02494895753fcb596e9deeda8d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool ESP8266::setOprToStation </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern1</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern2</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set operation mode to staion. </p>
+<p>Set operation mode to station. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern1</td><td>-1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". </td></tr>
+    <tr><td class="paramname">pattern2</td><td>-1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">true</td><td>- success. </td></tr>
@@ -1013,27 +1612,44 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a2">ConnectWiFi.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_connect_wi_fi_8ino-example.html#a2">ConnectWiFi.ino</a>, and <a class="el" href="test_8ino-example.html#a4">test.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00087">87</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00107">107</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac179183a46b218609a481747bcfd5a61"></a>
+<a class="anchor" id="a9662323e56b93b7e517a41cf6bf357fd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool ESP8266::setOprToStationSoftAP </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern1</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern2</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Set operation mode to station + softap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern1</td><td>-1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". </td></tr>
+    <tr><td class="paramname">pattern2</td><td>-1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=".</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">true</td><td>- success. </td></tr>
@@ -1041,13 +1657,40 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a2">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a2">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a2">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a2">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a2">TCPServer.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a2">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a2">UDPClientSingle.ino</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="_h_t_t_p_g_e_t_8ino-example.html#a2">HTTPGET.ino</a>, <a class="el" href="_t_c_p_client_multiple_8ino-example.html#a2">TCPClientMultiple.ino</a>, <a class="el" href="_t_c_p_client_single_8ino-example.html#a2">TCPClientSingle.ino</a>, <a class="el" href="_t_c_p_client_single_u_n_o_8ino-example.html#a2">TCPClientSingleUNO.ino</a>, <a class="el" href="_t_c_p_server_8ino-example.html#a2">TCPServer.ino</a>, <a class="el" href="test_8ino-example.html#a5">test.ino</a>, <a class="el" href="_u_d_p_client_multiple_8ino-example.html#a2">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a2">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00121">121</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00146">146</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aacce786dc0ef289cd37a48642d2efef1"></a>
+<a class="anchor" id="a8f31b68bd707ffa9c627c6419ab67ab2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setPing </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PING COMMAND. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00368">368</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a40793fedc378691cb15dacfb11db49"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1073,7 +1716,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>ecn</em> = <code>4</code>&#160;</td>
+          <td class="paramname"><em>ecn</em> = <code>4</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1086,6 +1735,7 @@ Public Member Functions</h2></td></tr>
 <p>Set SoftAP parameters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CWSAP_DEF=" -2 send "AT+CWSAP_CUR=" -3 send "AT+CWSAP=". </td></tr>
     <tr><td class="paramname">ssid</td><td>- SSID of SoftAP. </td></tr>
     <tr><td class="paramname">pwd</td><td>- PASSWORD of SoftAP. </td></tr>
     <tr><td class="paramname">chl</td><td>- the channel (1 - 13, default: 7). </td></tr>
@@ -1093,9 +1743,122 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section note"><dt>Note</dt><dd>This method should not be called when station mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a10">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00197">197</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00155">155</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a3a1401e851ba98af3e30b2682acc5c19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setStationIp </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>gateway</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>netmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the station's IP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CIPSTA_DEF=" -2 send "AT+CIPSTA_CUR=" -3 send "AT+CIPSTA=". </td></tr>
+    <tr><td class="paramname">ip</td><td>- the ip of station. </td></tr>
+    <tr><td class="paramname">gateway</td><td>-the gateway of station. </td></tr>
+    <tr><td class="paramname">netmask</td><td>-the netmask of station. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This method should not be called when ap mode. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a19">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00244">244</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33846f3a4640c40fd3ffcb600508814d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setStationMac </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>mac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the station's MAC address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+CIPSTAMAC_DEF=" -2 send "AT+CIPSTAMAC_CUR=" -3 send "AT+CIPSTAMAC=". </td></tr>
+    <tr><td class="paramname">mac</td><td>- the mac address of station. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a17">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00232">232</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1129,7 +1892,53 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a7">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00231">231</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00338">338</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bc79d4438447ba464d65458f2f5ff26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::setUart </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>baudrate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pattern</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set up a serial port configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>-1 send "AT+UART=", -2 send "AT+UART_CUR=", -3 send "AT+UART_DEF=". </td></tr>
+    <tr><td class="paramname">baudrate</td><td>- the uart baudrate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Only allows baud rate design, for the other parameters:databits- 8,stopbits -1,parity -0,flow control -0 . </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a1">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00096">96</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1165,7 +1974,41 @@ Public Member Functions</h2></td></tr>
 <dd>
 uint32_t <a class="el" href="class_e_s_p8266.html#a7d68591021e6ddc6919cb5865827856f" title="Receive data from all of TCP or UDP builded already in multiple mode. ">recv(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t len, uint32_t timeout)</a>; </dd></dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00251">251</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00376">376</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a645f7e316383c040f88faf31e34c0ce6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::startSmartConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>start smartconfig. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>-1:ESP_TOUCH -2:AirKiss. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a22">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00261">261</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1205,7 +2048,7 @@ uint32_t <a class="el" href="class_e_s_p8266.html#a7d68591021e6ddc6919cb58658278
 bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300" title="Release TCP connection in multiple mode. ">releaseTCP(uint8_t mux_id)</a>; </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_t_c_p_server_8ino-example.html#a6">TCPServer.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00236">236</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00343">343</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1232,7 +2075,35 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00256">256</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00381">381</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb3cca1c46319d4dbfc5caea6852e7c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ESP8266::stopSmartConfig </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stop smartconfig. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- success. </td></tr>
+    <tr><td class="paramname">false</td><td>- failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="test_8ino-example.html#a23">test.ino</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00266">266</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1259,7 +2130,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00244">244</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00351">351</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1287,7 +2158,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="_u_d_p_client_multiple_8ino-example.html#a9">UDPClientMultiple.ino</a>, and <a class="el" href="_u_d_p_client_single_8ino-example.html#a9">UDPClientSingle.ino</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00206">206</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00313">313</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1320,7 +2191,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00226">226</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_e_s_p8266_8cpp_source.html#l00333">333</a> of file <a class="el" href="_e_s_p8266_8cpp_source.html">ESP8266.cpp</a>.</p>
 
 </div>
 </div>
@@ -1331,7 +2202,7 @@ bool <a class="el" href="class_e_s_p8266.html#a96fd1a01f8f52dd80ae7f7a267005300"
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 17 2015 10:34:17 for API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 9 2015 13:57:59 for API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

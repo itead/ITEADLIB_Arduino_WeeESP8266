@@ -23,14 +23,21 @@
 
 #include "Arduino.h"
 
-
 //#define ESP8266_USE_SOFTWARE_SERIAL
-
 
 #ifdef ESP8266_USE_SOFTWARE_SERIAL
 #include "SoftwareSerial.h"
 #endif
 
+#define  VERSION_18   		0X18
+#define  VERSION_22   		0X22
+#define  DEFAULT_PATTERN	3
+
+/**
+ * You can modify the macro to choose a different version
+ */
+
+#define  USER_SEL_VERSION         VERSION_18
 
 /**
  * Provide an easy-to-use way to manipulate ESP8266. 
@@ -47,7 +54,12 @@ class ESP8266 {
      *
      * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
      */
+#if (USER_SEL_VERSION == VERSION_22)
+    ESP8266(SoftwareSerial &uart, uint32_t baud = 115200);
+#elif (USER_SEL_VERSION == VERSION_18)
     ESP8266(SoftwareSerial &uart, uint32_t baud = 9600);
+#endif  /* #if(USER_SEL_VERSION==VERSION_22) */
+
 #else /* HardwareSerial */
     /*
      * Constuctor. 
@@ -57,8 +69,14 @@ class ESP8266 {
      *
      * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
      */
+#if (USER_SEL_VERSION == VERSION_22)
+    ESP8266(HardwareSerial &uart, uint32_t baud = 115200);
+#elif (USER_SEL_VERSION == VERSION_18)
     ESP8266(HardwareSerial &uart, uint32_t baud = 9600);
-#endif
+#endif /* #if(USER_SEL_VERSION == VERSION_22) */
+
+
+#endif /* #ifdef ESP8266_USE_SOFTWARE_SERIAL */
     
     
     /** 
@@ -82,35 +100,99 @@ class ESP8266 {
     bool restart(void);
     
     /**
-     * Get the version of AT Command Set. 
+     * Get the version of AT Command Set.  
      * 
-     * @return the string of version. 
+     * @return the string of version.  
      */
     String getVersion(void);
     
     /**
-     * Set operation mode to staion. 
+     * Start function of deep sleep.  
      * 
-     * @retval true - success.
-     * @retval false - failure.
+     *  @param time - the sleep time. 
+     *  @retval true - success.
+     *  @retval false - failure.
+     *  @note the feature requires hardware support. 
      */
-    bool setOprToStation(void);
+    bool deepSleep(uint32_t time);
     
     /**
-     * Set operation mode to softap. 
+     * Switch the echo function.    
      * 
-     * @retval true - success.
-     * @retval false - failure.
+     *  @param mode - 1 start echo -0 stop echo
+     *  @retval true - success. 
+     *  @retval false - failure. 
+     *  
      */
-    bool setOprToSoftAP(void);
+    bool setEcho(uint8_t mode);
     
     /**
-     * Set operation mode to station + softap. 
-     * 
+      *  Restore factory.   
+      *  @retval true - success.  
+      *  @retval false - failure.  
+      *  @note  The operation can lead to restart the machine.  
+      */
+    bool restore(void);
+    
+    /**
+     * Set up a serial port configuration.  
+     *
+     * @param pattern -1 send "AT+UART=", -2 send "AT+UART_CUR=", -3 send "AT+UART_DEF=". 
+     * @param baudrate - the uart baudrate. 
+     * @retval true - success. 
+     * @retval false - failure. 
+     * @note  Only allows baud rate design, for the other parameters:databits- 8,stopbits -1,parity -0,flow control -0 . 
+     */
+    bool setUart(uint32_t baudrate,uint8_t pattern);
+    
+    /**
+     * Set operation mode to station. 
+     *
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * @param   pattern2 -1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". 
      * @retval true - success.
      * @retval false - failure.
+     * 
      */
-    bool setOprToStationSoftAP(void);
+    bool setOprToStation(uint8_t pattern1=DEFAULT_PATTERN,uint8_t pattern2=DEFAULT_PATTERN);
+    
+    /**
+     * Get the model values list.  
+     * 
+     * @return the list of model.  
+     */ 
+    String getWifiModeList(void);
+    
+    /**
+     * Set operation mode to softap.  
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * @param   pattern2 -1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". 
+     * 
+     * @retval true - success. 
+     * @retval false - failure. 
+     */
+    bool setOprToSoftAP(uint8_t pattern1=DEFAULT_PATTERN,uint8_t pattern2=DEFAULT_PATTERN);
+   
+    /**
+     * Set operation mode to station + softap.  
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send  "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * @param   pattern2 -1, send "AT+CWMODE_DEF=",-2,send "AT+CWMODE_CUR=",-3,send "AT+CWMODE=". 
+     * 
+     * @retval true - success. 
+     * @retval false - failure. 
+     */
+    bool setOprToStationSoftAP(uint8_t pattern1=DEFAULT_PATTERN,uint8_t pattern2=DEFAULT_PATTERN);
+    
+    /**
+     * Get the operation mode.  
+     * @param   pattern1 -1, send "AT+CWMODE_DEF?",-2,send  "AT+CWMODE_CUR?",-3,send "AT+CWMODE?". 
+     * 
+     * @retval 0 - failure.
+     * @retval 1 - mode Station.
+     * @retval 2 - mode AP. 
+     * @retval 3 - mode AP + station. 
+     */
+    uint8_t getOprMode(uint8_t pattern1=DEFAULT_PATTERN);
     
     /**
      * Search available AP list and return it.
@@ -122,15 +204,24 @@ class ESP8266 {
     String getAPList(void);
     
     /**
+     * Search and returns the current connect AP. 
+     * 
+     * @param pattern -1, send "AT+CWJAP_DEF?",-2,send "AT+CWJAP_CUR?",-3,send "AT+CWJAP?". 
+     * @return the ssid of AP connected now. 
+     */ 
+    String getNowConecAp(uint8_t pattern=DEFAULT_PATTERN);
+    
+    /**
      * Join in AP. 
      *
+     * @param pattern -1 send "AT+CWJAP_DEF=" -2 send "AT+CWJAP_CUR=" -3 send "AT+CWJAP=". 
      * @param ssid - SSID of AP to join in. 
      * @param pwd - Password of AP to join in. 
      * @retval true - success.
      * @retval false - failure.
      * @note This method will take a couple of seconds. 
      */
-    bool joinAP(String ssid, String pwd);
+    bool joinAP(String ssid, String pwd,uint8_t pattern=DEFAULT_PATTERN);
     
     /**
      * Leave AP joined before. 
@@ -143,14 +234,25 @@ class ESP8266 {
     /**
      * Set SoftAP parameters. 
      * 
+     * @param pattern -1 send "AT+CWSAP_DEF=" -2 send "AT+CWSAP_CUR=" -3 send "AT+CWSAP=". 
      * @param ssid - SSID of SoftAP. 
      * @param pwd - PASSWORD of SoftAP. 
      * @param chl - the channel (1 - 13, default: 7). 
      * @param ecn - the way of encrypstion (0 - OPEN, 1 - WEP, 
      *  2 - WPA_PSK, 3 - WPA2_PSK, 4 - WPA_WPA2_PSK, default: 4). 
+     * @retval true - success.
+     * @retval false - failure.
      * @note This method should not be called when station mode. 
      */
-    bool setSoftAPParam(String ssid, String pwd, uint8_t chl = 7, uint8_t ecn = 4);
+    bool setSoftAPParam(String ssid, String pwd, uint8_t chl = 7, uint8_t ecn = 4,uint8_t pattern=DEFAULT_PATTERN);
+    
+    /**
+     * get SoftAP parameters. 
+     * 
+     * @param pattern -1 send "AT+CWSAP_DEF?" -2 send "AT+CWSAP_CUR?" -3 send "AT+CWSAP?". 
+     * @note This method should not be called when station mode. 
+     */
+    String getSoftAPParam(uint8_t pattern=DEFAULT_PATTERN);
     
     /**
      * Get the IP list of devices connected to SoftAP. 
@@ -159,6 +261,105 @@ class ESP8266 {
      * @note This method should not be called when station mode. 
      */
     String getJoinedDeviceIP(void);
+    
+    /**
+     * Get the current state of DHCP. 
+     * 
+     * @param pattern -1 send "AT+CWDHCP_DEF?" -2 send "AT+CWDHCP_CUR?"  -3 send "AT+CWDHCP?". 
+     * @return the state of DHCP.
+     * 
+     */
+    String getDHCP(uint8_t pattern=DEFAULT_PATTERN);
+    
+     /**
+     * Set the  state of DHCP. 
+     * @param pattern -1 send "AT+CWDHCP_DEF=" -2 send "AT+CWDHCP_CUR=" -3 send "AT+CWDHCP=". 
+     * @param mode - set ap or set station or set ap + station. 
+     * @param en - 0 disable DHCP  - 1 enable DHCP. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+     bool setDHCP(uint8_t mode, uint8_t en, uint8_t pattern=DEFAULT_PATTERN);
+     
+     /**
+     * make boot automatically connected. 
+     * @param en -1 enable  -0 disable. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+     bool setAutoConnect(uint8_t en);
+     
+     /**
+     * Get the station's MAC address. 
+     * @param pattern -1 send "AT+CIPSTAMAC_DEF?=" -2 send "AT+CIPSTAMAC_CUR?" -3 send "AT+CIPSTAMAC?". 
+     * @return mac address. 
+     * @note This method should not be called when ap mode. 
+     */
+     String getStationMac(uint8_t pattern=DEFAULT_PATTERN);
+     
+     /**
+     * Set the station's MAC address. 
+     * @param pattern -1 send "AT+CIPSTAMAC_DEF=" -2 send "AT+CIPSTAMAC_CUR=" -3 send "AT+CIPSTAMAC=". 
+     * @param mac - the mac address of station. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+     bool setStationMac(String mac,uint8_t pattern=DEFAULT_PATTERN);
+     
+     /**
+     * Get the station's IP. 
+     * @param pattern -1 send "AT+CIPSTA_DEF?" -2 send "AT+CIPSTA_CUR?" -3 send "AT+CIPSTA?". 
+     * @return the station's IP. 
+     * @note This method should not be called when ap mode. 
+     */
+     String getStationIp(uint8_t pattern=DEFAULT_PATTERN);
+     
+      /**
+     * Set the station's IP. 
+     * @param pattern -1 send "AT+CIPSTA_DEF=" -2 send "AT+CIPSTA_CUR=" -3 send "AT+CIPSTA=". 
+     * @param ip - the ip of station. 
+     * @param gateway -the gateway of station. 
+     * @param netmask -the netmask of station.  
+     * @retval true - success.
+     * @retval false - failure.
+     * @note This method should not be called when ap mode. 
+     */
+     bool setStationIp(String ip,String gateway,String netmask,uint8_t pattern=DEFAULT_PATTERN);
+     
+     /**
+     * Get the AP's IP. 
+     * @param pattern -1 send "AT+CIPAP_DEF?" -2 send "AT+CIPAP_CUR?" -3 send "AT+CIPAP?". 
+     * @return ap's ip. 
+     * @note This method should not be called when station mode. 
+     * 
+     */
+     String getAPIp(uint8_t pattern=DEFAULT_PATTERN);
+     
+     /**
+     * Set the AP IP. 
+     * @param pattern -1 send "AT+CIPAP_DEF=" -2 send "AT+CIPAP_CUR=" -3 send "AT+CIPAP=". 
+     * @param ip - the ip of AP. 
+     * @retval true - success.
+     * @retval false - failure.
+     * @note This method should not be called when station mode.
+     */
+     bool setAPIp(String ip,uint8_t pattern=DEFAULT_PATTERN);
+     
+     /**
+     * start smartconfig. 
+     * @param type -1:ESP_TOUCH  -2:AirKiss. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+     bool startSmartConfig(uint8_t type);
+     
+     /**
+     * stop smartconfig. 
+     * 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+     bool stopSmartConfig(void); 
     
     /**
      * Get the current status of connection(UDP and TCP). 
@@ -194,7 +395,6 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool disableMUX(void);
-    
     
     /**
      * Create TCP connection in single mode. 
@@ -272,7 +472,6 @@ class ESP8266 {
      */
     bool unregisterUDP(uint8_t mux_id);
 
-
     /**
      * Set the timeout of TCP Server. 
      * 
@@ -308,6 +507,14 @@ class ESP8266 {
     bool stopTCPServer(void);
     
     /**
+     *Set the module transfer mode
+     * 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool setCIPMODE(uint8_t mode);
+    
+    /**
      * Start Server(Only in multiple mode). 
      * 
      * @param port - the port number to listen(default: 333).
@@ -326,6 +533,21 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool stopServer(void);
+    /**
+     * Save the passthrough links
+     * 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool saveTransLink (uint8_t mode,String ip,uint32_t port);
+    
+   /**
+    * PING COMMAND. 
+    * 
+    * @retval true - success.
+    * @retval false - failure.
+    */
+    bool setPing(String ip);
 
     /**
      * Send data based on TCP or UDP builded already in single mode. 
@@ -347,6 +569,27 @@ class ESP8266 {
      * @retval false - failure.
      */
     bool send(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
+    
+    /**
+     * Send data based on TCP or UDP builded already in single mode. 
+     * 
+     * @param buffer - the buffer of data to send from flash memeory. 
+     * @param len - the length of data to send. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool sendFromFlash(const uint8_t *buffer, uint32_t len);
+            
+    /**
+     * Send data based on one of TCP or UDP builded already in multiple mode. 
+     * 
+     * @param mux_id - the identifier of this TCP(available value: 0 - 4). 
+     * @param buffer - the buffer of data to send from flash memeory. 
+     * @param len - the length of data to send. 
+     * @retval true - success.
+     * @retval false - failure.
+     */
+    bool sendFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
     
     /**
      * Receive data from TCP or UDP builded already in single mode. 
@@ -431,25 +674,49 @@ class ESP8266 {
     bool eAT(void);
     bool eATRST(void);
     bool eATGMR(String &version);
+    bool eATGSLP(uint32_t time); 
+    bool eATE(uint8_t mode);
+    bool eATRESTORE(void);
+    bool eATSETUART(uint32_t baudrate,uint8_t pattern);
     
-    bool qATCWMODE(uint8_t *mode);
-    bool sATCWMODE(uint8_t mode);
-    bool sATCWJAP(String ssid, String pwd);
+    bool qATCWMODE(uint8_t *mode,uint8_t pattern=3);
+    bool eATCWMODE(String &list) ;
+    bool sATCWMODE(uint8_t mode,uint8_t pattern=3);
+    bool qATCWJAP(String &ssid,uint8_t pattern=3) ;
+    bool sATCWJAP(String ssid, String pwd,uint8_t pattern=3);
     bool eATCWLAP(String &list);
     bool eATCWQAP(void);
-    bool sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn);
+    bool qATCWSAP(String &List,uint8_t pattern=3); 
+    bool sATCWSAP(String ssid, String pwd, uint8_t chl, uint8_t ecn,uint8_t pattern=3);
     bool eATCWLIF(String &list);
-    
+    bool qATCWDHCP(String &List,uint8_t pattern=3); 
+    bool sATCWDHCP(uint8_t mode, uint8_t en, uint8_t pattern=3);
+    bool eATCWAUTOCONN(uint8_t en);
+    bool qATCIPSTAMAC(String &mac,uint8_t pattern=3);
+    bool eATCIPSTAMAC(String mac,uint8_t pattern=3);
+    bool qATCIPSTAIP(String &ip,uint8_t pattern=3);
+    bool eATCIPSTAIP(String ip,String gateway,String netmask,uint8_t pattern=3);
+    bool qATCIPAP(String &ip,uint8_t pattern=3);
+    bool eATCIPAP(String ip,uint8_t pattern=3);
+    bool eCWSTARTSMART(uint8_t type);
+    bool eCWSTOPSMART(void);
+
+   
     bool eATCIPSTATUS(String &list);
     bool sATCIPSTARTSingle(String type, String addr, uint32_t port);
     bool sATCIPSTARTMultiple(uint8_t mux_id, String type, String addr, uint32_t port);
     bool sATCIPSENDSingle(const uint8_t *buffer, uint32_t len);
     bool sATCIPSENDMultiple(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
+    bool sATCIPSENDSingleFromFlash(const uint8_t *buffer, uint32_t len);
+    bool sATCIPSENDMultipleFromFlash(uint8_t mux_id, const uint8_t *buffer, uint32_t len);
     bool sATCIPCLOSEMulitple(uint8_t mux_id);
     bool eATCIPCLOSESingle(void);
     bool eATCIFSR(String &list);
     bool sATCIPMUX(uint8_t mode);
     bool sATCIPSERVER(uint8_t mode, uint32_t port = 333);
+    bool sATCIPMODE(uint8_t mode);
+    bool eATSAVETRANSLINK(uint8_t mode,String ip,uint32_t port);
+    bool eATPING(String ip);
     bool sATCIPSTO(uint32_t timeout);
     
     /*

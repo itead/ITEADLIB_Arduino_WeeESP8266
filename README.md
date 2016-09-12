@@ -37,6 +37,8 @@ will be useful for Arduino lovers.
     bool 	setOprToSoftAP (void) : Set operation mode to softap.
      
     bool 	setOprToStationSoftAP (void) : Set operation mode to station + softap.
+    
+    uint8_t getOprMode(void) : Get the operation mode.
      
     String 	getAPList (void) : Search available AP list and return it.
      
@@ -85,6 +87,10 @@ will be useful for Arduino lovers.
     bool 	send (const uint8_t *buffer, uint32_t len) : Send data based on TCP or UDP builded already in single mode. 
      
     bool 	send (uint8_t mux_id, const uint8_t *buffer, uint32_t len) : Send data based on one of TCP or UDP builded already in multiple mode. 
+
+     bool 	sendFromFlash (const uint8_t *buffer, uint32_t len) : Send data based on TCP or UDP builded already in single mode. 
+     
+    bool 	sendFromFlash (uint8_t mux_id, const uint8_t *buffer, uint32_t len) : Send data based on one of TCP or UDP builded already in multiple mode. 
      
     uint32_t 	recv (uint8_t *buffer, uint32_t buffer_size, uint32_t timeout=1000) : Receive data from TCP or UDP builded already in single mode. 
      
@@ -104,6 +110,18 @@ will be useful for Arduino lovers.
   - Arduino MEGA and its derivatives
   - [Iteaduino UNO](http://imall.iteadstudio.com/im130312001.html)
   - [WBoard Pro](http://imall.iteadstudio.com/im141125005.html)
+
+# Select the version of ESP8266 AT Firmware
+
+At present, this library supports ESP8266 AT 0.18 version and 0.22 version. You
+can select one of them to fit your module by modifing this line in `ESP8266.h`:
+
+    #define  USER_SEL_VERSION         VERSION_18
+
+If you want to select 0.22 version, it should be like below after modification:
+
+    #define  USER_SEL_VERSION         VERSION_22
+
 
 # Using SoftwareSerial
 

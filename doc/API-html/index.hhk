@@ -5,43 +5,74 @@
 </OBJECT>
 <UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2"><param name="Name" value="createTCP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a06211d9f6f076fc712c56079ec0476a6"><param name="Name" value="deepSleep"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a2bc64145329ea45018e956b97ced030a"><param name="Name" value="disableMUX"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007"><param name="Name" value="enableMUX"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html"><param name="Name" value="ESP8266"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_e_s_p8266_8h.html"><param name="Name" value="ESP8266.h"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html"><param name="Name" value="ESP8266"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aa927b7b8aaef163011015c22da1f07e2"><param name="Name" value="createTCP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a06211d9f6f076fc712c56079ec0476a6"><param name="Name" value="deepSleep"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a2bc64145329ea45018e956b97ced030a"><param name="Name" value="disableMUX"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a16963a076b80906563d2269c0cd52007"><param name="Name" value="enableMUX"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ab102bf2334ccfbc6475104ca7f6cd88a"><param name="Name" value="getAPIp"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af0cafe8a994349e81e75a35af9645a76"><param name="Name" value="getAPList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a025777f5fe3360ee4b85ba76595c5f1d"><param name="Name" value="getDHCP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ad273286fbb8627a612249a232d53ca22"><param name="Name" value="getIPStatus"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a10c82a5196a8f349720a9c9ba7209a6e"><param name="Name" value="getJoinedDeviceIP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d"><param name="Name" value="getLocalIP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a877d42c19b79460b7bc7044d61127362"><param name="Name" value="getNowConecAp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aece8cbb5d38f0bab1105fcd1e074d449"><param name="Name" value="getSoftAPParam"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a881c56e06485303c06204d7db772311f"><param name="Name" value="getStationIp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a5d0516885a04de735dc1ff83c8359bd3"><param name="Name" value="getStationMac"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750"><param name="Name" value="getVersion"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f"><param name="Name" value="joinAP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a1103fdc1562d2632c7fe56455a200904"><param name="Name" value="getWifiModeList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a109cc0b4d90ab8894e50a73ae15cb76d"><param name="Name" value="joinAP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a5ed71947606435c3b03b73efdaf810a5"><param name="Name" value="kick"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aeda29748e0d28efa9d82c9c7fab1859b"><param name="Name" value="leaveAP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af8ce40bd14556bcfb5d4c521047fc821"><param name="Name" value="recv"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af8d3305a28d862c0cf353d0d758b96d4"><param name="Name" value="registerUDP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337"><param name="Name" value="releaseTCP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a04b61a01af4ee5e8820c9de79b4b3c39"><param name="Name" value="restart"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a6f965a4d12aaee1c157ee3c749b64943"><param name="Name" value="restore"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a28f69cf8ff405f881a00d9c48b171d53"><param name="Name" value="saveTransLink"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc"><param name="Name" value="send"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a247706884d60e85c8983bb65de26d346"><param name="Name" value="setOprToSoftAP"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a572c6f855d70078fdbff9ac2c4b1ce99"><param name="Name" value="setOprToStation"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61"><param name="Name" value="setOprToStationSoftAP"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aacce786dc0ef289cd37a48642d2efef1"><param name="Name" value="setSoftAPParam"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a9b46751c386f62c8caa0bb47e08a0291"><param name="Name" value="setAPIp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a7df4d6ad4f3fe332b9635fe722cfc6cb"><param name="Name" value="setAutoConnect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a4448463d30008eabb799243c4b10bbcd"><param name="Name" value="setCIPMODE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a9009e3fc35b30881e62d563ecb87b0a6"><param name="Name" value="setDHCP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a54e5adeb4e47ee133123d8149e9a9dfd"><param name="Name" value="setEcho"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#add7695c7120d4811075c8a57e9ac2300"><param name="Name" value="setOprToSoftAP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a37579b02494895753fcb596e9deeda8d"><param name="Name" value="setOprToStation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a9662323e56b93b7e517a41cf6bf357fd"><param name="Name" value="setOprToStationSoftAP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a8f31b68bd707ffa9c627c6419ab67ab2"><param name="Name" value="setPing"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a0a40793fedc378691cb15dacfb11db49"><param name="Name" value="setSoftAPParam"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a3a1401e851ba98af3e30b2682acc5c19"><param name="Name" value="setStationIp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a33846f3a4640c40fd3ffcb600508814d"><param name="Name" value="setStationMac"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a71f76c76d23fc66c26f1c7b357f58ac2"><param name="Name" value="setTCPServerTimeout"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a7bc79d4438447ba464d65458f2f5ff26"><param name="Name" value="setUart"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7"><param name="Name" value="startServer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a645f7e316383c040f88faf31e34c0ce6"><param name="Name" value="startSmartConfig"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a22a7768a76709c8d8f0b9809158b7ec9"><param name="Name" value="startTCPServer"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc"><param name="Name" value="stopServer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#abb3cca1c46319d4dbfc5caea6852e7c8"><param name="Name" value="stopSmartConfig"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef"><param name="Name" value="stopTCPServer"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aa355332a78aa5f2b58cb11b0daa05cf5"><param name="Name" value="unregisterUDP"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ab102bf2334ccfbc6475104ca7f6cd88a"><param name="Name" value="getAPIp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af0cafe8a994349e81e75a35af9645a76"><param name="Name" value="getAPList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a025777f5fe3360ee4b85ba76595c5f1d"><param name="Name" value="getDHCP"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ad273286fbb8627a612249a232d53ca22"><param name="Name" value="getIPStatus"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a10c82a5196a8f349720a9c9ba7209a6e"><param name="Name" value="getJoinedDeviceIP"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a20819d4dabf19fed6e3dcb3fd04ee49d"><param name="Name" value="getLocalIP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a877d42c19b79460b7bc7044d61127362"><param name="Name" value="getNowConecAp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aece8cbb5d38f0bab1105fcd1e074d449"><param name="Name" value="getSoftAPParam"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a881c56e06485303c06204d7db772311f"><param name="Name" value="getStationIp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a5d0516885a04de735dc1ff83c8359bd3"><param name="Name" value="getStationMac"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a4e2d8a0637b437d4b03209cebfa5b750"><param name="Name" value="getVersion"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a300535b4b5f001b74058ebcc694a749f"><param name="Name" value="joinAP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a1103fdc1562d2632c7fe56455a200904"><param name="Name" value="getWifiModeList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a109cc0b4d90ab8894e50a73ae15cb76d"><param name="Name" value="joinAP"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a5ed71947606435c3b03b73efdaf810a5"><param name="Name" value="kick"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aeda29748e0d28efa9d82c9c7fab1859b"><param name="Name" value="leaveAP"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="md__r_e_a_d_m_e.html"><param name="Name" value="README"></OBJECT>
@@ -49,17 +80,31 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af8d3305a28d862c0cf353d0d758b96d4"><param name="Name" value="registerUDP"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ac15ce9df69dc566c37b3fa2c3c869337"><param name="Name" value="releaseTCP"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a04b61a01af4ee5e8820c9de79b4b3c39"><param name="Name" value="restart"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a6f965a4d12aaee1c157ee3c749b64943"><param name="Name" value="restore"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a28f69cf8ff405f881a00d9c48b171d53"><param name="Name" value="saveTransLink"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a6ba21b921a7afc79a36d0e41c20d59bc"><param name="Name" value="send"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a247706884d60e85c8983bb65de26d346"><param name="Name" value="setOprToSoftAP"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a572c6f855d70078fdbff9ac2c4b1ce99"><param name="Name" value="setOprToStation"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#ac179183a46b218609a481747bcfd5a61"><param name="Name" value="setOprToStationSoftAP"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aacce786dc0ef289cd37a48642d2efef1"><param name="Name" value="setSoftAPParam"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a9b46751c386f62c8caa0bb47e08a0291"><param name="Name" value="setAPIp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a7df4d6ad4f3fe332b9635fe722cfc6cb"><param name="Name" value="setAutoConnect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a4448463d30008eabb799243c4b10bbcd"><param name="Name" value="setCIPMODE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a9009e3fc35b30881e62d563ecb87b0a6"><param name="Name" value="setDHCP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a54e5adeb4e47ee133123d8149e9a9dfd"><param name="Name" value="setEcho"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#add7695c7120d4811075c8a57e9ac2300"><param name="Name" value="setOprToSoftAP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a37579b02494895753fcb596e9deeda8d"><param name="Name" value="setOprToStation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a9662323e56b93b7e517a41cf6bf357fd"><param name="Name" value="setOprToStationSoftAP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a8f31b68bd707ffa9c627c6419ab67ab2"><param name="Name" value="setPing"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a0a40793fedc378691cb15dacfb11db49"><param name="Name" value="setSoftAPParam"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a3a1401e851ba98af3e30b2682acc5c19"><param name="Name" value="setStationIp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a33846f3a4640c40fd3ffcb600508814d"><param name="Name" value="setStationMac"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a71f76c76d23fc66c26f1c7b357f58ac2"><param name="Name" value="setTCPServerTimeout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a7bc79d4438447ba464d65458f2f5ff26"><param name="Name" value="setUart"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a88d9a6b130b6c278fd6cd2e6cda816d7"><param name="Name" value="startServer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a645f7e316383c040f88faf31e34c0ce6"><param name="Name" value="startSmartConfig"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#a22a7768a76709c8d8f0b9809158b7ec9"><param name="Name" value="startTCPServer"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#af272f2f57b7b99434e257f06c276acfc"><param name="Name" value="stopServer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#abb3cca1c46319d4dbfc5caea6852e7c8"><param name="Name" value="stopSmartConfig"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aa5355dce05aa59b92ce9f7ea76d86eef"><param name="Name" value="stopTCPServer"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_e_s_p8266.html#aa355332a78aa5f2b58cb11b0daa05cf5"><param name="Name" value="unregisterUDP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_e_s_p8266_8h.html#a14059f7d80f7f7ca3a3aa71e53ea3b12"><param name="Name" value="USER_SEL_VERSION"></OBJECT>
 </UL>
 </BODY>
 </HTML>

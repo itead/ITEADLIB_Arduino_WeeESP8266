@@ -175,6 +175,9 @@ String ESP8266::getLocalIP(void)
 {
     String list;
     eATCIFSR(list);
+    int ip_idx = list.indexOf("+CIFSR:STAIP,\"") + 14;
+    int ip_end = list.indexOf("\"", ip_idx);
+    list = list.substring(ip_idx, ip_end);
     return list;
 }
 

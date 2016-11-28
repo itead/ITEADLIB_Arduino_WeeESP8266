@@ -291,6 +291,7 @@ uint32_t ESP8266::recv(uint8_t mux_id, uint8_t *buffer, uint32_t buffer_size, ui
 
 uint32_t ESP8266::recv(uint8_t *coming_mux_id, uint8_t *buffer, uint32_t buffer_size, uint32_t timeout)
 {
+	if(!m_puart->available()) return 0; // don't enter while loop if there is no serial data available
     return recvPkg(buffer, buffer_size, NULL, timeout, coming_mux_id);
 }
 

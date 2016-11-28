@@ -25,12 +25,16 @@
 
 
 //#define ESP8266_USE_SOFTWARE_SERIAL
+//#define ESP8266_USE_ALTSOFT_SERIAL
 
 
 #ifdef ESP8266_USE_SOFTWARE_SERIAL
 #include "SoftwareSerial.h"
 #endif
 
+#ifdef ESP8266_USE_ALTSOFT_SERIAL
+#include "AltSoftSerial.h"
+#endif
 
 /**
  * Provide an easy-to-use way to manipulate ESP8266. 
@@ -48,6 +52,18 @@ class ESP8266 {
      * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
      */
     ESP8266(SoftwareSerial &uart, uint32_t baud = 9600);
+
+#elif defined(ESP8266_USE_ALTSOFT_SERIAL)
+    /*
+     * Constuctor. 
+     *
+     * @param uart - an reference of AltSoftSerial object. 
+     * @param baud - the buad rate to communicate with ESP8266(default:9600). 
+     *
+     * @warning parameter baud depends on the AT firmware. 9600 is an common value. 
+     */
+    ESP8266(AltSoftSerial &uart, uint32_t baud = 9600);
+
 #else /* HardwareSerial */
     /*
      * Constuctor. 
@@ -471,6 +487,8 @@ class ESP8266 {
     
 #ifdef ESP8266_USE_SOFTWARE_SERIAL
     SoftwareSerial *m_puart; /* The UART to communicate with ESP8266 */
+#elif defined(ESP8266_USE_ALTSOFT_SERIAL)
+    AltSoftSerial *m_puart; /* The UART to communicate with ESP8266 */
 #else
     HardwareSerial *m_puart; /* The UART to communicate with ESP8266 */
 #endif

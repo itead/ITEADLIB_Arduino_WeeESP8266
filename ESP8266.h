@@ -339,6 +339,25 @@ class ESP8266 {
     bool stopServer(void);
 
     /**
+       Enable MDNS
+
+       @param hostname - MDNS host name.
+       @param servername - MDNS server name.
+       @param port - MDNS server port.
+       @retval true - success.
+       @retval false - failure.
+    */
+    bool enableMDNS(String hostname, String servername, uint32_t port);
+    
+    /**
+       Disable MDNS
+
+       @retval true - success.
+       @retval false - failure.
+    */
+    bool disableMDNS(void);
+
+    /**
      * Send data based on TCP or UDP builded already in single mode. 
      * 
      * @param buffer - the buffer of data to send. 
@@ -463,6 +482,7 @@ class ESP8266 {
     bool sATCIPMUX(uint8_t mode);
     bool sATCIPSERVER(uint8_t mode, uint32_t port = 333);
     bool sATCIPSTO(uint32_t timeout);
+    bool sATCMDNS(bool enable, String hostname, String servername, uint32_t port);
     
     /*
      * +IPD,len:data

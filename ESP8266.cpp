@@ -263,6 +263,16 @@ bool ESP8266::stopServer(void)
     return stopTCPServer();
 }
 
+bool ESP8266::enableMDNS(String hostname, String servername, uint32_t port)
+{
+    return sATCMDNS(true, hostname, servername, port);
+}
+  
+  bool ESP8266::disableMDNS(void)
+{
+    return sATCMDNS(false, "", "", 0);
+}
+
 bool ESP8266::send(const uint8_t *buffer, uint32_t len)
 {
     return sATCIPSENDSingle(buffer, len);
@@ -740,5 +750,26 @@ bool ESP8266::sATCIPSTO(uint32_t timeout)
     m_puart->print("AT+CIPSTO=");
     m_puart->println(timeout);
     return recvFind("OK");
+}
+bool ESP8266::sATCMDNS(bool enable, String hostname, String servername, uint32_t port)
+{
+  String data;
+  if (enable) {
+    rx_empty();
+    m_puart->print("AT+MDNS=1,\"");
+    m_puart->print(hostname);
+    m_puart->print("\",\"");
+    m_puart->print(servername);
+    m_puart->print("\",");
+    m_puart->println(port);
+  } else {
+    rx_empty();
+    m_puart->println("AT+MDNS=0");
+  }
+  data = recvString("OK", "ERROR");
+  if (data.indexOf("OK") != -1 || data.indexOf("no change") != -1) {
+    return true;
+  }
+  return false;
 }
 
